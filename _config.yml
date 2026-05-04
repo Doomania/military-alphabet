@@ -1,0 +1,49 @@
+# Jekyll config for GitHub Pages
+title: Military Communication Reference
+description: Complete interactive reference for NATO phonetic alphabet, Morse code, military time, Zulu time converter, and police 10-codes.
+url: "https://doomania.github.io"
+baseurl: "/military-alphabet"
+author: doomania
+
+# SEO
+lang: en
+timezone: Pacific/Auckland
+
+# Build
+theme: null
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Sitemap settings (jekyll-sitemap plugin)
+defaults:
+  - scope:
+      path: ""
+    values:
+      sitemap: true
+
+# Exclude from build
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+
+# Include
+include:
+  - robots.txt
+  - sitemap.xml
+
+# SEO tag settings
+twitter:
+  username: doomania
+  card: summary_large_image
+
+social:
+  name: doomania
+  links: []
+
+# Google verification (add after Search Console setup)
+# google_site_verification: YOUR_CODE_HERE
+
+# Open Graph defaults
+logo: "/military-alphabet/og-image.png"
