@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NATO Phonetic Alphabet — Complete Reference</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Source+Code+Pro:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --olive:#4a5c2f;--olive-light:#6b8042;--olive-dark:#2e3a1c;
+  --khaki:#c8b87a;--khaki-dark:#9e8f52;
+  --ink:#1a2030;--fog:#7a8a78;
+  --surface:#f4f2ec;--card:#fafaf6;
+  --border:rgba(74,92,47,0.18);
+  --accent:#c0392b;
+}
+body{font-family:'Inter',sans-serif;background:var(--surface);color:var(--ink);min-height:100vh}
+
+/* HEADER */
+.hdr{padding:3rem 2rem 2rem;border-bottom:2px solid var(--border);position:relative;overflow:hidden;background:linear-gradient(135deg,#2e3a1c 0%,#4a5c2f 60%,#6b8042 100%)}
+.hdr::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 12px,rgba(255,255,255,0.03) 12px,rgba(255,255,255,0.03) 24px)}
+.hdr-inner{position:relative;max-width:900px;margin:0 auto}
+.tag{font-family:'Source Code Pro',monospace;font-size:11px;letter-spacing:.18em;color:var(--khaki);text-transform:uppercase;margin-bottom:.6rem;opacity:.9}
+h1{font-family:'Rajdhani',sans-serif;font-size:3rem;font-weight:700;color:#f0ead0;line-height:1;margin-bottom:.5rem}
+.sub{font-size:14px;color:rgba(240,234,208,0.7);max-width:500px;line-height:1.5}
+
+/* TABS */
+.tabs{display:flex;gap:0;border-bottom:2px solid var(--border);background:var(--surface);padding:0 2rem;overflow-x:auto;max-width:none}
+.tab{font-family:'Rajdhani',sans-serif;font-size:.95rem;font-weight:600;letter-spacing:.06em;padding:.8rem 1.4rem;border:none;background:none;cursor:pointer;color:var(--fog);border-bottom:3px solid transparent;white-space:nowrap;transition:color .2s;margin-bottom:-2px;text-transform:uppercase}
+.tab:hover{color:var(--olive)}
+.tab.active{color:var(--olive);border-bottom-color:var(--olive)}
+
+/* PANELS */
+.panel{display:none;padding:2rem;max-width:960px;margin:0 auto}
+.panel.active{display:block}
+
+/* CONVERTER */
+.conv-wrap{display:flex;gap:8px;margin-bottom:.75rem}
+#conv-input{flex:1;font-family:'Source Code Pro',monospace;font-size:15px;padding:.7rem 1rem;border:1.5px solid var(--border);border-radius:6px;background:var(--card);color:var(--ink);letter-spacing:.05em}
+#conv-input:focus{outline:none;border-color:var(--olive-light)}
+#conv-btn{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:.9rem;letter-spacing:.1em;text-transform:uppercase;padding:.7rem 1.4rem;background:var(--olive);color:#f0ead0;border:none;border-radius:6px;cursor:pointer;transition:background .2s}
+#conv-btn:hover{background:var(--olive-light)}
+#conv-out{font-family:'Source Code Pro',monospace;font-size:13px;line-height:1.9;color:var(--olive-light);padding:.9rem 1rem;background:var(--card);border:1.5px solid var(--border);border-radius:6px;word-break:break-word;min-height:3.5rem}
+.copy-btn{font-size:11px;color:var(--fog);cursor:pointer;text-align:right;margin-top:4px;font-family:'Source Code Pro',monospace}
+.copy-btn:hover{color:var(--olive-light)}
+
+/* ALPHA GRID */
+.alpha-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:10px}
+.alpha-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:.85rem;cursor:default;transition:border-color .2s,transform .15s,box-shadow .15s;position:relative;overflow:hidden}
+.alpha-card::after{content:attr(data-letter);position:absolute;right:-6px;bottom:-10px;font-family:'Rajdhani',sans-serif;font-size:5rem;font-weight:700;color:var(--olive);opacity:.05;line-height:1;pointer-events:none}
+.alpha-card:hover{border-color:var(--olive-light);transform:translateY(-2px);box-shadow:0 4px 16px rgba(74,92,47,0.1)}
+.alpha-card .ltr{font-family:'Rajdhani',sans-serif;font-size:2rem;font-weight:700;color:var(--olive);line-height:1}
+.alpha-card .word{font-family:'Rajdhani',sans-serif;font-size:1.05rem;font-weight:600;color:var(--ink);margin:.2rem 0 .1rem}
+.alpha-card .pron{font-family:'Source Code Pro',monospace;font-size:.65rem;color:var(--fog);letter-spacing:.04em}
+.alpha-card .origin{font-size:.62rem;color:var(--khaki-dark);margin-top:.35rem;line-height:1.35}
+
+/* SECTION TITLES */
+.sec-title{font-family:'Rajdhani',sans-serif;font-size:1.1rem;font-weight:700;color:var(--olive);letter-spacing:.08em;text-transform:uppercase;margin-bottom:.9rem;margin-top:2rem;padding-bottom:.4rem;border-bottom:1.5px solid var(--border)}
+.sec-title:first-child{margin-top:0}
+
+/* CARDS GRID */
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px;margin-bottom:.5rem}
+.info-card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:.85rem 1rem}
+.info-card .code{font-family:'Rajdhani',sans-serif;font-size:1rem;font-weight:700;color:var(--olive-light);margin-bottom:.25rem}
+.info-card .meaning{font-size:.82rem;color:var(--ink);line-height:1.4}
+.info-card .ctx{font-size:.7rem;color:var(--fog);margin-top:.25rem;font-style:italic}
+
+/* PROWORDS TABLE */
+.pw-table{width:100%;border-collapse:collapse;font-size:13px}
+.pw-table th{font-family:'Rajdhani',sans-serif;font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:.75rem;color:var(--fog);text-align:left;padding:.55rem .85rem;border-bottom:1.5px solid var(--border)}
+.pw-table td{padding:.6rem .85rem;border-bottom:1px solid var(--border);vertical-align:top}
+.pw-table td:first-child{font-family:'Source Code Pro',monospace;font-size:.78rem;font-weight:500;color:var(--olive-light);white-space:nowrap}
+.pw-table td:last-child{font-size:.82rem;color:var(--ink);line-height:1.45}
+.pw-table tr:hover td{background:var(--card)}
+.pw-wrap{border:1px solid var(--border);border-radius:8px;overflow:hidden}
+
+/* TIMELINE */
+.timeline{position:relative;padding-left:1.8rem}
+.timeline::before{content:'';position:absolute;left:6px;top:4px;bottom:4px;width:1.5px;background:var(--border)}
+.tl-item{position:relative;margin-bottom:1.4rem}
+.tl-item::before{content:'';position:absolute;left:-1.8rem;top:5px;width:12px;height:12px;border-radius:50%;background:var(--olive);border:2.5px solid var(--surface)}
+.tl-year{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:.9rem;color:var(--olive-light);margin-bottom:.25rem;letter-spacing:.05em}
+.tl-desc{font-size:.83rem;color:var(--ink);line-height:1.55}
+
+/* QUIZ */
+.quiz-wrap{max-width:420px;margin:0 auto;text-align:center}
+.quiz-letter{font-family:'Rajdhani',sans-serif;font-size:5rem;font-weight:700;color:var(--olive);margin-bottom:.4rem;letter-spacing:.1em;line-height:1}
+.quiz-hint{font-size:.85rem;color:var(--fog);margin-bottom:1.2rem}
+.quiz-input{width:100%;font-family:'Source Code Pro',monospace;font-size:1rem;padding:.75rem 1rem;border:2px solid var(--border);border-radius:8px;background:var(--card);color:var(--ink);text-align:center;letter-spacing:.05em;margin-bottom:.6rem;display:block}
+.quiz-input:focus{outline:none;border-color:var(--olive-light)}
+.quiz-reveal{font-family:'Source Code Pro',monospace;font-size:.9rem;color:var(--accent);min-height:1.4rem;margin-bottom:.5rem}
+.quiz-feedback{font-family:'Rajdhani',sans-serif;font-size:1.2rem;font-weight:700;min-height:1.6rem;margin-bottom:.8rem}
+.quiz-btns{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.q-btn{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:.85rem;letter-spacing:.08em;text-transform:uppercase;padding:.6rem 1.3rem;border:1.5px solid var(--border);border-radius:6px;cursor:pointer;background:var(--card);color:var(--ink);transition:all .15s}
+.q-btn:hover{background:var(--olive);color:#f0ead0;border-color:var(--olive)}
+.quiz-score{font-size:.8rem;color:var(--fog);margin-top:1rem;font-family:'Source Code Pro',monospace}
+
+/* NUMBERS */
+.num-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(90px,1fr));gap:8px;margin-bottom:1.5rem}
+.num-card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:.65rem .5rem;text-align:center}
+.num-card .num{font-family:'Rajdhani',sans-serif;font-size:1.6rem;font-weight:700;color:var(--olive);line-height:1}
+.num-card .nword{font-family:'Rajdhani',sans-serif;font-size:.85rem;font-weight:600;color:var(--ink)}
+.num-card .npron{font-family:'Source Code Pro',monospace;font-size:.62rem;color:var(--fog);margin-top:.15rem}
+</style>
+</head>
+<body>
+
+<div class="hdr">
+  <div class="hdr-inner">
+    <div class="tag">NATO / ICAO Standard · Adopted 1957 · Unchanged for 67 Years</div>
+    <h1>Military Phonetic Alphabet</h1>
+    <p class="sub">Complete reference — alphabet cards, text converter, tactical code words, radio prowords, and history</p>
+  </div>
+</div>
+
+<div class="tabs">
+  <button class="tab active" onclick="showTab('alphabet',this)">Alphabet</button>
+  <button class="tab" onclick="showTab('converter',this)">Converter</button>
+  <button class="tab" onclick="showTab('codewords',this)">Code Words</button>
+  <button class="tab" onclick="showTab('prowords',this)">Prowords</button>
+  <button class="tab" onclick="showTab('history',this)">History</button>
+  <button class="tab" onclick="showTab('quiz',this)">Drill</button>
+</div>
+
+<!-- ALPHABET -->
+<div id="tab-alphabet" class="panel active">
+  <div class="alpha-grid" id="alpha-grid"></div>
+</div>
+
+<!-- CONVERTER -->
+<div id="tab-converter" class="panel">
+  <div class="sec-title">Text → NATO Phonetic</div>
+  <div class="conv-wrap">
+    <input id="conv-input" placeholder="Type text... e.g. CALL SIGN" maxlength="100" />
+    <button id="conv-btn" onclick="convert()">Convert</button>
+  </div>
+  <div id="conv-out">Output appears here...</div>
+  <div class="copy-btn" onclick="copyOut()">Copy to clipboard</div>
+
+  <div class="sec-title">Phonetic Numbers</div>
+  <div class="num-grid" id="num-grid"></div>
+
+  <div class="sec-title">Usage Notes</div>
+  <div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:1rem;font-size:.85rem;line-height:1.7;color:var(--ink)">
+    <strong style="font-family:'Rajdhani',sans-serif">Three rules for radio clarity:</strong><br>
+    1. <strong>Accuracy</strong> — use the exact codeword, not shortcuts.<br>
+    2. <strong>Brevity</strong> — keep transmissions under 30 seconds.<br>
+    3. <strong>Clarity</strong> — enunciate each syllable, pause between words.<br><br>
+    Decimal point = "DECIMAL". Period = "STOP". Never say "repeat" on radio — say "SAY AGAIN" (repeat is reserved for artillery fire missions).
+  </div>
+</div>
+
+<!-- CODE WORDS -->
+<div id="tab-codewords" class="panel">
+  <div class="sec-title">Tactical Code Phrases</div>
+  <div class="cards-grid" id="codes-grid"></div>
+
+  <div class="sec-title">Military Acronyms</div>
+  <div class="cards-grid" id="acronyms-grid"></div>
+
+  <div class="sec-title">Call Sign Structure</div>
+  <div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:1rem;font-size:.85rem;line-height:1.7;color:var(--ink)">
+    <strong style="font-family:'Rajdhani',sans-serif;font-size:1rem">Format:</strong> "[Recipient callsign], this is [Sender callsign], [message], Over."<br><br>
+    Call signs identify units without revealing identities to interceptors. They rotate regularly. "Actual" appended to a callsign means the actual commander (not a subordinate). Famous example: "Maverick Actual" would mean the Maverick unit's actual commanding officer.
+  </div>
+</div>
+
+<!-- PROWORDS -->
+<div id="tab-prowords" class="panel">
+  <div class="sec-title">Procedural Words</div>
+  <div class="pw-wrap">
+    <table class="pw-table" id="prowords-table"></table>
+  </div>
+
+  <div class="sec-title">Signal Quality Scale (RST)</div>
+  <div class="cards-grid">
+    <div class="info-card"><div class="code">LIMA CHARLIE</div><div class="meaning">Loud and Clear — perfect 5×5 signal</div></div>
+    <div class="info-card"><div class="code">WEAK BUT READABLE</div><div class="meaning">Low signal, message still understood</div></div>
+    <div class="info-card"><div class="code">BROKEN</div><div class="meaning">Interrupted signal, partial copy</div></div>
+    <div class="info-card"><div class="code">UNREADABLE</div><div class="meaning">Cannot copy — retransmit required</div></div>
+  </div>
+
+  <div class="sec-title">Critical Warnings</div>
+  <div style="background:var(--card);border:1.5px solid #c0392b44;border-radius:8px;padding:1rem;font-size:.85rem;line-height:1.7;color:var(--ink)">
+    <strong style="color:var(--accent);font-family:'Rajdhani',sans-serif">Never say "REPEAT" on radio.</strong> "Repeat" is an artillery command meaning "fire again." Always say <strong>SAY AGAIN</strong> when requesting retransmission.<br><br>
+    <strong style="color:var(--accent);font-family:'Rajdhani',sans-serif">Never say WILCO + ROGER together.</strong> WILCO already implies Roger. Using both is redundant and marks you as inexperienced.
+  </div>
+</div>
+
+<!-- HISTORY -->
+<div id="tab-history" class="panel">
+  <div class="sec-title">Timeline</div>
+  <div class="timeline" id="timeline"></div>
+
+  <div class="sec-title">Why These Specific Words?</div>
+  <div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:1rem;font-size:.85rem;line-height:1.7;color:var(--ink);margin-bottom:1.5rem">
+    The ICAO tested each codeword in noise, interference, and with speakers from 31 different languages. No two codewords may sound alike even at low signal quality. Spelling adjustments include: <strong>Alfa</strong> (not Alpha — prevents Spanish/Portuguese mispronunciation), <strong>Juliett</strong> (double-T prevents French speakers from silencing the final consonant), <strong>Oskar</strong> tested over "Oliver" and "Ontario" for better international clarity.
+  </div>
+
+  <div class="sec-title">Use Outside the Military</div>
+  <div class="cards-grid">
+    <div class="info-card"><div class="code">Aviation</div><div class="meaning">Squawk codes, ATIS updates, ATC coordination. Some airlines swap "Delta" to avoid airline name confusion.</div></div>
+    <div class="info-card"><div class="code">Banking</div><div class="meaning">Account verification, security codes, and large transaction confirmations over phone.</div></div>
+    <div class="info-card"><div class="code">Emergency Services</div><div class="meaning">Police, fire, and paramedics worldwide — combined with 10-codes for dispatch efficiency.</div></div>
+    <div class="info-card"><div class="code">Cybersecurity</div><div class="meaning">IR teams spell CVE IDs, IOC hashes, and IP addresses over voice comms during incidents.</div></div>
+    <div class="info-card"><div class="code">Maritime</div><div class="meaning">Coast Guard and shipping for vessel names, coordinates, and distress call identification.</div></div>
+    <div class="info-card"><div class="code">Medicine</div><div class="meaning">ER and ICU teams spell drug names and patient IDs to prevent fatal transcription errors.</div></div>
+  </div>
+
+  <div class="sec-title">Predecessor Alphabets</div>
+  <div class="cards-grid">
+    <div class="info-card"><div class="code">RAF Alphabet (1917)</div><div class="meaning">Ace, Beer, Cork, Don, Edward... First systematic spelling alphabet.</div></div>
+    <div class="info-card"><div class="code">Able Baker (1941)</div><div class="meaning">Able, Baker, Charlie, Dog, Easy, Fox... US WWII standard — heard in classic war films.</div></div>
+    <div class="info-card"><div class="code">CCIR Alphabet (1927)</div><div class="meaning">Amsterdam, Baltimore, Casablanca... ITU telegraph standard adopted by early airlines.</div></div>
+  </div>
+</div>
+
+<!-- QUIZ -->
+<div id="tab-quiz" class="panel">
+  <div class="quiz-wrap">
+    <div class="sec-title" style="text-align:center">Letter Drill</div>
+    <div class="quiz-letter" id="quiz-letter">?</div>
+    <div class="quiz-hint">Type the NATO codeword for this letter</div>
+    <input class="quiz-input" id="quiz-answer" placeholder="e.g. Alpha" autocomplete="off" onkeydown="if(event.key==='Enter')checkQuiz()" />
+    <div class="quiz-reveal" id="quiz-reveal"></div>
+    <div class="quiz-feedback" id="quiz-feedback"></div>
+    <div class="quiz-btns">
+      <button class="q-btn" onclick="checkQuiz()">Check</button>
+      <button class="q-btn" onclick="revealQuiz()">Reveal</button>
+      <button class="q-btn" onclick="nextQuiz()">Next →</button>
+    </div>
+    <div class="quiz-score" id="quiz-score">Score: 0 / 0</div>
+  </div>
+</div>
+
+<script>
+const NATO=[
+  {l:'A',w:'Alpha',p:'AL-fah',o:'Greek letter; ICAO spells as "Alfa" for international clarity'},
+  {l:'B',w:'Bravo',p:'BRAH-voh',o:'Spanish/Italian "brave" — distinct from Beta or Baker'},
+  {l:'C',w:'Charlie',p:'CHAR-lee',o:'English name; replaced CCIR\'s "Casablanca"'},
+  {l:'D',w:'Delta',p:'DEL-tah',o:'Greek letter; also NASA mission naming convention'},
+  {l:'E',w:'Echo',p:'EKK-oh',o:'Greek myth nymph; very distinctive from every other word'},
+  {l:'F',w:'Foxtrot',p:'FOKS-trot',o:'Ballroom dance; replaced "Fox" for extra syllables'},
+  {l:'G',w:'Golf',p:'Golf',o:'Scottish sport — monosyllable, very clear on radio'},
+  {l:'H',w:'Hotel',p:'HOH-tell',o:'French origin; replaced RAF\'s "Harry"'},
+  {l:'I',w:'India',p:'IN-dee-ah',o:'Country name; 3 syllables prevent confusion with "Item"'},
+  {l:'J',w:'Juliett',p:'JEW-lee-ett',o:'Double-T forces French speakers to pronounce final consonant'},
+  {l:'K',w:'Kilo',p:'KEY-loh',o:'Greek for thousand; SI prefix — widely understood'},
+  {l:'L',w:'Lima',p:'LEE-mah',o:'Capital of Peru; not "lime" — the city pronunciation'},
+  {l:'M',w:'Mike',p:'Myke',o:'English name; also slang for microphone'},
+  {l:'N',w:'November',p:'NOH-vem-ber',o:'Latin "ninth month" (old Roman calendar)'},
+  {l:'O',w:'Oscar',p:'OSS-car',o:'Old Norse "divine spear"; also ICAO awards reference'},
+  {l:'P',w:'Papa',p:'PAH-pah',o:'Cross-linguistic for father — understood in many languages'},
+  {l:'Q',w:'Quebec',p:'keh-BECK',o:'Canadian province; stress on second syllable'},
+  {l:'R',w:'Romeo',p:'ROH-me-oh',o:'Shakespeare\'s Romeo; also NATO ship classification prefix'},
+  {l:'S',w:'Sierra',p:'see-AIR-ah',o:'Spanish "mountain range"; also Nevada region name'},
+  {l:'T',w:'Tango',p:'TANG-go',o:'Argentine ballroom dance; also UTC offset indicator'},
+  {l:'U',w:'Uniform',p:'YOU-nee-form',o:'Military dress standard; 4 syllables ensure clarity'},
+  {l:'V',w:'Victor',p:'VIK-ter',o:'Latin "conqueror"; WWII codename for victory'},
+  {l:'W',w:'Whiskey',p:'WISS-key',o:'Irish/Scottish spirit; also NATO weapon type prefix'},
+  {l:'X',w:'X-Ray',p:'EKS-ray',o:'Röntgen\'s 1895 discovery; medical and security use'},
+  {l:'Y',w:'Yankee',p:'YANG-kee',o:'American English term; also Zulu offset indicator'},
+  {l:'Z',w:'Zulu',p:'ZOO-loo',o:'South African nation; Zulu = UTC+0 in military time'}
+];
+
+const CODES=[
+  {code:'Oscar Mike',meaning:'On the move',ctx:'Unit relocating between positions'},
+  {code:'Charlie Mike',meaning:'Continue mission',ctx:'Resume after interruption'},
+  {code:'Lima Charlie',meaning:'Loud and clear (5×5)',ctx:'Signal quality confirmation'},
+  {code:'Bravo Zulu',meaning:'Well done / Good job',ctx:'NATO signal of praise'},
+  {code:'Tango Yankee',meaning:'Thank you',ctx:'Radio courtesy phrase'},
+  {code:'Tango Mike',meaning:'Thanks much',ctx:'Variant courtesy phrase'},
+  {code:'November Golf',meaning:'No good',ctx:'Negative assessment'},
+  {code:'Tango Delta',meaning:'Target down',ctx:'Engagement report'},
+  {code:'Echo Tango Sierra',meaning:'Expiration Term of Service',ctx:'Last tour of duty'},
+  {code:'Whiskey Pete',meaning:'White phosphorous',ctx:'Munition type designation'},
+  {code:'Alpha Whiskey',meaning:'Air Warfare',ctx:'Naval tactical context'},
+  {code:'11 Bravo',meaning:'Army Infantry (MOS 11B)',ctx:'US Army job classification'},
+  {code:'40 Mike Mike',meaning:'40mm grenade / M203 launcher',ctx:'Weapons reference'},
+  {code:'Romeo Foxtrot',meaning:'Radio frequency',ctx:'Communications context'},
+];
+
+const ACRONYMS=[
+  {code:'BOHICA',meaning:'Bend Over Here It Comes Again',ctx:'Vietnam-era dark humour, still widely used'},
+  {code:'FUBAR',meaning:'F***ed Up Beyond All Recognition',ctx:'WWII origin — now mainstream English'},
+  {code:'SNAFU',meaning:'Situation Normal: All F***ed Up',ctx:'WWII — also mainstream today'},
+  {code:'TARFU',meaning:'Things Are Really F***ed Up',ctx:'Escalation above SNAFU'},
+  {code:'AWOL',meaning:'Absent Without Leave',ctx:'Legal military status — criminal offence'},
+  {code:'FOB',meaning:'Forward Operating Base',ctx:'Tactical outpost in theatre'},
+  {code:'ROE',meaning:'Rules of Engagement',ctx:'Legal framework for use of force'},
+  {code:'SITREP',meaning:'Situation Report',ctx:'Regular command update format'},
+];
+
+const PROWORDS=[
+  ['BREAK','Separates long messages into segments without ending the transmission. Insert when message exceeds one breath.'],
+  ['COPY','Message received and understood. Informal acknowledgement.'],
+  ['CORRECTION','Error in previous transmission — corrected version immediately follows.'],
+  ['DO NOT ANSWER','Recipient must not reply or acknowledge receipt of this message.'],
+  ['I SAY AGAIN','Intentionally repeating previous transmission (not a request for repetition).'],
+  ['I VERIFY','Confirming accuracy of information as specifically requested.'],
+  ['MORE TO FOLLOW','Additional information is coming — hold the net.'],
+  ['NEGATIVE','No / Disagreement / Request denied.'],
+  ['OUT','End of conversation — said only by the station that initiated the call.'],
+  ['OVER','End of this transmission — reply is expected. Conversation continues.'],
+  ['READ BACK','Repeat this transmission verbatim back to me for verification.'],
+  ['RELAY TO','Forward this message to the named station.'],
+  ['ROGER','I have received and understood your last transmission.'],
+  ['SAY AGAIN','Repeat your last transmission (NEVER say "repeat" on radio).'],
+  ['SILENCE × 3','All stations on this net cease transmission immediately.'],
+  ['SILENCE LIFTED','Normal communication on this net may resume.'],
+  ['UNKNOWN STATION','Transmitting to an unidentified party on the net.'],
+  ['VERIFY','Check accuracy of this message and/or information and confirm.'],
+  ['WILCO','Will comply (implies Roger — never use both together).'],
+];
+
+const NUMS=[
+  {n:'0',w:'Zero',p:'ZEE-roh'},
+  {n:'1',w:'One',p:'WUN'},
+  {n:'2',w:'Two',p:'TOO'},
+  {n:'3',w:'Three',p:'TREE'},
+  {n:'4',w:'Four',p:'FOW-er'},
+  {n:'5',w:'Five',p:'FIFE'},
+  {n:'6',w:'Six',p:'SIX'},
+  {n:'7',w:'Seven',p:'SEV-en'},
+  {n:'8',w:'Eight',p:'AIT'},
+  {n:'9',w:'Nine',p:'NIN-er'},
+];
+
+const TIMELINE=[
+  {y:'WWI · 1917',d:'British Royal Air Force creates first complete spelling alphabet for pilot–ground coordination. AM radio interference made individual letters indistinguishable over static.'},
+  {y:'1927',d:'International Telegraph Union (ITU) develops a standard spelling alphabet for telegram communication. Adopted by commercial airlines worldwide by the late 1930s.'},
+  {y:'1941 · WWII',d:'US introduces the Joint Army/Navy "Able Baker Charlie" alphabet across all service branches. Recognizable in films like Saving Private Ryan.'},
+  {y:'1943–1956',d:'Post-war analysis reveals Able Baker was too American-English-centric. NATO allies experienced frequent miscommunication. ICAO begins multi-year testing across 31 nations and languages.'},
+  {y:'1956',d:'ICAO finalizes word list after testing each codeword against noise, interference, and native speakers of Spanish, French, Arabic, Chinese, and more. Spelling variants adopted for international accuracy.'},
+  {y:'1957',d:'NATO and US Armed Forces formally adopt the International Radiotelephony Spelling Alphabet (IRSA). Unchanged since adoption — 67 years of operational reliability.'},
+  {y:'Present',d:'Used by military, aviation, emergency services, banking, cybersecurity, and medicine worldwide. The most enduring communication standard in modern history.'},
+];
+
+function buildAlpha(){
+  const g=document.getElementById('alpha-grid');
+  NATO.forEach(n=>{
+    const d=document.createElement('div');
+    d.className='alpha-card';
+    d.setAttribute('data-letter',n.l);
+    d.innerHTML=`<div class="ltr">${n.l}</div><div class="word">${n.w}</div><div class="pron">${n.p}</div><div class="origin">${n.o}</div>`;
+    g.appendChild(d);
+  });
+}
+
+function buildNums(){
+  const g=document.getElementById('num-grid');
+  NUMS.forEach(n=>{
+    const d=document.createElement('div');
+    d.className='num-card';
+    d.innerHTML=`<div class="num">${n.n}</div><div class="nword">${n.w}</div><div class="npron">${n.p}</div>`;
+    g.appendChild(d);
+  });
+}
+
+function buildCodes(){
+  const g=document.getElementById('codes-grid');
+  CODES.forEach(c=>{
+    const d=document.createElement('div');
+    d.className='info-card';
+    d.innerHTML=`<div class="code">${c.code}</div><div class="meaning">${c.meaning}</div><div class="ctx">${c.ctx}</div>`;
+    g.appendChild(d);
+  });
+  const ag=document.getElementById('acronyms-grid');
+  ACRONYMS.forEach(c=>{
+    const d=document.createElement('div');
+    d.className='info-card';
+    d.innerHTML=`<div class="code">${c.code}</div><div class="meaning">${c.meaning}</div><div class="ctx">${c.ctx}</div>`;
+    ag.appendChild(d);
+  });
+}
+
+function buildProwords(){
+  const t=document.getElementById('prowords-table');
+  t.innerHTML='<tr><th style="width:200px">Proword</th><th>Meaning</th></tr>';
+  PROWORDS.forEach(p=>{
+    const r=document.createElement('tr');
+    r.innerHTML=`<td>${p[0]}</td><td>${p[1]}</td>`;
+    t.appendChild(r);
+  });
+}
+
+function buildTimeline(){
+  const tl=document.getElementById('timeline');
+  TIMELINE.forEach(t=>{
+    const d=document.createElement('div');
+    d.className='tl-item';
+    d.innerHTML=`<div class="tl-year">${t.y}</div><div class="tl-desc">${t.d}</div>`;
+    tl.appendChild(d);
+  });
+}
+
+function convert(){
+  const raw=document.getElementById('conv-input').value.toUpperCase();
+  const map={};
+  NATO.forEach(n=>map[n.l]=n.w);
+  const numWords=['ZERO','ONE','TWO','THREE','FOUR','FIVE','SIX','SEVEN','EIGHT','NINER'];
+  let out=[];
+  for(let c of raw){
+    if(map[c]) out.push(map[c]);
+    else if(c===' ') out.push('/');
+    else if(/[0-9]/.test(c)) out.push(numWords[parseInt(c)]);
+    else if(c.trim()) out.push(c);
+  }
+  document.getElementById('conv-out').textContent=out.join(' ');
+}
+
+function copyOut(){
+  const t=document.getElementById('conv-out').textContent;
+  navigator.clipboard.writeText(t).then(()=>{
+    const el=document.querySelector('.copy-btn');
+    el.textContent='Copied!';
+    setTimeout(()=>el.textContent='Copy to clipboard',1500);
+  });
+}
+
+function showTab(id,el){
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('tab-'+id).classList.add('active');
+  el.classList.add('active');
+}
+
+let quizIdx=Math.floor(Math.random()*26),qCorrect=0,qTotal=0;
+function loadQuiz(){
+  document.getElementById('quiz-letter').textContent=NATO[quizIdx].l;
+  document.getElementById('quiz-answer').value='';
+  document.getElementById('quiz-feedback').textContent='';
+  document.getElementById('quiz-feedback').style.color='var(--ink)';
+  document.getElementById('quiz-reveal').textContent='';
+  document.getElementById('quiz-answer').focus();
+}
+function checkQuiz(){
+  const ans=document.getElementById('quiz-answer').value.trim().toLowerCase();
+  const correct=NATO[quizIdx].w.toLowerCase();
+  qTotal++;
+  const fb=document.getElementById('quiz-feedback');
+  if(ans===correct){qCorrect++;fb.style.color='#2ecc71';fb.textContent='Correct!';}
+  else{fb.style.color='#e74c3c';fb.textContent='Incorrect — try reveal.';}
+  document.getElementById('quiz-score').textContent='Score: '+qCorrect+' / '+qTotal;
+}
+function revealQuiz(){
+  document.getElementById('quiz-reveal').textContent=NATO[quizIdx].w+' — '+NATO[quizIdx].p;
+}
+function nextQuiz(){
+  let next;
+  do{next=Math.floor(Math.random()*26);}while(next===quizIdx&&NATO.length>1);
+  quizIdx=next;
+  loadQuiz();
+}
+
+buildAlpha();buildNums();buildCodes();buildProwords();buildTimeline();loadQuiz();
+document.getElementById('conv-input').addEventListener('keydown',e=>{if(e.key==='Enter')convert();});
+</script>
+</body>
+</html>
