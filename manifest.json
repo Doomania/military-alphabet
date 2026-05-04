@@ -1,0 +1,62 @@
+{
+  "name": "Military Communication Reference",
+  "short_name": "MilRef",
+  "description": "NATO phonetic alphabet, Morse code, military time, Zulu converter, police 10-codes and more.",
+  "start_url": "/military-alphabet/",
+  "scope": "/military-alphabet/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#f4f2ec",
+  "theme_color": "#4a5c2f",
+  "lang": "en",
+  "categories": ["reference", "utilities", "education"],
+  "icons": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect width='192' height='192' fill='%234a5c2f'/><text x='96' y='140' font-size='120' font-weight='bold' text-anchor='middle' fill='%23f0ead0' font-family='serif'>M</text></svg>",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect width='512' height='512' fill='%234a5c2f'/><text x='256' y='370' font-size='320' font-weight='bold' text-anchor='middle' fill='%23f0ead0' font-family='serif'>M</text></svg>",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "og-image.png",
+      "sizes": "1200x630",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Military Communication Reference — Desktop"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "NATO Alphabet",
+      "short_name": "Alphabet",
+      "description": "View NATO phonetic alphabet cards",
+      "url": "/military-alphabet/#alphabet"
+    },
+    {
+      "name": "Morse Code",
+      "short_name": "Morse",
+      "description": "Encode and decode Morse code",
+      "url": "/military-alphabet/#morse"
+    },
+    {
+      "name": "Military Time",
+      "short_name": "Mil Time",
+      "description": "Convert military and Zulu time",
+      "url": "/military-alphabet/#miltime"
+    },
+    {
+      "name": "Police Codes",
+      "short_name": "10-Codes",
+      "description": "Police 10-codes reference",
+      "url": "/military-alphabet/#police"
+    }
+  ]
+}
