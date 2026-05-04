@@ -115,6 +115,12 @@
 
 <link rel="canonical" href="https://doomania.github.io/military-alphabet">
 <meta name="theme-color" content="#4a5c2f">
+<link rel="manifest" href="/military-alphabet/manifest.json">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="MilRef">
+<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect width='180' height='180' fill='%234a5c2f' rx='40'/><text x='90' y='132' font-size='110' font-weight='bold' text-anchor='middle' fill='%23f0ead0' font-family='serif'>M</text></svg>">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text x='50' y='70' font-size='80' font-weight='bold' text-anchor='middle' fill='%234a5c2f'>M</text></svg>">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebApplication","name":"Military Communication Reference","description":"NATO phonetic alphabet, Morse code, military time, police 10-codes, radio prowords","url":"https://doomania.github.io/military-alphabet","author":{"@type":"Person","name":"doomania"},"applicationCategory":"UtilityApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
@@ -236,6 +242,13 @@ h1{font-family:'Rajdhani',sans-serif;font-size:2.6rem;font-weight:700;color:#f0e
 </head>
 <body>
 
+<div id="install-bar" style="display:none;align-items:center;justify-content:space-between;background:#2e3a1c;color:#f0ead0;padding:.6rem 1.5rem;font-family:'Rajdhani',sans-serif;font-size:.9rem;gap:1rem;flex-wrap:wrap">
+  <span>📱 Add to home screen for offline access</span>
+  <div style="display:flex;gap:8px">
+    <button onclick="installApp()" style="font-family:'Rajdhani',sans-serif;font-weight:700;font-size:.85rem;padding:.4rem 1rem;background:#6b8042;color:#f0ead0;border:none;border-radius:4px;cursor:pointer">Install</button>
+    <button onclick="document.getElementById('install-bar').style.display='none'" style="font-family:'Rajdhani',sans-serif;font-size:.85rem;padding:.4rem .75rem;background:none;color:#c8b87a;border:1px solid #c8b87a44;border-radius:4px;cursor:pointer">✕</button>
+  </div>
+</div>
 <a href="#tab-alphabet" class="skip-link" style="position:absolute;top:-40px;left:0;background:var(--olive);color:#f0ead0;padding:8px 16px;border-radius:0 0 6px 0;font-family:'Rajdhani',sans-serif;font-weight:700;font-size:.9rem;text-decoration:none;z-index:9999;transition:top .2s" onfocus="this.style.top='0'" onblur="this.style.top='-40px'">Skip to content</a>
 <div class="hdr">
   <div class="hdr-inner">
@@ -1219,6 +1232,35 @@ document.getElementById('mil-input').addEventListener('keydown',e=>{if(e.key==='
 document.getElementById('zulu-input').addEventListener('change',convertZuluLocal);
 document.getElementById('civil-time').addEventListener('change',convertMilTime);
 convertMilTime();buildTzSelect();
+
+/* === PWA SERVICE WORKER === */
+const PROD_HOST='doomania.github.io';
+if('serviceWorker' in navigator && location.hostname===PROD_HOST){
+  window.addEventListener('load',()=>{
+    navigator.serviceWorker.register('/military-alphabet/sw.js')
+      .then(()=>console.log('SW registered'))
+      .catch(e=>console.warn('SW:',e));
+  });
+}
+
+/* === INSTALL PROMPT === */
+let deferredPrompt=null;
+window.addEventListener('beforeinstallprompt',e=>{
+  e.preventDefault();
+  deferredPrompt=e;
+  const bar=document.getElementById('install-bar');
+  if(bar) bar.style.display='flex';
+});
+window.addEventListener('appinstalled',()=>{
+  const bar=document.getElementById('install-bar');
+  if(bar) bar.style.display='none';
+  deferredPrompt=null;
+});
+function installApp(){
+  if(!deferredPrompt) return;
+  deferredPrompt.prompt();
+  deferredPrompt.userChoice.then(()=>{deferredPrompt=null;});
+}
 </script>
 </body>
 </html>
