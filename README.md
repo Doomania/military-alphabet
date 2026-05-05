@@ -55,4 +55,8 @@ Single `index.html` — no frameworks, no build step, no dependencies. Vanilla J
 
 ## License
 
-Public domain.
+[![CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
+
+© 2025 doomania. Licensed under [Creative Commons Attribution-NonCommercial 4.0](https://creativecommons.org/licenses/by-nc/4.0/).
+
+Free to share and adapt with credit. **Commercial use requires written permission.**
