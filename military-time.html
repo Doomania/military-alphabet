@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Military Time Converter — Zulu Time, World Clocks & NZT</title>
-<meta name="description" content="Live military time clock, Zulu to local time converter for 29 timezones, 12-hour to military time converter, NATO time zone letters and New Zealand NZT converter.">
-<meta name="keywords" content="military time converter, zulu time, Zulu to NZT, military time New Zealand, 24 hour military clock, NATO time zones">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Military Time Converter — Zulu Time, World Clocks and NZT</title>
+<meta name="description" content="Live military time clock, Zulu to local time converter for 29 timezones, 12-hour to military time converter, NATO time zone letters and NZT converter.">
+<meta name="author" content="doomania">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://doomania.github.io/military-alphabet/military-time.html">
-<meta name="theme-color" content="#4a5c2f"><link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#4a5c2f">
+<link rel="manifest" href="manifest.json">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-WZ1SZQYXPC"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-WZ1SZQYXPC');</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=Source+Code+Pro:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-<style>*{box-sizing:border-box;margin:0;padding:0}
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
 :root{
   --olive:#4a5c2f;--olive-l:#6b8042;--olive-d:#2e3a1c;
   --khaki:#c8b87a;--khaki-d:#9e8f52;
@@ -230,6 +233,8 @@ body{font-family:'Inter',sans-serif;background:var(--surface);color:var(--ink);m
   .bot-nav{display:none !important}
   body{padding-bottom:0}
 }
+
+.dual-clocks{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:1.25rem}.nzt-card{border:2px solid var(--olive-l)}@media(max-width:380px){.dual-clocks{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -239,12 +244,11 @@ body{font-family:'Inter',sans-serif;background:var(--surface);color:var(--ink);m
   <h1 class="pg-title">Military Time</h1>
   <p class="pg-sub">Live clocks · Zulu to any timezone · 12-hour converter · NATO zone letters</p>
 </div></header>
-
 <main class="content" id="main">
   <div class="st">Live Clocks</div>
   <div class="dual-clocks">
     <div class="clock-card">
-      <div class="clock-label">Zulu — UTC+0</div>
+      <div class="clock-label">Zulu (UTC+0)</div>
       <div class="clock-big" id="zulu-clock" role="timer" aria-live="polite">----</div>
       <div style="font-size:.68rem;color:var(--fog);margin-top:.25rem" id="zulu-date"></div>
     </div>
@@ -255,62 +259,52 @@ body{font-family:'Inter',sans-serif;background:var(--surface);color:var(--ink);m
       <div style="font-size:.65rem;color:var(--fog);margin-top:.1rem" id="local-dst"></div>
     </div>
   </div>
-
-  <div class="st">Zulu → Local Converter</div>
+  <div class="st">Zulu to Local Converter</div>
   <div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:.9rem;margin-bottom:1rem">
     <div class="irow">
-      <span style="font-family:'Source Code Pro',monospace;font-size:11px;color:var(--fog);align-self:center;white-space:nowrap">Zulu (UTC):</span>
-      <input type="time" id="zulu-in" value="00:00" aria-label="Zulu UTC time" style="flex:0 0 auto"/>
+      <span style="font-family:Source Code Pro,monospace;font-size:11px;color:var(--fog);align-self:center;white-space:nowrap">Zulu (UTC):</span>
+      <input type="time" id="zulu-in" value="00:00" aria-label="Zulu UTC time" style="flex:0 0 auto" onchange="convertZulu()"/>
       <select id="tz-sel" aria-label="Select timezone" onchange="convertZulu()" style="flex:1;min-width:150px"></select>
       <button class="btn" onclick="convertZulu()">Convert</button>
     </div>
-    <div style="font-size:.68rem;color:var(--olive-l);font-family:'Source Code Pro',monospace;margin-bottom:.65rem" id="tz-detected"></div>
+    <div style="font-size:.68rem;color:var(--olive-l);font-family:Source Code Pro,monospace;margin-bottom:.65rem" id="tz-detected"></div>
     <div style="display:flex;gap:1.5rem;flex-wrap:wrap;align-items:baseline">
-      <div><div style="font-family:'Source Code Pro',monospace;font-size:.62rem;color:var(--fog)">LOCAL TIME</div><div class="mt-result" id="zconv-local">--:--</div></div>
-      <div><div style="font-family:'Source Code Pro',monospace;font-size:.62rem;color:var(--fog)">MILITARY</div><div class="mt-result" id="zconv-mil" style="color:var(--olive-l)">----</div></div>
-      <div><div style="font-family:'Source Code Pro',monospace;font-size:.62rem;color:var(--fog)">OFFSET</div><div class="mt-result" id="zconv-off" style="color:var(--fog);font-size:1.5rem">--</div></div>
+      <div><div style="font-family:Source Code Pro,monospace;font-size:.62rem;color:var(--fog)">LOCAL TIME</div><div class="mt-result" id="zconv-local">--:--</div></div>
+      <div><div style="font-family:Source Code Pro,monospace;font-size:.62rem;color:var(--fog)">MILITARY</div><div class="mt-result" id="zconv-mil" style="color:var(--olive-l)">----</div></div>
+      <div><div style="font-family:Source Code Pro,monospace;font-size:.62rem;color:var(--fog)">OFFSET</div><div class="mt-result" id="zconv-off" style="color:var(--fog);font-size:1.5rem">--</div></div>
     </div>
     <div style="margin-top:.65rem">
       <button class="btn btn-sec" onclick="copyZconv()" id="zcopy-btn" style="font-size:.75rem;padding:.4rem .9rem">Copy Result</button>
-      <span style="font-family:'Source Code Pro',monospace;font-size:.7rem;color:var(--fog);margin-left:.5rem" id="zcopy-confirm"></span>
     </div>
   </div>
-
-  <div class="st">12-Hour → Military</div>
+  <div class="st">12-Hour to Military</div>
   <div class="irow">
-    <input type="time" id="civil-in" value="13:30" aria-label="12-hour time input" onchange="toMil()"/>
+    <input type="time" id="civil-in" value="13:30" aria-label="12-hour time" onchange="toMil()"/>
     <button class="btn" onclick="toMil()">Convert</button>
   </div>
   <div class="mt-result" id="mil-res">1330</div>
   <div class="mt-sub" id="mil-say">Say: "Thirteen Thirty Hours"</div>
-
-  <div class="st">Military → 12-Hour</div>
+  <div class="st">Military to 12-Hour</div>
   <div class="irow">
     <input id="mil-in" placeholder="e.g. 1430" maxlength="4" aria-label="Military time 4 digits" style="max-width:110px;font-size:16px" onkeydown="if(event.key==='Enter')fromMil()"/>
     <button class="btn" onclick="fromMil()">Convert</button>
   </div>
   <div class="mt-result" id="civ-res">2:30 PM</div>
   <div class="mt-sub" id="civ-say">Military: 1430 Hours</div>
-
   <div class="st">World Zones</div>
   <div class="time-grid" id="world-grid"></div>
-
   <div class="st">Quick Reference</div>
   <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:7px;margin-bottom:1.25rem" id="ref-grid"></div>
-
   <div class="st">NATO Timezone Letters</div>
   <div class="grid-wide" id="tz-letters"></div>
-
   <div class="st">How to Read Military Time</div>
   <div class="info-box">
     <strong>Format:</strong> 4-digit 24-hour clock (HHMM). No AM/PM, no colon.<br><br>
-    <strong>Pronunciation:</strong> "0830" = "Zero Eight Thirty Hours" · "1545" = "Fifteen Forty-Five Hours" · "0000" = "Zero Hundred Hours" · "1200" = "Twelve Hundred Hours"<br><br>
-    <strong>Why no AM/PM?</strong> Ambiguity kills. A supply drop at "3:00" in combat — 0300 or 1500? Military time eliminates the question entirely.
+    <strong>Pronunciation:</strong> "0830" = "Zero Eight Thirty Hours" · "1545" = "Fifteen Forty-Five Hours" · "0000" = "Zero Hundred Hours"<br><br>
+    <strong>Why no AM/PM?</strong> A supply drop at "3:00" in combat — 0300 or 1500? Military time eliminates all ambiguity.
   </div>
 </main>
-
 <footer class="pg-footer">© 2025 <a href="index.html">doomania</a> · <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></footer>
-
 <script>
 const NAV_PAGES=[
   {id:'home',   label:'Home',        url:'index.html'},
@@ -409,246 +403,29 @@ document.addEventListener('click',e=>{
   }
 });
 
-buildNav(currentId){
-  const nav=document.createElement('nav');
-  nav.className='bnav';
-  nav.setAttribute('aria-label','Main navigation');
-
-  NAV_PAGES.forEach(p=>{
-    if(p.id==='more'){
-      // More button + popup
-      const wrap=document.createElement('div');
-      wrap.style.cssText='flex:1;position:relative';
-      const btn=document.createElement('button');
-      btn.className='bnav-item bnav-more'+(MORE_PAGES.some(m=>m.id===currentId)?' active':'');
-      btn.setAttribute('aria-label','More pages');
-      btn.innerHTML='<svg viewBox="0 0 24 24">'+p.icon+'</svg>'+p.label;
-      const menu=document.createElement('div');
-      menu.className='more-menu';
-      menu.id='more-menu';
-      MORE_PAGES.forEach(mp=>{
-        const a=document.createElement('a');
-        a.href=mp.url;
-        a.className='more-item'+(mp.id===currentId?' active':'');
-        a.innerHTML='<svg viewBox="0 0 24 24">'+mp.icon+'</svg>'+mp.label;
-        menu.appendChild(a);
-      });
-      btn.onclick=(e)=>{e.stopPropagation();menu.classList.toggle('open');};
-      document.addEventListener('click',()=>menu.classList.remove('open'));
-      wrap.appendChild(btn);
-      wrap.appendChild(menu);
-      nav.appendChild(wrap);
-    } else {
-      const a=document.createElement('a');
-      a.href=p.url;
-      a.className='bnav-item'+(p.id===currentId?' active':'');
-      a.setAttribute('aria-label',p.label);
-      a.setAttribute('aria-current',p.id===currentId?'page':'false');
-      a.innerHTML='<svg viewBox="0 0 24 24">'+p.icon+'</svg>'+p.label;
-      nav.appendChild(a);
-    }
-  });
-  document.body.appendChild(nav);
-}
 buildNav('time');
 
-const TZ_LIST=[
-  {label:'Auckland, NZ (NZST/NZDT)',iana:'Pacific/Auckland'},
-  {label:'Sydney, AU (AEST/AEDT)',iana:'Australia/Sydney'},
-  {label:'Tokyo, JP (JST)',iana:'Asia/Tokyo'},
-  {label:'Singapore (SGT)',iana:'Asia/Singapore'},
-  {label:'Dubai (GST)',iana:'Asia/Dubai'},
-  {label:'Moscow (MSK)',iana:'Europe/Moscow'},
-  {label:'Nairobi (EAT)',iana:'Africa/Nairobi'},
-  {label:'Paris/Berlin (CET/CEST)',iana:'Europe/Paris'},
-  {label:'London (GMT/BST)',iana:'Europe/London'},
-  {label:'Reykjavik (GMT)',iana:'Atlantic/Reykjavik'},
-  {label:'Azores (AZOT)',iana:'Atlantic/Azores'},
-  {label:'Sao Paulo (BRT)',iana:'America/Sao_Paulo'},
-  {label:'New York (EST/EDT)',iana:'America/New_York'},
-  {label:'Chicago (CST/CDT)',iana:'America/Chicago'},
-  {label:'Denver (MST/MDT)',iana:'America/Denver'},
-  {label:'Los Angeles (PST/PDT)',iana:'America/Los_Angeles'},
-  {label:'Anchorage (AKST)',iana:'America/Anchorage'},
-  {label:'Honolulu (HST)',iana:'Pacific/Honolulu'},
-  {label:'Samoa (SST)',iana:'Pacific/Pago_Pago'},
-  {label:'Kabul (AFT)',iana:'Asia/Kabul'},
-  {label:'Colombo (IST)',iana:'Asia/Colombo'},
-  {label:'Kathmandu (NPT)',iana:'Asia/Kathmandu'},
-  {label:'Yangon (MMT)',iana:'Asia/Rangoon'},
-  {label:'Beijing/Shanghai (CST)',iana:'Asia/Shanghai'},
-  {label:'Seoul (KST)',iana:'Asia/Seoul'},
-  {label:'Kamchatka (PETT)',iana:'Asia/Kamchatka'},
-  {label:'Fiji (FJT)',iana:'Pacific/Fiji'},
-  {label:'Chatham Islands (CHAST)',iana:'Pacific/Chatham'},
-  {label:'Kiribati (LINT)',iana:'Pacific/Kiritimati'},
-];
-const WORLD_TZ=[
-  {label:'ZULU (UTC)',offset:0,id:'UTC'},
-  {label:'ROMEO (UTC-5)',offset:-5,id:'EST'},
-  {label:'UNIFORM (UTC-8)',offset:-8,id:'PST'},
-  {label:'ALPHA (UTC+1)',offset:1,id:'CET'},
-  {label:'CHARLIE (UTC+3)',offset:3,id:'MSK'},
-  {label:'KILO (UTC+10)',offset:10,id:'AEST'},
-  {label:'MIKE/NZT (UTC+12)',offset:12,id:'NZST'},
-];
-const TZ_LETTERS=[
-  {l:'Z',name:'Zulu',offset:'UTC+0',note:'Greenwich / universal reference'},
-  {l:'A',name:'Alpha',offset:'UTC+1',note:'Central European Time'},
-  {l:'B',name:'Bravo',offset:'UTC+2',note:'Eastern Europe / Middle East'},
-  {l:'C',name:'Charlie',offset:'UTC+3',note:'Moscow / East Africa'},
-  {l:'E',name:'Echo',offset:'UTC+5',note:'Pakistan'},
-  {l:'I',name:'India',offset:'UTC+9',note:'Japan / Korea'},
-  {l:'K',name:'Kilo',offset:'UTC+10',note:'Eastern Australia'},
-  {l:'M',name:'Mike',offset:'UTC+12',note:'New Zealand (NZT)'},
-  {l:'N',name:'November',offset:'UTC-1',note:'Azores'},
-  {l:'R',name:'Romeo',offset:'UTC-5',note:'Eastern Standard (US)'},
-  {l:'S',name:'Sierra',offset:'UTC-6',note:'Central Standard (US)'},
-  {l:'U',name:'Uniform',offset:'UTC-8',note:'Pacific Standard (US)'},
-  {l:'Y',name:'Yankee',offset:'UTC-12',note:'International Date Line West'},
-];
-const MILREF=[
-  {m:'0000',c:'12:00 AM'},{m:'0100',c:'1:00 AM'},{m:'0600',c:'6:00 AM'},
-  {m:'0800',c:'8:00 AM'},{m:'1000',c:'10:00 AM'},{m:'1200',c:'12:00 PM'},
-  {m:'1300',c:'1:00 PM'},{m:'1500',c:'3:00 PM'},{m:'1800',c:'6:00 PM'},
-  {m:'2000',c:'8:00 PM'},{m:'2100',c:'9:00 PM'},{m:'2359',c:'11:59 PM'},
-];
+const TZ_LIST = [{label:'Auckland, NZ (NZST/NZDT)',iana:'Pacific/Auckland'},{label:'Sydney, AU (AEST/AEDT)',iana:'Australia/Sydney'},{label:'Tokyo, JP (JST)',iana:'Asia/Tokyo'},{label:'Singapore (SGT)',iana:'Asia/Singapore'},{label:'Dubai (GST)',iana:'Asia/Dubai'},{label:'Moscow (MSK)',iana:'Europe/Moscow'},{label:'Nairobi (EAT)',iana:'Africa/Nairobi'},{label:'Paris/Berlin (CET/CEST)',iana:'Europe/Paris'},{label:'London (GMT/BST)',iana:'Europe/London'},{label:'Reykjavik (GMT)',iana:'Atlantic/Reykjavik'},{label:'Azores (AZOT)',iana:'Atlantic/Azores'},{label:'Sao Paulo (BRT)',iana:'America/Sao_Paulo'},{label:'New York (EST/EDT)',iana:'America/New_York'},{label:'Chicago (CST/CDT)',iana:'America/Chicago'},{label:'Denver (MST/MDT)',iana:'America/Denver'},{label:'Los Angeles (PST/PDT)',iana:'America/Los_Angeles'},{label:'Anchorage (AKST)',iana:'America/Anchorage'},{label:'Honolulu (HST)',iana:'Pacific/Honolulu'},{label:'Samoa (SST)',iana:'Pacific/Pago_Pago'},{label:'Kabul (AFT)',iana:'Asia/Kabul'},{label:'Colombo (IST)',iana:'Asia/Colombo'},{label:'Kathmandu (NPT)',iana:'Asia/Kathmandu'},{label:'Yangon (MMT)',iana:'Asia/Rangoon'},{label:'Beijing/Shanghai (CST)',iana:'Asia/Shanghai'},{label:'Seoul (KST)',iana:'Asia/Seoul'},{label:'Kamchatka (PETT)',iana:'Asia/Kamchatka'},{label:'Fiji (FJT)',iana:'Pacific/Fiji'},{label:'Chatham Islands (CHAST)',iana:'Pacific/Chatham'},{label:'Kiribati (LINT)',iana:'Pacific/Kiritimati'}];
+const WORLD_TZ = [{label:'ZULU (UTC)',offset:0,id:'UTC'},{label:'ROMEO (UTC-5)',offset:-5,id:'EST'},{label:'UNIFORM (UTC-8)',offset:-8,id:'PST'},{label:'ALPHA (UTC+1)',offset:1,id:'CET'},{label:'CHARLIE (UTC+3)',offset:3,id:'MSK'},{label:'KILO (UTC+10)',offset:10,id:'AEST'},{label:'MIKE/NZT (UTC+12)',offset:12,id:'NZST'}];
+const TZ_LETTERS = [{l:'Z',name:'Zulu',offset:'UTC+0',note:'Greenwich / universal reference'},{l:'A',name:'Alpha',offset:'UTC+1',note:'Central European Time'},{l:'B',name:'Bravo',offset:'UTC+2',note:'Eastern Europe / Middle East'},{l:'C',name:'Charlie',offset:'UTC+3',note:'Moscow / East Africa'},{l:'E',name:'Echo',offset:'UTC+5',note:'Pakistan'},{l:'I',name:'India',offset:'UTC+9',note:'Japan / Korea'},{l:'K',name:'Kilo',offset:'UTC+10',note:'Eastern Australia'},{l:'M',name:'Mike',offset:'UTC+12',note:'New Zealand (NZT)'},{l:'N',name:'November',offset:'UTC-1',note:'Azores'},{l:'R',name:'Romeo',offset:'UTC-5',note:'Eastern Standard (US)'},{l:'S',name:'Sierra',offset:'UTC-6',note:'Central Standard (US)'},{l:'U',name:'Uniform',offset:'UTC-8',note:'Pacific Standard (US)'},{l:'Y',name:'Yankee',offset:'UTC-12',note:'International Date Line West'}];
+const MILREF = [{m:'0000',c:'12:00 AM'},{m:'0100',c:'1:00 AM'},{m:'0600',c:'6:00 AM'},{m:'0800',c:'8:00 AM'},{m:'1000',c:'10:00 AM'},{m:'1200',c:'12:00 PM'},{m:'1300',c:'1:00 PM'},{m:'1500',c:'3:00 PM'},{m:'1800',c:'6:00 PM'},{m:'2000',c:'8:00 PM'},{m:'2100',c:'9:00 PM'},{m:'2359',c:'11:59 PM'}];
+const DAYS = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+const MONTHS = ['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
+const ONES = ['','One','Two','Three','Four','Five','Six','Seven','Eight','Nine','Ten','Eleven','Twelve','Thirteen','Fourteen','Fifteen','Sixteen','Seventeen','Eighteen','Nineteen'];
+const TENS = ['','','Twenty','Thirty','Forty','Fifty'];
+const HOURS_WORDS = ['Zero Hundred','Zero One Hundred','Zero Two Hundred','Zero Three Hundred','Zero Four Hundred','Zero Five Hundred','Zero Six Hundred','Zero Seven Hundred','Zero Eight Hundred','Zero Nine Hundred','Ten Hundred','Eleven Hundred','Twelve Hundred','Thirteen Hundred','Fourteen Hundred','Fifteen Hundred','Sixteen Hundred','Seventeen Hundred','Eighteen Hundred','Nineteen Hundred','Twenty Hundred','Twenty-One Hundred','Twenty-Two Hundred','Twenty-Three Hundred'];
+function sayNum(n){if(n<20)return ONES[n];return TENS[Math.floor(n/10)]+(n%10?' '+ONES[n%10]:'')}
+function buildTzSelect(){const sel=document.getElementById('tz-sel');const userTz=Intl.DateTimeFormat().resolvedOptions().timeZone;let matchedIdx=0;TZ_LIST.forEach((tz,i)=>{const opt=document.createElement('option');opt.value=tz.iana;opt.textContent=tz.label;sel.appendChild(opt);if(tz.iana===userTz)matchedIdx=i});sel.selectedIndex=matchedIdx;document.getElementById('tz-detected').textContent='Auto-detected: '+TZ_LIST[matchedIdx].label;convertZulu()}
+function convertZulu(){const t=document.getElementById('zulu-in').value;if(!t)return;const [h,m]=t.split(':').map(Number);const iana=document.getElementById('tz-sel').value||'Pacific/Auckland';const zuluDate=new Date();zuluDate.setUTCHours(h,m,0,0);try{const lh=parseInt(new Intl.DateTimeFormat('en-US',{timeZone:iana,hour:'numeric',hour12:false}).format(zuluDate));const lm=parseInt(new Intl.DateTimeFormat('en-US',{timeZone:iana,minute:'2-digit'}).format(zuluDate));const ampm=lh<12?'AM':'PM';const ch=lh===0?12:lh>12?lh-12:lh;const tzAbbr=new Intl.DateTimeFormat('en-US',{timeZone:iana,timeZoneName:'short'}).formatToParts(zuluDate).find(p=>p.type==='timeZoneName')?.value||'';const tzOff=new Intl.DateTimeFormat('en-US',{timeZone:iana,timeZoneName:'shortOffset'}).formatToParts(zuluDate).find(p=>p.type==='timeZoneName')?.value||'';document.getElementById('zconv-local').textContent=ch+':'+String(lm).padStart(2,'0')+' '+ampm+' '+tzAbbr;document.getElementById('zconv-mil').textContent=String(lh).padStart(2,'0')+String(lm).padStart(2,'0');document.getElementById('zconv-off').textContent=tzOff}catch(e){console.warn('TZ error',e)}}
+function copyZconv(){const t=document.getElementById('zconv-local').textContent+' | Military: '+document.getElementById('zconv-mil').textContent+' | '+document.getElementById('zconv-off').textContent;navigator.clipboard.writeText(t).then(()=>{const btn=document.getElementById('zcopy-btn');const orig=btn.textContent;btn.textContent='Copied!';setTimeout(()=>btn.textContent=orig,1500)})}
+function toMil(){const t=document.getElementById('civil-in').value;if(!t)return;const [h,m]=t.split(':').map(Number);document.getElementById('mil-res').textContent=String(h).padStart(2,'0')+String(m).padStart(2,'0');const say=HOURS_WORDS[h]+(m>0?' '+sayNum(m)+' Hours':' Hours');document.getElementById('mil-say').textContent='Say: "'+say+'"'}
+function fromMil(){const raw=document.getElementById('mil-in').value.trim();if(raw.length!==4||isNaN(raw)){document.getElementById('civ-res').textContent='Invalid';return}const h=parseInt(raw.slice(0,2)),m=parseInt(raw.slice(2,4));if(h>23||m>59){document.getElementById('civ-res').textContent='Invalid';return}const ampm=h<12?'AM':'PM',ch=h===0?12:h>12?h-12:h;document.getElementById('civ-res').textContent=ch+':'+String(m).padStart(2,'0')+' '+ampm;document.getElementById('civ-say').textContent='Military: '+raw+' Hours'}
+function updateClocks(){const now=new Date();document.getElementById('zulu-clock').textContent=String(now.getUTCHours()).padStart(2,'0')+String(now.getUTCMinutes()).padStart(2,'0');document.getElementById('zulu-date').textContent=DAYS[now.getUTCDay()]+' '+now.getUTCDate()+' '+MONTHS[now.getUTCMonth()];const sel=document.getElementById('tz-sel');const iana=(sel&&sel.value)?sel.value:'Pacific/Auckland';try{const lh=parseInt(new Intl.DateTimeFormat('en-US',{timeZone:iana,hour:'numeric',hour12:false}).format(now));const lm=parseInt(new Intl.DateTimeFormat('en-US',{timeZone:iana,minute:'2-digit'}).format(now));const tzAbbr=new Intl.DateTimeFormat('en-US',{timeZone:iana,timeZoneName:'short'}).formatToParts(now).find(p=>p.type==='timeZoneName')?.value||'';const tzOff=new Intl.DateTimeFormat('en-US',{timeZone:iana,timeZoneName:'shortOffset'}).formatToParts(now).find(p=>p.type==='timeZoneName')?.value||'';const localDate=new Intl.DateTimeFormat('en-US',{timeZone:iana,weekday:'short',day:'numeric',month:'short'}).format(now);document.getElementById('local-clock').textContent=String(lh).padStart(2,'0')+String(lm).padStart(2,'0');document.getElementById('local-date').textContent=localDate;document.getElementById('local-dst').textContent=tzAbbr+' '+tzOff;if(sel)document.getElementById('local-lbl').textContent=sel.options[sel.selectedIndex]?.text.split('(')[0].trim()||'Local'}catch(e){}}
+WORLD_TZ.forEach(tz=>{const d=document.createElement('div');d.className='clock-card';d.id='wtz-'+tz.id;document.getElementById('world-grid').appendChild(d)});
+MILREF.forEach(r=>{const d=document.createElement('div');d.className='card';d.innerHTML='<div style="font-family:Rajdhani,sans-serif;font-size:1.15rem;font-weight:700;color:var(--olive)">'+r.m+'</div><div style="font-size:.72rem;color:var(--ink)">'+r.c+'</div>';document.getElementById('ref-grid').appendChild(d)});
+TZ_LETTERS.forEach(tz=>{const d=document.createElement('div');d.className='card';d.innerHTML='<div class="card-code">'+tz.l+' — '+tz.name+'</div><div class="card-mean">'+tz.offset+'</div><div class="card-ctx">'+tz.note+'</div>';document.getElementById('tz-letters').appendChild(d)});
+buildTzSelect();toMil();updateClocks();setInterval(updateClocks,1000);
 
-function buildTzSelect(){
-  const sel=document.getElementById('tz-sel');
-  const userTz=Intl.DateTimeFormat().resolvedOptions().timeZone;
-  let matchedIdx=0;
-  TZ_LIST.forEach((tz,i)=>{
-    const opt=document.createElement('option');
-    opt.value=tz.iana;opt.textContent=tz.label;sel.appendChild(opt);
-    if(tz.iana===userTz) matchedIdx=i;
-  });
-  sel.selectedIndex=matchedIdx;
-  const det=document.getElementById('tz-detected');
-  det.textContent='Auto-detected: '+TZ_LIST[matchedIdx].label;
-  convertZulu();
-}
-
-function convertZulu(){
-  const t=document.getElementById('zulu-in').value;
-  if(!t) return;
-  const [h,m]=t.split(':').map(Number);
-  const iana=document.getElementById('tz-sel').value||'Pacific/Auckland';
-  const zuluDate=new Date();
-  zuluDate.setUTCHours(h,m,0,0);
-  try{
-    const fmtH=new Intl.DateTimeFormat('en-US',{timeZone:iana,hour:'numeric',hour12:false});
-    const fmtM=new Intl.DateTimeFormat('en-US',{timeZone:iana,minute:'2-digit'});
-    const lh=parseInt(fmtH.format(zuluDate));
-    const lm=parseInt(fmtM.format(zuluDate));
-    const ampm=lh<12?'AM':'PM';
-    const ch=lh===0?12:lh>12?lh-12:lh;
-    const tzAbbr=new Intl.DateTimeFormat('en-US',{timeZone:iana,timeZoneName:'short'}).formatToParts(zuluDate).find(p=>p.type==='timeZoneName')?.value||'';
-    const tzOff=new Intl.DateTimeFormat('en-US',{timeZone:iana,timeZoneName:'shortOffset'}).formatToParts(zuluDate).find(p=>p.type==='timeZoneName')?.value||'';
-    document.getElementById('zconv-local').textContent=ch+':'+String(lm).padStart(2,'0')+' '+ampm+' '+tzAbbr;
-    document.getElementById('zconv-mil').textContent=String(lh).padStart(2,'0')+String(lm).padStart(2,'0');
-    document.getElementById('zconv-off').textContent=tzOff;
-  }catch(e){console.warn('TZ error',e);}
-}
-
-function copyZconv(){
-  const local=document.getElementById('zconv-local').textContent;
-  const mil=document.getElementById('zconv-mil').textContent;
-  const off=document.getElementById('zconv-off').textContent;
-  navigator.clipboard.writeText(local+' | Military: '+mil+' | '+off).then(()=>{
-    const btn=document.getElementById('zcopy-btn');
-    const orig=btn.textContent;btn.textContent='Copied!';
-    setTimeout(()=>btn.textContent=orig,1500);
-  });
-}
-
-const ONES=['','One','Two','Three','Four','Five','Six','Seven','Eight','Nine','Ten','Eleven','Twelve','Thirteen','Fourteen','Fifteen','Sixteen','Seventeen','Eighteen','Nineteen'];
-const TENS=['','','Twenty','Thirty','Forty','Fifty'];
-function sayNum(n){if(n<20) return ONES[n];return TENS[Math.floor(n/10)]+(n%10?' '+ONES[n%10]:'');}
-function sayHours(h){const w=['Zero Hundred','Zero One Hundred','Zero Two Hundred','Zero Three Hundred','Zero Four Hundred','Zero Five Hundred','Zero Six Hundred','Zero Seven Hundred','Zero Eight Hundred','Zero Nine Hundred','Ten Hundred','Eleven Hundred','Twelve Hundred','Thirteen Hundred','Fourteen Hundred','Fifteen Hundred','Sixteen Hundred','Seventeen Hundred','Eighteen Hundred','Nineteen Hundred','Twenty Hundred','Twenty-One Hundred','Twenty-Two Hundred','Twenty-Three Hundred'];return w[h];}
-
-function toMil(){
-  const t=document.getElementById('civil-in').value;if(!t)return;
-  const [h,m]=t.split(':').map(Number);
-  document.getElementById('mil-res').textContent=String(h).padStart(2,'0')+String(m).padStart(2,'0');
-  const say=sayHours(h)+(m>0?' '+sayNum(m)+' Hours':' Hours');
-  document.getElementById('mil-say').textContent='Say: "'+say+'"';
-}
-
-function fromMil(){
-  const raw=document.getElementById('mil-in').value.trim();
-  if(raw.length!==4||isNaN(raw)){document.getElementById('civ-res').textContent='Invalid';return;}
-  const h=parseInt(raw.slice(0,2)),m=parseInt(raw.slice(2,4));
-  if(h>23||m>59){document.getElementById('civ-res').textContent='Invalid';return;}
-  const ampm=h<12?'AM':'PM';const ch=h===0?12:h>12?h-12:h;
-  document.getElementById('civ-res').textContent=ch+':'+String(m).padStart(2,'0')+' '+ampm;
-  document.getElementById('civ-say').textContent='Military: '+raw+' Hours';
-}
-
-function buildWorldGrid(){
-  const g=document.getElementById('world-grid');
-  WORLD_TZ.forEach(tz=>{
-    const d=document.createElement('div');d.className='clock-card';d.id='wtz-'+tz.id;
-    g.appendChild(d);
-  });
-}
-
-function buildRefGrid(){
-  const g=document.getElementById('ref-grid');
-  MILREF.forEach(r=>{
-    const d=document.createElement('div');d.className='card';
-    d.innerHTML='<div style="font-family:Rajdhani,sans-serif;font-size:1.15rem;font-weight:700;color:var(--olive)">'+r.m+'</div><div style="font-size:.72rem;color:var(--ink)">'+r.c+'</div>';
-    g.appendChild(d);
-  });
-}
-
-function buildTzLetters(){
-  const g=document.getElementById('tz-letters');
-  TZ_LETTERS.forEach(tz=>{
-    const d=document.createElement('div');d.className='card';
-    d.innerHTML='<div class="card-code">'+tz.l+' — '+tz.name+'</div><div class="card-mean">'+tz.offset+'</div><div class="card-ctx">'+tz.note+'</div>';
-    g.appendChild(d);
-  });
-}
-
-const days=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-const months=['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
-
-function updateClocks(){
-  const now=new Date();
-  const zh=String(now.getUTCHours()).padStart(2,'0');
-  const zm=String(now.getUTCMinutes()).padStart(2,'0');
-  document.getElementById('zulu-clock').textContent=zh+zm;
-  document.getElementById('zulu-date').textContent=days[now.getUTCDay()]+' '+now.getUTCDate()+' '+months[now.getUTCMonth()];
-
-  const sel=document.getElementById('tz-sel');
-  const iana=(sel&&sel.value)?sel.value:'Pacific/Auckland';
-  try{
-    const lh=parseInt(new Intl.DateTimeFormat('en-US',{timeZone:iana,hour:'numeric',hour12:false}).format(now));
-    const lm=parseInt(new Intl.DateTimeFormat('en-US',{timeZone:iana,minute:'2-digit'}).format(now));
-    const tzAbbr=new Intl.DateTimeFormat('en-US',{timeZone:iana,timeZoneName:'short'}).formatToParts(now).find(p=>p.type==='timeZoneName')?.value||'';
-    const tzOff=new Intl.DateTimeFormat('en-US',{timeZone:iana,timeZoneName:'shortOffset'}).formatToParts(now).find(p=>p.type==='timeZoneName')?.value||'';
-    const localDate=new Intl.DateTimeFormat('en-US',{timeZone:iana,weekday:'short',day:'numeric',month:'short'}).format(now);
-    document.getElementById('local-clock').textContent=String(lh).padStart(2,'0')+String(lm).padStart(2,'0');
-    document.getElementById('local-date').textContent=localDate;
-    document.getElementById('local-dst').textContent=tzAbbr+' '+tzOff;
-    if(sel) document.getElementById('local-lbl').textContent=sel.options[sel.selectedIndex]?.text.split('(')[0].trim()||'Local';
-  }catch(e){}
-
-  WORLD_TZ.forEach(tz=>{
-    const local=new Date(now.getTime()+tz.offset*3600000);
-    const lh=String(local.getUTCHours()).padStart(2,'0');
-    const lm=String(local.getUTCMinutes()).padStart(2,'0');
-    const el=document.getElementById('wtz-'+tz.id);
-    if(el) el.innerHTML='<div class="clock-label">'+tz.label+'</div><div class="clock-big" style="font-size:1.9rem">'+lh+lm+'</div><div class="clock-sub">UTC'+(tz.offset>=0?'+':'')+tz.offset+'</div>';
-  });
-}
-
-buildTzSelect();buildWorldGrid();buildRefGrid();buildTzLetters();
-toMil();updateClocks();setInterval(updateClocks,1000);
-document.getElementById('zulu-in').addEventListener('change',convertZulu);
-document.getElementById('civil-in').addEventListener('change',toMil);
-document.getElementById('mil-in').addEventListener('keydown',e=>{if(e.key==='Enter')fromMil();});
 if('serviceWorker' in navigator && location.hostname==='doomania.github.io'){
   navigator.serviceWorker.register('/military-alphabet/sw.js').catch(()=>{});
 }
