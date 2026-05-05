@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Police 10-Codes, Military Code Words and Radio Prowords</title>
+<meta name="description" content="Complete police 10-codes, status codes, California penal codes, NATO radio prowords, military tactical code phrases and acronyms reference.">
+<meta name="author" content="doomania">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://doomania.github.io/military-alphabet/codes.html">
+<meta name="theme-color" content="#4a5c2f">
+<link rel="manifest" href="manifest.json">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WZ1SZQYXPC"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-WZ1SZQYXPC');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=Source+Code+Pro:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --olive:#4a5c2f;--olive-l:#6b8042;--olive-d:#2e3a1c;
+  --khaki:#c8b87a;--khaki-d:#9e8f52;
+  --ink:#1a2030;--fog:#7a8a78;
+  --surface:#f4f2ec;--card:#fafaf6;
+  --border:rgba(74,92,47,0.18);
+  --red:#c0392b;--blue:#1a5276;
+  --nav-h:64px;
+}
+body{font-family:'Inter',sans-serif;background:var(--surface);color:var(--ink);min-height:100vh;padding-bottom:var(--nav-h)}
+
+/* PAGE HEADER */
+.pg-hdr{padding:1.5rem 1.25rem 1.25rem;background:linear-gradient(135deg,#2e3a1c 0%,#4a5c2f 65%,#6b8042 100%);position:relative;overflow:hidden}
+.pg-hdr::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 12px,rgba(255,255,255,0.025) 12px,rgba(255,255,255,0.025) 24px)}
+.pg-hdr-inner{position:relative;max-width:900px;margin:0 auto}
+.pg-tag{font-family:'Source Code Pro',monospace;font-size:9px;letter-spacing:.18em;color:var(--khaki);text-transform:uppercase;margin-bottom:.3rem;opacity:.85}
+.pg-title{font-family:'Rajdhani',sans-serif;font-size:1.9rem;font-weight:700;color:#f0ead0;line-height:1}
+.pg-sub{font-size:12px;color:rgba(240,234,208,0.6);margin-top:.3rem}
+
+/* CONTENT */
+.content{max-width:900px;margin:0 auto;padding:1.25rem}
+
+/* SECTION TITLE */
+.st{font-family:'Rajdhani',sans-serif;font-size:.95rem;font-weight:700;color:var(--olive);letter-spacing:.08em;text-transform:uppercase;margin-bottom:.75rem;margin-top:1.75rem;padding-bottom:.3rem;border-bottom:1.5px solid var(--border)}
+.st:first-child{margin-top:0}
+
+/* CARDS */
+.grid-auto{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px}
+.grid-wide{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px}
+.grid-narrow{display:grid;grid-template-columns:repeat(auto-fill,minmax(90px,1fr));gap:7px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:9px;padding:.8rem;transition:border-color .2s,transform .15s,box-shadow .15s}
+.card:hover{border-color:var(--olive-l);transform:translateY(-2px);box-shadow:0 4px 14px rgba(74,92,47,0.1)}
+.card-code{font-family:'Rajdhani',sans-serif;font-size:.95rem;font-weight:700;color:var(--olive-l);margin-bottom:.2rem}
+.card-mean{font-size:.8rem;color:var(--ink);line-height:1.4}
+.card-ctx{font-size:.67rem;color:var(--fog);margin-top:.2rem;font-style:italic}
+
+/* INPUT / OUTPUT */
+.irow{display:flex;gap:8px;margin-bottom:.65rem;flex-wrap:wrap}
+.irow input,.irow select{flex:1;min-width:120px;font-family:'Source Code Pro',monospace;font-size:13px;padding:.6rem .85rem;border:1.5px solid var(--border);border-radius:6px;background:var(--card);color:var(--ink)}
+.irow input:focus,.irow select:focus{outline:none;border-color:var(--olive-l)}
+.btn{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;padding:.6rem 1.1rem;background:var(--olive);color:#f0ead0;border:none;border-radius:6px;cursor:pointer;transition:background .2s;white-space:nowrap}
+.btn:hover{background:var(--olive-l)}
+.btn-sec{background:var(--card);color:var(--olive);border:1.5px solid var(--border)}
+.btn-sec:hover{background:var(--olive);color:#f0ead0;border-color:var(--olive)}
+.out-box{font-family:'Source Code Pro',monospace;font-size:13px;line-height:1.85;color:var(--olive-l);padding:.8rem 1rem;background:var(--card);border:1.5px solid var(--border);border-radius:6px;word-break:break-word;min-height:3rem}
+.copy-lnk{font-size:11px;color:var(--fog);cursor:pointer;text-align:right;margin-top:3px;font-family:'Source Code Pro',monospace}
+.copy-lnk:hover{color:var(--olive-l)}
+.info-box{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:.9rem 1rem;font-size:.82rem;line-height:1.7;color:var(--ink)}
+.info-box strong{font-family:'Rajdhani',sans-serif}
+.alert-box{background:var(--card);border:1.5px solid #c0392b44;border-radius:8px;padding:.9rem 1rem;font-size:.82rem;line-height:1.7;color:var(--ink)}
+.alert-box strong{color:var(--red);font-family:'Rajdhani',sans-serif}
+
+/* TABLES */
+.tbl{width:100%;border-collapse:collapse;font-size:12px}
+.tbl th{font-family:'Rajdhani',sans-serif;font-weight:700;letter-spacing:.07em;text-transform:uppercase;font-size:.7rem;color:var(--fog);text-align:left;padding:.45rem .8rem;border-bottom:1.5px solid var(--border)}
+.tbl td{padding:.5rem .8rem;border-bottom:1px solid var(--border);vertical-align:top}
+.tbl td:first-child{font-family:'Source Code Pro',monospace;font-size:.73rem;font-weight:500;color:var(--olive-l);white-space:nowrap}
+.tbl td:last-child{font-size:.78rem;color:var(--ink);line-height:1.4}
+.tbl tr:hover td{background:rgba(74,92,47,0.03)}
+.tbl-wrap{border:1px solid var(--border);border-radius:8px;overflow:hidden;margin-bottom:.5rem}
+
+/* TIMELINE */
+.timeline{position:relative;padding-left:1.6rem}
+.timeline::before{content:'';position:absolute;left:5px;top:4px;bottom:4px;width:1.5px;background:var(--border)}
+.tli{position:relative;margin-bottom:1.2rem}
+.tli::before{content:'';position:absolute;left:-1.6rem;top:4px;width:10px;height:10px;border-radius:50%;background:var(--olive);border:2px solid var(--surface)}
+.tli-y{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:.85rem;color:var(--olive-l);margin-bottom:.18rem}
+.tli-d{font-size:.8rem;color:var(--ink);line-height:1.5}
+
+/* BOTTOM NAV */
+.bnav{position:fixed;bottom:0;left:0;right:0;height:var(--nav-h);background:#fff;border-top:1px solid var(--border);display:flex;align-items:stretch;z-index:100;box-shadow:0 -4px 20px rgba(0,0,0,0.06)}
+.bnav-item{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-decoration:none;color:var(--fog);font-family:'Rajdhani',sans-serif;font-size:.6rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;gap:3px;transition:color .15s;border:none;background:none;cursor:pointer;padding:.4rem .1rem}
+.bnav-item svg{width:22px;height:22px;stroke:currentColor;stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.bnav-item.active{color:var(--olive)}
+.bnav-item:hover{color:var(--olive-l)}
+.bnav-more{position:relative}
+.more-menu{display:none;position:absolute;bottom:calc(100% + 4px);right:0;background:#fff;border:1px solid var(--border);border-radius:10px;box-shadow:0 4px 20px rgba(0,0,0,0.12);min-width:180px;overflow:hidden;z-index:200}
+.more-menu.open{display:block}
+.more-item{display:flex;align-items:center;gap:.6rem;padding:.65rem 1rem;text-decoration:none;color:var(--ink);font-family:'Rajdhani',sans-serif;font-size:.85rem;font-weight:600;border-bottom:1px solid var(--border);transition:background .15s}
+.more-item:last-child{border-bottom:none}
+.more-item:hover{background:var(--surface)}
+.more-item.active{color:var(--olive)}
+.more-item svg{width:16px;height:16px;stroke:currentColor;stroke-width:2;fill:none;flex-shrink:0}
+
+/* ALPHA CARDS */
+.alpha-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:8px}
+.ac{background:var(--card);border:1px solid var(--border);border-radius:9px;padding:.75rem;position:relative;overflow:hidden;transition:border-color .2s,transform .15s,box-shadow .15s}
+.ac::after{content:attr(data-l);position:absolute;right:-4px;bottom:-8px;font-family:'Rajdhani',sans-serif;font-size:4rem;font-weight:700;color:var(--olive);opacity:.05;line-height:1;pointer-events:none}
+.ac:hover{border-color:var(--olive-l);transform:translateY(-2px);box-shadow:0 4px 12px rgba(74,92,47,0.1)}
+.ac .l{font-family:'Rajdhani',sans-serif;font-size:1.8rem;font-weight:700;color:var(--olive);line-height:1}
+.ac .w{font-family:'Rajdhani',sans-serif;font-size:.95rem;font-weight:600;color:var(--ink);margin:.12rem 0 .06rem}
+.ac .p{font-family:'Source Code Pro',monospace;font-size:.6rem;color:var(--fog)}
+.ac .o{font-size:.58rem;color:var(--khaki-d);margin-top:.28rem;line-height:1.3}
+
+/* QUIZ */
+.quiz-wrap{max-width:380px;margin:0 auto;text-align:center}
+.quiz-q{font-family:'Rajdhani',sans-serif;font-size:4.5rem;font-weight:700;color:var(--olive);line-height:1;margin-bottom:.3rem}
+.quiz-hint{font-size:.8rem;color:var(--fog);margin-bottom:.9rem}
+.quiz-inp{width:100%;font-family:'Source Code Pro',monospace;font-size:.95rem;padding:.65rem 1rem;border:2px solid var(--border);border-radius:8px;background:var(--card);color:var(--ink);text-align:center;display:block;margin-bottom:.45rem}
+.quiz-inp:focus{outline:none;border-color:var(--olive-l)}
+.quiz-reveal{font-family:'Source Code Pro',monospace;font-size:.85rem;color:var(--red);min-height:1.2rem;margin-bottom:.35rem}
+.quiz-fb{font-family:'Rajdhani',sans-serif;font-size:1.1rem;font-weight:700;min-height:1.4rem;margin-bottom:.65rem}
+.quiz-btns{display:flex;gap:7px;justify-content:center;flex-wrap:wrap}
+.qb{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:.8rem;letter-spacing:.07em;text-transform:uppercase;padding:.5rem 1.1rem;border:1.5px solid var(--border);border-radius:6px;cursor:pointer;background:var(--card);color:var(--ink);transition:all .15s}
+.qb:hover{background:var(--olive);color:#f0ead0;border-color:var(--olive)}
+.quiz-score{font-size:.75rem;color:var(--fog);margin-top:.8rem;font-family:'Source Code Pro',monospace}
+
+/* MORSE */
+.morse-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(72px,1fr));gap:6px}
+.mc{background:var(--card);border:1px solid var(--border);border-radius:7px;padding:.55rem .4rem;text-align:center}
+.mc .ml{font-family:'Rajdhani',sans-serif;font-size:1.3rem;font-weight:700;color:var(--olive);line-height:1}
+.mc .mm{font-family:'Source Code Pro',monospace;font-size:.8rem;color:var(--ink);letter-spacing:.08em;margin-top:.15rem}
+
+/* TIME */
+.clock-big{font-family:'Rajdhani',sans-serif;font-size:3.2rem;font-weight:700;color:var(--olive);line-height:1;letter-spacing:.06em}
+.clock-label{font-family:'Source Code Pro',monospace;font-size:.65rem;color:var(--fog);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.3rem}
+.clock-card{background:var(--card);border:1px solid var(--border);border-radius:9px;padding:.9rem;text-align:center}
+.clock-sub{font-size:.68rem;color:var(--fog);margin-top:.2rem}
+.time-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:9px;margin-bottom:1.25rem}
+.mt-result{font-family:'Rajdhani',sans-serif;font-size:2rem;font-weight:700;color:var(--olive);letter-spacing:.06em}
+.mt-sub{font-size:.8rem;color:var(--fog);margin-bottom:1.2rem}
+
+/* POLICE */
+.police-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:7px}
+.pc{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:.7rem .9rem}
+.pc .pcode{font-family:'Rajdhani',sans-serif;font-size:1rem;font-weight:700;color:var(--blue);margin-bottom:.12rem}
+.pc .pmean{font-size:.78rem;color:var(--ink);line-height:1.35}
+.pc .pctx{font-size:.65rem;color:var(--fog);margin-top:.15rem;font-style:italic}
+
+/* HAM */
+.qcode{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:.7rem .9rem}
+.qcode .qc{font-family:'Rajdhani',sans-serif;font-size:1rem;font-weight:700;color:var(--olive-l);margin-bottom:.12rem}
+.qcode .qm{font-size:.78rem;color:var(--ink);line-height:1.35}
+.qcode .qx{font-size:.65rem;color:var(--fog);margin-top:.15rem;font-style:italic}
+.qcode-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:7px}
+
+/* SIGNAL FLAGS */
+.flag-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:10px}
+.flag-card{background:var(--card);border:1px solid var(--border);border-radius:9px;padding:.75rem .5rem;text-align:center;transition:border-color .2s,transform .15s}
+.flag-card:hover{border-color:var(--olive-l);transform:translateY(-2px)}
+.flag-svg{width:70px;height:56px;margin:0 auto .5rem;display:block}
+.flag-letter{font-family:'Rajdhani',sans-serif;font-size:1.3rem;font-weight:700;color:var(--olive);line-height:1}
+.flag-name{font-family:'Rajdhani',sans-serif;font-size:.8rem;font-weight:600;color:var(--ink);margin:.1rem 0}
+.flag-mean{font-size:.62rem;color:var(--fog);line-height:1.3}
+
+/* FOOTER */
+.pg-footer{text-align:center;padding:1.2rem;font-family:'Source Code Pro',monospace;font-size:.68rem;color:var(--fog);border-top:1px solid var(--border);margin-top:1.5rem}
+.pg-footer a{color:var(--olive-l);text-decoration:none}
+
+/* SKIP LINK */
+.skip{position:absolute;top:-40px;left:0;background:var(--olive);color:#f0ead0;padding:8px 14px;border-radius:0 0 6px 0;font-family:'Rajdhani',sans-serif;font-weight:700;font-size:.85rem;text-decoration:none;z-index:9999;transition:top .15s}
+.skip:focus{top:0}
+
+/* RESPONSIVE */
+@media(max-width:480px){
+  .pg-title{font-size:1.55rem}
+  .content{padding:1rem}
+  .alpha-grid{grid-template-columns:repeat(auto-fill,minmax(100px,1fr));gap:6px}
+  .flag-grid{grid-template-columns:repeat(auto-fill,minmax(90px,1fr));gap:7px}
+  .police-grid,.qcode-grid{grid-template-columns:repeat(auto-fill,minmax(145px,1fr))}
+  .clock-big{font-size:2.6rem}
+}
+
+/* ══════════════════════════════════════
+   TOP NAV (desktop)
+══════════════════════════════════════ */
+.top-nav{background:#2e3a1c;border-bottom:1px solid rgba(255,255,255,0.08);position:sticky;top:0;z-index:200}
+.top-nav-inner{max-width:960px;margin:0 auto;display:flex;align-items:center;gap:0;padding:0 1.25rem;height:48px}
+.top-nav-brand{text-decoration:none;margin-right:1rem;flex-shrink:0}
+.tnb-badge{font-family:'Rajdhani',sans-serif;font-size:.85rem;font-weight:700;letter-spacing:.1em;color:#f0ead0;background:rgba(255,255,255,0.1);padding:.2rem .55rem;border-radius:4px}
+.top-nav-links{display:flex;align-items:center;gap:0;flex:1;overflow:hidden}
+.tnl{font-family:'Rajdhani',sans-serif;font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:rgba(240,234,208,0.6);text-decoration:none;padding:.35rem .65rem;border-radius:4px;white-space:nowrap;transition:color .15s,background .15s;flex-shrink:0}
+.tnl:hover{color:#f0ead0;background:rgba(255,255,255,0.08)}
+.tnl.active{color:#f0ead0;background:rgba(255,255,255,0.12)}
+.hamburger{display:none;flex-direction:column;justify-content:center;gap:4px;width:36px;height:36px;background:none;border:none;cursor:pointer;padding:6px;margin-left:auto;flex-shrink:0}
+.hamburger span{display:block;height:2px;background:#f0ead0;border-radius:2px;transition:all .2s}
+
+/* mobile dropdown from hamburger */
+.mobile-menu{display:none;background:#2e3a1c;border-top:1px solid rgba(255,255,255,0.08);padding:.5rem 0}
+.mobile-menu.open{display:block}
+.mm-item{display:flex;align-items:center;gap:.65rem;padding:.65rem 1.5rem;text-decoration:none;font-family:'Rajdhani',sans-serif;font-size:.9rem;font-weight:700;color:rgba(240,234,208,0.7);transition:background .15s,color .15s}
+.mm-item:hover{background:rgba(255,255,255,0.06);color:#f0ead0}
+.mm-item.active{color:#f0ead0}
+.mm-item svg{width:16px;height:16px;stroke:currentColor;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+
+/* ══════════════════════════════════════
+   BOTTOM NAV (mobile only)
+══════════════════════════════════════ */
+.bot-nav{display:none;position:fixed;bottom:0;left:0;right:0;height:60px;background:#fff;border-top:1px solid var(--border);z-index:100;box-shadow:0 -2px 12px rgba(0,0,0,0.07)}
+.bn-item{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-decoration:none;color:var(--fog);font-family:'Rajdhani',sans-serif;font-size:.55rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;gap:2px;transition:color .15s;padding:.3rem .1rem}
+.bn-item svg{width:20px;height:20px;stroke:currentColor;stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.bn-item.active{color:var(--olive)}
+.bn-item:hover{color:var(--olive-l)}
+
+/* ══════════════════════════════════════
+   RESPONSIVE BREAKPOINTS
+══════════════════════════════════════ */
+@media(max-width:700px){
+  /* hide top nav links, show hamburger */
+  .top-nav-links{display:none}
+  .hamburger{display:flex}
+  /* show bottom nav */
+  .bot-nav{display:flex}
+  body{padding-bottom:60px}
+  /* shrink page header */
+  .pg-hdr{padding:1.1rem 1rem 1rem}
+  .pg-title{font-size:1.5rem}
+  .content{padding:.9rem}
+}
+@media(min-width:701px){
+  /* desktop: show all top links, no hamburger, no bottom nav */
+  .top-nav-links{display:flex}
+  .hamburger{display:none}
+  .mobile-menu{display:none !important}
+  .bot-nav{display:none !important}
+  body{padding-bottom:0}
+}
+
+.search-wrap{position:relative;margin-bottom:1rem}.search-wrap input{width:100%;font-family:Source Code Pro,monospace;font-size:13px;padding:.6rem 2.5rem .6rem .9rem;border:1.5px solid var(--border);border-radius:6px;background:var(--card);color:var(--ink)}.search-wrap input:focus{outline:none;border-color:var(--olive-l)}.search-wrap::after{content:"search";font-family:Rajdhani,sans-serif;font-size:.7rem;position:absolute;right:.75rem;top:50%;transform:translateY(-50%);color:var(--fog);pointer-events:none}
+</style>
+</head>
+<body>
+<a href="#main" class="skip">Skip to content</a>
+<header class="pg-hdr"><div class="pg-hdr-inner">
+  <div class="pg-tag">Police · Military · Radio · Prowords</div>
+  <h1 class="pg-title">Codes Reference</h1>
+  <p class="pg-sub">Police 10-codes · Status codes · Penal codes · Military tactical · Radio prowords</p>
+</div></header>
+<main class="content" id="main">
+  <div class="search-wrap">
+    <input id="code-search" placeholder="Search codes... e.g. 10-4, ROGER, FUBAR" oninput="filterCodes(this.value)" aria-label="Search all codes"/>
+  </div>
+  <div class="st">Police 10-Codes</div>
+  <div class="police-grid" id="g-police"><div class="pc" data-search="10-1 signal weak "><div class="pcode">10-1</div><div class="pmean">Signal weak</div></div>
+<div class="pc" data-search="10-2 signal good "><div class="pcode">10-2</div><div class="pmean">Signal good</div></div>
+<div class="pc" data-search="10-3 stop transmitting "><div class="pcode">10-3</div><div class="pmean">Stop transmitting</div></div>
+<div class="pc" data-search="10-4 acknowledged / ok most widely known code"><div class="pcode">10-4</div><div class="pmean">Acknowledged / OK</div><div class="pctx">Most widely known code</div></div>
+<div class="pc" data-search="10-5 relay message "><div class="pcode">10-5</div><div class="pmean">Relay message</div></div>
+<div class="pc" data-search="10-6 busy — stand by "><div class="pcode">10-6</div><div class="pmean">Busy — stand by</div></div>
+<div class="pc" data-search="10-7 out of service "><div class="pcode">10-7</div><div class="pmean">Out of service</div></div>
+<div class="pc" data-search="10-8 in service / available "><div class="pcode">10-8</div><div class="pmean">In service / Available</div></div>
+<div class="pc" data-search="10-9 repeat last message "><div class="pcode">10-9</div><div class="pmean">Repeat last message</div></div>
+<div class="pc" data-search="10-10 off duty "><div class="pcode">10-10</div><div class="pmean">Off duty</div></div>
+<div class="pc" data-search="10-13 weather / road conditions "><div class="pcode">10-13</div><div class="pmean">Weather / road conditions</div></div>
+<div class="pc" data-search="10-20 location most common field use"><div class="pcode">10-20</div><div class="pmean">Location</div><div class="pctx">Most common field use</div></div>
+<div class="pc" data-search="10-21 call by telephone "><div class="pcode">10-21</div><div class="pmean">Call by telephone</div></div>
+<div class="pc" data-search="10-22 disregard / cancel "><div class="pcode">10-22</div><div class="pmean">Disregard / Cancel</div></div>
+<div class="pc" data-search="10-23 arrived at scene "><div class="pcode">10-23</div><div class="pmean">Arrived at scene</div></div>
+<div class="pc" data-search="10-26 detaining suspect "><div class="pcode">10-26</div><div class="pmean">Detaining suspect</div></div>
+<div class="pc" data-search="10-27 driver license check "><div class="pcode">10-27</div><div class="pmean">Driver license check</div></div>
+<div class="pc" data-search="10-28 vehicle registration check "><div class="pcode">10-28</div><div class="pmean">Vehicle registration check</div></div>
+<div class="pc" data-search="10-29 check for warrants "><div class="pcode">10-29</div><div class="pmean">Check for warrants</div></div>
+<div class="pc" data-search="10-31 crime in progress "><div class="pcode">10-31</div><div class="pmean">Crime in progress</div></div>
+<div class="pc" data-search="10-32 person with gun armed subject"><div class="pcode">10-32</div><div class="pmean">Person with gun</div><div class="pctx">Armed subject</div></div>
+<div class="pc" data-search="10-33 emergency all units stand by "><div class="pcode">10-33</div><div class="pmean">Emergency all units stand by</div></div>
+<div class="pc" data-search="10-36 correct time time check"><div class="pcode">10-36</div><div class="pmean">Correct time</div><div class="pctx">Time check</div></div>
+<div class="pc" data-search="10-38 traffic stop "><div class="pcode">10-38</div><div class="pmean">Traffic stop</div></div>
+<div class="pc" data-search="10-39 urgent lights and siren "><div class="pcode">10-39</div><div class="pmean">Urgent lights and siren</div></div>
+<div class="pc" data-search="10-40 silent run covert approach"><div class="pcode">10-40</div><div class="pmean">Silent run</div><div class="pctx">Covert approach</div></div>
+<div class="pc" data-search="10-50 accident traffic collision"><div class="pcode">10-50</div><div class="pmean">Accident</div><div class="pctx">Traffic collision</div></div>
+<div class="pc" data-search="10-52 ambulance needed "><div class="pcode">10-52</div><div class="pmean">Ambulance needed</div></div>
+<div class="pc" data-search="10-55 suspected dui "><div class="pcode">10-55</div><div class="pmean">Suspected DUI</div></div>
+<div class="pc" data-search="10-57 hit and run "><div class="pcode">10-57</div><div class="pmean">Hit and run</div></div>
+<div class="pc" data-search="10-70 fire alarm "><div class="pcode">10-70</div><div class="pmean">Fire alarm</div></div>
+<div class="pc" data-search="10-76 en route responding"><div class="pcode">10-76</div><div class="pmean">En route</div><div class="pctx">Responding</div></div>
+<div class="pc" data-search="10-77 eta estimated arrival"><div class="pcode">10-77</div><div class="pmean">ETA</div><div class="pctx">Estimated arrival</div></div>
+<div class="pc" data-search="10-78 need assistance officer needs backup"><div class="pcode">10-78</div><div class="pmean">Need assistance</div><div class="pctx">Officer needs backup</div></div>
+<div class="pc" data-search="10-79 notify coroner death at scene"><div class="pcode">10-79</div><div class="pmean">Notify coroner</div><div class="pctx">Death at scene</div></div>
+<div class="pc" data-search="10-80 chase in progress vehicle pursuit"><div class="pcode">10-80</div><div class="pmean">Chase in progress</div><div class="pctx">Vehicle pursuit</div></div>
+<div class="pc" data-search="10-95 prisoner in custody "><div class="pcode">10-95</div><div class="pmean">Prisoner in custody</div></div>
+<div class="pc" data-search="10-98 finished available "><div class="pcode">10-98</div><div class="pmean">Finished available</div></div>
+<div class="pc" data-search="10-99 wanted / stolen high priority"><div class="pcode">10-99</div><div class="pmean">Wanted / stolen</div><div class="pctx">High priority</div></div></div>
+  <div class="st">Status Codes</div>
+  <div class="police-grid" id="g-status"><div class="pc" data-search="code 1 routine no rush "><div class="pcode">Code 1</div><div class="pmean">Routine no rush</div></div>
+<div class="pc" data-search="code 2 urgent no siren "><div class="pcode">Code 2</div><div class="pmean">Urgent no siren</div></div>
+<div class="pc" data-search="code 3 emergency lights and siren "><div class="pcode">Code 3</div><div class="pmean">Emergency lights and siren</div></div>
+<div class="pc" data-search="code 4 no further assistance "><div class="pcode">Code 4</div><div class="pmean">No further assistance</div></div>
+<div class="pc" data-search="code 5 stakeout stay away plainclothes"><div class="pcode">Code 5</div><div class="pmean">Stakeout stay away</div><div class="pctx">Plainclothes</div></div>
+<div class="pc" data-search="code 6 out of car investigation "><div class="pcode">Code 6</div><div class="pmean">Out of car investigation</div></div>
+<div class="pc" data-search="code 7 meal break "><div class="pcode">Code 7</div><div class="pmean">Meal break</div></div>
+<div class="pc" data-search="code 9 jail break escape in progress"><div class="pcode">Code 9</div><div class="pmean">Jail break</div><div class="pctx">Escape in progress</div></div>
+<div class="pc" data-search="code 10 bomb threat "><div class="pcode">Code 10</div><div class="pmean">Bomb threat</div></div>
+<div class="pc" data-search="code 33 emergency clear the air "><div class="pcode">Code 33</div><div class="pmean">Emergency clear the air</div></div>
+<div class="pc" data-search="code 37 subject wanted "><div class="pcode">Code 37</div><div class="pmean">Subject wanted</div></div>
+<div class="pc" data-search="code 99 officer needs help officer down"><div class="pcode">Code 99</div><div class="pmean">Officer needs help</div><div class="pctx">Officer down</div></div></div>
+  <div class="st">Penal / Incident Codes</div>
+  <div class="police-grid" id="g-penal"><div class="pc" data-search="187 homicide ca penal code"><div class="pcode">187</div><div class="pmean">Homicide</div><div class="pctx">CA Penal Code</div></div>
+<div class="pc" data-search="211 robbery "><div class="pcode">211</div><div class="pmean">Robbery</div></div>
+<div class="pc" data-search="245 assault with deadly weapon adw"><div class="pcode">245</div><div class="pmean">Assault with deadly weapon</div><div class="pctx">ADW</div></div>
+<div class="pc" data-search="261 rape "><div class="pcode">261</div><div class="pmean">Rape</div></div>
+<div class="pc" data-search="390 drunk in public "><div class="pcode">390</div><div class="pmean">Drunk in public</div></div>
+<div class="pc" data-search="415 disturbing the peace "><div class="pcode">415</div><div class="pmean">Disturbing the peace</div></div>
+<div class="pc" data-search="451 arson "><div class="pcode">451</div><div class="pmean">Arson</div></div>
+<div class="pc" data-search="459 burglary "><div class="pcode">459</div><div class="pmean">Burglary</div></div>
+<div class="pc" data-search="484 petty theft "><div class="pcode">484</div><div class="pmean">Petty theft</div></div>
+<div class="pc" data-search="487 grand theft "><div class="pcode">487</div><div class="pmean">Grand theft</div></div>
+<div class="pc" data-search="502 dui "><div class="pcode">502</div><div class="pmean">DUI</div></div>
+<div class="pc" data-search="503 vehicle theft grand theft auto"><div class="pcode">503</div><div class="pmean">Vehicle theft</div><div class="pctx">Grand theft auto</div></div>
+<div class="pc" data-search="594 vandalism "><div class="pcode">594</div><div class="pmean">Vandalism</div></div>
+<div class="pc" data-search="602 trespassing "><div class="pcode">602</div><div class="pmean">Trespassing</div></div>
+<div class="pc" data-search="647 disorderly conduct "><div class="pcode">647</div><div class="pmean">Disorderly conduct</div></div></div>
+  <div class="st">NATO Prowords</div>
+  <div class="tbl-wrap"><table class="tbl"><tr><th style="width:180px">Proword</th><th>Meaning</th></tr><tr data-search="break separates long messages without ending transmission"><td>BREAK</td><td>Separates long messages without ending transmission</td></tr>
+<tr data-search="copy message received and understood"><td>COPY</td><td>Message received and understood</td></tr>
+<tr data-search="correction error in previous transmission — correction follows"><td>CORRECTION</td><td>Error in previous transmission — correction follows</td></tr>
+<tr data-search="do not answer do not reply to this message"><td>DO NOT ANSWER</td><td>Do not reply to this message</td></tr>
+<tr data-search="i say again intentionally repeating previous transmission"><td>I SAY AGAIN</td><td>Intentionally repeating previous transmission</td></tr>
+<tr data-search="more to follow additional information coming"><td>MORE TO FOLLOW</td><td>Additional information coming</td></tr>
+<tr data-search="negative no / disagreement / request denied"><td>NEGATIVE</td><td>No / Disagreement / Request denied</td></tr>
+<tr data-search="out end of conversation — initiating station only"><td>OUT</td><td>End of conversation — initiating station only</td></tr>
+<tr data-search="over end of transmission — reply expected"><td>OVER</td><td>End of transmission — reply expected</td></tr>
+<tr data-search="read back repeat this transmission verbatim back to me"><td>READ BACK</td><td>Repeat this transmission verbatim back to me</td></tr>
+<tr data-search="relay to forward to named station"><td>RELAY TO</td><td>Forward to named station</td></tr>
+<tr data-search="roger received and understood your last transmission"><td>ROGER</td><td>Received and understood your last transmission</td></tr>
+<tr data-search="say again repeat your last transmission"><td>SAY AGAIN</td><td>Repeat your last transmission</td></tr>
+<tr data-search="silence x3 all stations cease transmission immediately"><td>SILENCE x3</td><td>All stations cease transmission immediately</td></tr>
+<tr data-search="silence lifted normal communication may resume"><td>SILENCE LIFTED</td><td>Normal communication may resume</td></tr>
+<tr data-search="verify check and confirm the information"><td>VERIFY</td><td>Check and confirm the information</td></tr>
+<tr data-search="wilco will comply — implies roger, never use together"><td>WILCO</td><td>Will comply — implies Roger, never use together</td></tr></table></div>
+  <div class="st">Military Tactical Phrases</div>
+  <div class="grid-wide" id="g-tactical"><div class="card" data-search="oscar mike on the move unit relocating"><div class="card-code">Oscar Mike</div><div class="card-mean">On the move</div><div class="card-ctx">Unit relocating</div></div>
+<div class="card" data-search="charlie mike continue mission resume after interruption"><div class="card-code">Charlie Mike</div><div class="card-mean">Continue mission</div><div class="card-ctx">Resume after interruption</div></div>
+<div class="card" data-search="lima charlie loud and clear 5x5 signal quality"><div class="card-code">Lima Charlie</div><div class="card-mean">Loud and clear 5x5</div><div class="card-ctx">Signal quality</div></div>
+<div class="card" data-search="bravo zulu well done nato praise signal"><div class="card-code">Bravo Zulu</div><div class="card-mean">Well done</div><div class="card-ctx">NATO praise signal</div></div>
+<div class="card" data-search="tango yankee thank you radio courtesy"><div class="card-code">Tango Yankee</div><div class="card-mean">Thank you</div><div class="card-ctx">Radio courtesy</div></div>
+<div class="card" data-search="november golf no good negative assessment"><div class="card-code">November Golf</div><div class="card-mean">No good</div><div class="card-ctx">Negative assessment</div></div>
+<div class="card" data-search="tango delta target down engagement report"><div class="card-code">Tango Delta</div><div class="card-mean">Target down</div><div class="card-ctx">Engagement report</div></div>
+<div class="card" data-search="whiskey pete white phosphorous munition type"><div class="card-code">Whiskey Pete</div><div class="card-mean">White phosphorous</div><div class="card-ctx">Munition type</div></div>
+<div class="card" data-search="40 mike mike 40mm grenade / m203 weapons reference"><div class="card-code">40 Mike Mike</div><div class="card-mean">40mm grenade / M203</div><div class="card-ctx">Weapons reference</div></div>
+<div class="card" data-search="romeo foxtrot radio frequency comms context"><div class="card-code">Romeo Foxtrot</div><div class="card-mean">Radio frequency</div><div class="card-ctx">Comms context</div></div></div>
+  <div class="st">Military Acronyms</div>
+  <div class="grid-wide" id="g-acronyms"><div class="card" data-search="fubar f***ed up beyond all recognition wwii origin"><div class="card-code">FUBAR</div><div class="card-mean">F***ed Up Beyond All Recognition</div><div class="card-ctx">WWII origin</div></div>
+<div class="card" data-search="snafu situation normal: all f***ed up wwii, now mainstream"><div class="card-code">SNAFU</div><div class="card-mean">Situation Normal: All F***ed Up</div><div class="card-ctx">WWII, now mainstream</div></div>
+<div class="card" data-search="bohica bend over here it comes again dark humour"><div class="card-code">BOHICA</div><div class="card-mean">Bend Over Here It Comes Again</div><div class="card-ctx">Dark humour</div></div>
+<div class="card" data-search="tarfu things are really f***ed up above snafu"><div class="card-code">TARFU</div><div class="card-mean">Things Are Really F***ed Up</div><div class="card-ctx">Above SNAFU</div></div>
+<div class="card" data-search="awol absent without leave legal military status"><div class="card-code">AWOL</div><div class="card-mean">Absent Without Leave</div><div class="card-ctx">Legal military status</div></div>
+<div class="card" data-search="fob forward operating base tactical outpost"><div class="card-code">FOB</div><div class="card-mean">Forward Operating Base</div><div class="card-ctx">Tactical outpost</div></div>
+<div class="card" data-search="roe rules of engagement legal framework for force"><div class="card-code">ROE</div><div class="card-mean">Rules of Engagement</div><div class="card-ctx">Legal framework for force</div></div>
+<div class="card" data-search="sitrep situation report command update format"><div class="card-code">SITREP</div><div class="card-mean">Situation Report</div><div class="card-ctx">Command update format</div></div></div>
+  <div class="st">Critical Radio Rules</div>
+  <div class="alert-box">
+    <strong>NEVER say "REPEAT" on radio.</strong> It is an artillery command meaning fire again. Always say SAY AGAIN.<br><br>
+    <strong>NEVER say WILCO and ROGER together.</strong> WILCO already implies Roger.
+  </div>
+  <div class="st">NZ Police Notes</div>
+  <div class="info-box">NZ Police use a modified 10-code set. Common NZ codes: <strong>10-1</strong> Signal weak · <strong>10-4</strong> Acknowledged · <strong>10-20</strong> Location · <strong>10-76</strong> En route.</div>
+</main>
+<footer class="pg-footer">© 2025 <a href="index.html">doomania</a> · <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></footer>
+<script>
+const NAV_PAGES=[
+  {id:'home',   label:'Home',        url:'index.html'},
+  {id:'alpha',  label:'Alphabet',    url:'alphabet.html'},
+  {id:'morse',  label:'Morse Code',  url:'morse.html'},
+  {id:'time',   label:'Mil Time',    url:'military-time.html'},
+  {id:'codes',  label:'Codes',       url:'codes.html'},
+  {id:'ham',    label:'Ham Radio',   url:'ham-radio.html'},
+  {id:'flags',  label:'Sig Flags',   url:'signal-flags.html'},
+  {id:'drill',  label:'Drill',       url:'drill.html'},
+];
+
+const NAV_ICONS={
+  home:'<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>',
+  alpha:'<polyline points="4 7 4 4 20 4 20 7"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="12" y1="4" x2="12" y2="20"/>',
+  morse:'<circle cx="5" cy="12" r="2"/><circle cx="13" cy="12" r="2"/><line x1="20" y1="9" x2="20" y2="15"/>',
+  time:'<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>',
+  codes:'<rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>',
+  ham:'<path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/>',
+  flags:'<path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/>',
+  drill:'<path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>',
+};
+
+function icon(id){
+  return '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">'+NAV_ICONS[id]+'</svg>';
+}
+
+function buildNav(currentId){
+  // ── TOP NAV (desktop) ──────────────────────────────────────
+  const topNav=document.createElement('nav');
+  topNav.className='top-nav';
+  topNav.setAttribute('aria-label','Main navigation');
+  topNav.innerHTML=`
+    <div class="top-nav-inner">
+      <a href="index.html" class="top-nav-brand">
+        <span class="tnb-badge">MilRef</span>
+      </a>
+      <div class="top-nav-links">
+        ${NAV_PAGES.map(p=>`
+          <a href="${p.url}" class="tnl${p.id===currentId?' active':''}" aria-current="${p.id===currentId?'page':'false'}">
+            ${p.label}
+          </a>`).join('')}
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" onclick="toggleMobileMenu()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+      ${NAV_PAGES.map(p=>`
+        <a href="${p.url}" class="mm-item${p.id===currentId?' active':''}">
+          ${icon(p.id)}${p.label}
+        </a>`).join('')}
+    </div>
+  `;
+  document.body.insertBefore(topNav, document.body.firstChild);
+
+  // ── BOTTOM NAV (mobile only, max 5 visible) ────────────────
+  const PRIMARY=['home','alpha','morse','time','drill'];
+  const bNav=document.createElement('nav');
+  bNav.className='bot-nav';
+  bNav.setAttribute('aria-label','Quick navigation');
+
+  // show current page in bottom nav even if it's not in primary list
+  let bottomPages=[...PRIMARY];
+  if(!bottomPages.includes(currentId) && currentId){
+    bottomPages.splice(4,1,currentId); // replace last slot
+  }
+
+  NAV_PAGES.filter(p=>bottomPages.includes(p.id)).forEach(p=>{
+    const a=document.createElement('a');
+    a.href=p.url;
+    a.className='bn-item'+(p.id===currentId?' active':'');
+    a.setAttribute('aria-current',p.id===currentId?'page':'false');
+    a.setAttribute('aria-label',p.label);
+    a.innerHTML=icon(p.id)+'<span>'+p.label+'</span>';
+    bNav.appendChild(a);
+  });
+  document.body.appendChild(bNav);
+}
+
+function toggleMobileMenu(){
+  const menu=document.getElementById('mobile-menu');
+  const btn=document.getElementById('hamburger');
+  const open=menu.classList.toggle('open');
+  btn.setAttribute('aria-expanded',open);
+  menu.setAttribute('aria-hidden',!open);
+}
+// close mobile menu on outside click
+document.addEventListener('click',e=>{
+  const menu=document.getElementById('mobile-menu');
+  const btn=document.getElementById('hamburger');
+  if(menu&&!menu.contains(e.target)&&!btn.contains(e.target)){
+    menu.classList.remove('open');
+    btn.setAttribute('aria-expanded','false');
+    menu.setAttribute('aria-hidden','true');
+  }
+});
+
+buildNav('codes');
+const allCards = [...document.querySelectorAll('[data-search]')];
+function filterCodes(q){
+  const term = q.toLowerCase().trim();
+  allCards.forEach(el => { el.style.display = !term || el.getAttribute('data-search').includes(term) ? '' : 'none'; });
+}
+
+if('serviceWorker' in navigator && location.hostname==='doomania.github.io'){
+  navigator.serviceWorker.register('/military-alphabet/sw.js').catch(()=>{});
+}
+</script>
+</body>
+</html>

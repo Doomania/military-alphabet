@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Military Time Converter — Zulu Time, World Clocks & NZT</title>
+<meta name="description" content="Live military time clock, Zulu to local time converter for 29 timezones, 12-hour to military time converter, NATO time zone letters and New Zealand NZT converter.">
+<meta name="keywords" content="military time converter, zulu time, Zulu to NZT, military time New Zealand, 24 hour military clock, NATO time zones">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://doomania.github.io/military-alphabet/military-time.html">
+<meta name="theme-color" content="#4a5c2f"><link rel="manifest" href="manifest.json">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WZ1SZQYXPC"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-WZ1SZQYXPC');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=Source+Code+Pro:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --olive:#4a5c2f;--olive-l:#6b8042;--olive-d:#2e3a1c;
+  --khaki:#c8b87a;--khaki-d:#9e8f52;
+  --ink:#1a2030;--fog:#7a8a78;
+  --surface:#f4f2ec;--card:#fafaf6;
+  --border:rgba(74,92,47,0.18);
+  --red:#c0392b;--blue:#1a5276;
+  --nav-h:64px;
+}
+body{font-family:'Inter',sans-serif;background:var(--surface);color:var(--ink);min-height:100vh;padding-bottom:var(--nav-h)}
+
+/* PAGE HEADER */
+.pg-hdr{padding:1.5rem 1.25rem 1.25rem;background:linear-gradient(135deg,#2e3a1c 0%,#4a5c2f 65%,#6b8042 100%);position:relative;overflow:hidden}
+.pg-hdr::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 12px,rgba(255,255,255,0.025) 12px,rgba(255,255,255,0.025) 24px)}
+.pg-hdr-inner{position:relative;max-width:900px;margin:0 auto}
+.pg-tag{font-family:'Source Code Pro',monospace;font-size:9px;letter-spacing:.18em;color:var(--khaki);text-transform:uppercase;margin-bottom:.3rem;opacity:.85}
+.pg-title{font-family:'Rajdhani',sans-serif;font-size:1.9rem;font-weight:700;color:#f0ead0;line-height:1}
+.pg-sub{font-size:12px;color:rgba(240,234,208,0.6);margin-top:.3rem}
+
+/* CONTENT */
+.content{max-width:900px;margin:0 auto;padding:1.25rem}
+
+/* SECTION TITLE */
+.st{font-family:'Rajdhani',sans-serif;font-size:.95rem;font-weight:700;color:var(--olive);letter-spacing:.08em;text-transform:uppercase;margin-bottom:.75rem;margin-top:1.75rem;padding-bottom:.3rem;border-bottom:1.5px solid var(--border)}
+.st:first-child{margin-top:0}
+
+/* CARDS */
+.grid-auto{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px}
+.grid-wide{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px}
+.grid-narrow{display:grid;grid-template-columns:repeat(auto-fill,minmax(90px,1fr));gap:7px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:9px;padding:.8rem;transition:border-color .2s,transform .15s,box-shadow .15s}
+.card:hover{border-color:var(--olive-l);transform:translateY(-2px);box-shadow:0 4px 14px rgba(74,92,47,0.1)}
+.card-code{font-family:'Rajdhani',sans-serif;font-size:.95rem;font-weight:700;color:var(--olive-l);margin-bottom:.2rem}
+.card-mean{font-size:.8rem;color:var(--ink);line-height:1.4}
+.card-ctx{font-size:.67rem;color:var(--fog);margin-top:.2rem;font-style:italic}
+
+/* INPUT / OUTPUT */
+.irow{display:flex;gap:8px;margin-bottom:.65rem;flex-wrap:wrap}
+.irow input,.irow select{flex:1;min-width:120px;font-family:'Source Code Pro',monospace;font-size:13px;padding:.6rem .85rem;border:1.5px solid var(--border);border-radius:6px;background:var(--card);color:var(--ink)}
+.irow input:focus,.irow select:focus{outline:none;border-color:var(--olive-l)}
+.btn{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;padding:.6rem 1.1rem;background:var(--olive);color:#f0ead0;border:none;border-radius:6px;cursor:pointer;transition:background .2s;white-space:nowrap}
+.btn:hover{background:var(--olive-l)}
+.btn-sec{background:var(--card);color:var(--olive);border:1.5px solid var(--border)}
+.btn-sec:hover{background:var(--olive);color:#f0ead0;border-color:var(--olive)}
+.out-box{font-family:'Source Code Pro',monospace;font-size:13px;line-height:1.85;color:var(--olive-l);padding:.8rem 1rem;background:var(--card);border:1.5px solid var(--border);border-radius:6px;word-break:break-word;min-height:3rem}
+.copy-lnk{font-size:11px;color:var(--fog);cursor:pointer;text-align:right;margin-top:3px;font-family:'Source Code Pro',monospace}
+.copy-lnk:hover{color:var(--olive-l)}
+.info-box{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:.9rem 1rem;font-size:.82rem;line-height:1.7;color:var(--ink)}
+.info-box strong{font-family:'Rajdhani',sans-serif}
+.alert-box{background:var(--card);border:1.5px solid #c0392b44;border-radius:8px;padding:.9rem 1rem;font-size:.82rem;line-height:1.7;color:var(--ink)}
+.alert-box strong{color:var(--red);font-family:'Rajdhani',sans-serif}
+
+/* TABLES */
+.tbl{width:100%;border-collapse:collapse;font-size:12px}
+.tbl th{font-family:'Rajdhani',sans-serif;font-weight:700;letter-spacing:.07em;text-transform:uppercase;font-size:.7rem;color:var(--fog);text-align:left;padding:.45rem .8rem;border-bottom:1.5px solid var(--border)}
+.tbl td{padding:.5rem .8rem;border-bottom:1px solid var(--border);vertical-align:top}
+.tbl td:first-child{font-family:'Source Code Pro',monospace;font-size:.73rem;font-weight:500;color:var(--olive-l);white-space:nowrap}
+.tbl td:last-child{font-size:.78rem;color:var(--ink);line-height:1.4}
+.tbl tr:hover td{background:rgba(74,92,47,0.03)}
+.tbl-wrap{border:1px solid var(--border);border-radius:8px;overflow:hidden;margin-bottom:.5rem}
+
+/* TIMELINE */
+.timeline{position:relative;padding-left:1.6rem}
+.timeline::before{content:'';position:absolute;left:5px;top:4px;bottom:4px;width:1.5px;background:var(--border)}
+.tli{position:relative;margin-bottom:1.2rem}
+.tli::before{content:'';position:absolute;left:-1.6rem;top:4px;width:10px;height:10px;border-radius:50%;background:var(--olive);border:2px solid var(--surface)}
+.tli-y{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:.85rem;color:var(--olive-l);margin-bottom:.18rem}
+.tli-d{font-size:.8rem;color:var(--ink);line-height:1.5}
+
+/* BOTTOM NAV */
+.bnav{position:fixed;bottom:0;left:0;right:0;height:var(--nav-h);background:#fff;border-top:1px solid var(--border);display:flex;align-items:stretch;z-index:100;box-shadow:0 -4px 20px rgba(0,0,0,0.06)}
+.bnav-item{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-decoration:none;color:var(--fog);font-family:'Rajdhani',sans-serif;font-size:.6rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;gap:3px;transition:color .15s;border:none;background:none;cursor:pointer;padding:.4rem .1rem}
+.bnav-item svg{width:22px;height:22px;stroke:currentColor;stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.bnav-item.active{color:var(--olive)}
+.bnav-item:hover{color:var(--olive-l)}
+.bnav-more{position:relative}
+.more-menu{display:none;position:absolute;bottom:calc(100% + 4px);right:0;background:#fff;border:1px solid var(--border);border-radius:10px;box-shadow:0 4px 20px rgba(0,0,0,0.12);min-width:180px;overflow:hidden;z-index:200}
+.more-menu.open{display:block}
+.more-item{display:flex;align-items:center;gap:.6rem;padding:.65rem 1rem;text-decoration:none;color:var(--ink);font-family:'Rajdhani',sans-serif;font-size:.85rem;font-weight:600;border-bottom:1px solid var(--border);transition:background .15s}
+.more-item:last-child{border-bottom:none}
+.more-item:hover{background:var(--surface)}
+.more-item.active{color:var(--olive)}
+.more-item svg{width:16px;height:16px;stroke:currentColor;stroke-width:2;fill:none;flex-shrink:0}
+
+/* ALPHA CARDS */
+.alpha-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:8px}
+.ac{background:var(--card);border:1px solid var(--border);border-radius:9px;padding:.75rem;position:relative;overflow:hidden;transition:border-color .2s,transform .15s,box-shadow .15s}
+.ac::after{content:attr(data-l);position:absolute;right:-4px;bottom:-8px;font-family:'Rajdhani',sans-serif;font-size:4rem;font-weight:700;color:var(--olive);opacity:.05;line-height:1;pointer-events:none}
+.ac:hover{border-color:var(--olive-l);transform:translateY(-2px);box-shadow:0 4px 12px rgba(74,92,47,0.1)}
+.ac .l{font-family:'Rajdhani',sans-serif;font-size:1.8rem;font-weight:700;color:var(--olive);line-height:1}
+.ac .w{font-family:'Rajdhani',sans-serif;font-size:.95rem;font-weight:600;color:var(--ink);margin:.12rem 0 .06rem}
+.ac .p{font-family:'Source Code Pro',monospace;font-size:.6rem;color:var(--fog)}
+.ac .o{font-size:.58rem;color:var(--khaki-d);margin-top:.28rem;line-height:1.3}
+
+/* QUIZ */
+.quiz-wrap{max-width:380px;margin:0 auto;text-align:center}
+.quiz-q{font-family:'Rajdhani',sans-serif;font-size:4.5rem;font-weight:700;color:var(--olive);line-height:1;margin-bottom:.3rem}
+.quiz-hint{font-size:.8rem;color:var(--fog);margin-bottom:.9rem}
+.quiz-inp{width:100%;font-family:'Source Code Pro',monospace;font-size:.95rem;padding:.65rem 1rem;border:2px solid var(--border);border-radius:8px;background:var(--card);color:var(--ink);text-align:center;display:block;margin-bottom:.45rem}
+.quiz-inp:focus{outline:none;border-color:var(--olive-l)}
+.quiz-reveal{font-family:'Source Code Pro',monospace;font-size:.85rem;color:var(--red);min-height:1.2rem;margin-bottom:.35rem}
+.quiz-fb{font-family:'Rajdhani',sans-serif;font-size:1.1rem;font-weight:700;min-height:1.4rem;margin-bottom:.65rem}
+.quiz-btns{display:flex;gap:7px;justify-content:center;flex-wrap:wrap}
+.qb{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:.8rem;letter-spacing:.07em;text-transform:uppercase;padding:.5rem 1.1rem;border:1.5px solid var(--border);border-radius:6px;cursor:pointer;background:var(--card);color:var(--ink);transition:all .15s}
+.qb:hover{background:var(--olive);color:#f0ead0;border-color:var(--olive)}
+.quiz-score{font-size:.75rem;color:var(--fog);margin-top:.8rem;font-family:'Source Code Pro',monospace}
+
+/* MORSE */
+.morse-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(72px,1fr));gap:6px}
+.mc{background:var(--card);border:1px solid var(--border);border-radius:7px;padding:.55rem .4rem;text-align:center}
+.mc .ml{font-family:'Rajdhani',sans-serif;font-size:1.3rem;font-weight:700;color:var(--olive);line-height:1}
+.mc .mm{font-family:'Source Code Pro',monospace;font-size:.8rem;color:var(--ink);letter-spacing:.08em;margin-top:.15rem}
+
+/* TIME */
+.clock-big{font-family:'Rajdhani',sans-serif;font-size:3.2rem;font-weight:700;color:var(--olive);line-height:1;letter-spacing:.06em}
+.clock-label{font-family:'Source Code Pro',monospace;font-size:.65rem;color:var(--fog);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.3rem}
+.clock-card{background:var(--card);border:1px solid var(--border);border-radius:9px;padding:.9rem;text-align:center}
+.clock-sub{font-size:.68rem;color:var(--fog);margin-top:.2rem}
+.time-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:9px;margin-bottom:1.25rem}
+.mt-result{font-family:'Rajdhani',sans-serif;font-size:2rem;font-weight:700;color:var(--olive);letter-spacing:.06em}
+.mt-sub{font-size:.8rem;color:var(--fog);margin-bottom:1.2rem}
+
+/* POLICE */
+.police-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:7px}
+.pc{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:.7rem .9rem}
+.pc .pcode{font-family:'Rajdhani',sans-serif;font-size:1rem;font-weight:700;color:var(--blue);margin-bottom:.12rem}
+.pc .pmean{font-size:.78rem;color:var(--ink);line-height:1.35}
+.pc .pctx{font-size:.65rem;color:var(--fog);margin-top:.15rem;font-style:italic}
+
+/* HAM */
+.qcode{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:.7rem .9rem}
+.qcode .qc{font-family:'Rajdhani',sans-serif;font-size:1rem;font-weight:700;color:var(--olive-l);margin-bottom:.12rem}
+.qcode .qm{font-size:.78rem;color:var(--ink);line-height:1.35}
+.qcode .qx{font-size:.65rem;color:var(--fog);margin-top:.15rem;font-style:italic}
+.qcode-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:7px}
+
+/* SIGNAL FLAGS */
+.flag-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:10px}
+.flag-card{background:var(--card);border:1px solid var(--border);border-radius:9px;padding:.75rem .5rem;text-align:center;transition:border-color .2s,transform .15s}
+.flag-card:hover{border-color:var(--olive-l);transform:translateY(-2px)}
+.flag-svg{width:70px;height:56px;margin:0 auto .5rem;display:block}
+.flag-letter{font-family:'Rajdhani',sans-serif;font-size:1.3rem;font-weight:700;color:var(--olive);line-height:1}
+.flag-name{font-family:'Rajdhani',sans-serif;font-size:.8rem;font-weight:600;color:var(--ink);margin:.1rem 0}
+.flag-mean{font-size:.62rem;color:var(--fog);line-height:1.3}
+
+/* FOOTER */
+.pg-footer{text-align:center;padding:1.2rem;font-family:'Source Code Pro',monospace;font-size:.68rem;color:var(--fog);border-top:1px solid var(--border);margin-top:1.5rem}
+.pg-footer a{color:var(--olive-l);text-decoration:none}
+
+/* SKIP LINK */
+.skip{position:absolute;top:-40px;left:0;background:var(--olive);color:#f0ead0;padding:8px 14px;border-radius:0 0 6px 0;font-family:'Rajdhani',sans-serif;font-weight:700;font-size:.85rem;text-decoration:none;z-index:9999;transition:top .15s}
+.skip:focus{top:0}
+
+/* RESPONSIVE */
+@media(max-width:480px){
+  .pg-title{font-size:1.55rem}
+  .content{padding:1rem}
+  .alpha-grid{grid-template-columns:repeat(auto-fill,minmax(100px,1fr));gap:6px}
+  .flag-grid{grid-template-columns:repeat(auto-fill,minmax(90px,1fr));gap:7px}
+  .police-grid,.qcode-grid{grid-template-columns:repeat(auto-fill,minmax(145px,1fr))}
+  .clock-big{font-size:2.6rem}
+}
+
+/* ══════════════════════════════════════
+   TOP NAV (desktop)
+══════════════════════════════════════ */
+.top-nav{background:#2e3a1c;border-bottom:1px solid rgba(255,255,255,0.08);position:sticky;top:0;z-index:200}
+.top-nav-inner{max-width:960px;margin:0 auto;display:flex;align-items:center;gap:0;padding:0 1.25rem;height:48px}
+.top-nav-brand{text-decoration:none;margin-right:1rem;flex-shrink:0}
+.tnb-badge{font-family:'Rajdhani',sans-serif;font-size:.85rem;font-weight:700;letter-spacing:.1em;color:#f0ead0;background:rgba(255,255,255,0.1);padding:.2rem .55rem;border-radius:4px}
+.top-nav-links{display:flex;align-items:center;gap:0;flex:1;overflow:hidden}
+.tnl{font-family:'Rajdhani',sans-serif;font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:rgba(240,234,208,0.6);text-decoration:none;padding:.35rem .65rem;border-radius:4px;white-space:nowrap;transition:color .15s,background .15s;flex-shrink:0}
+.tnl:hover{color:#f0ead0;background:rgba(255,255,255,0.08)}
+.tnl.active{color:#f0ead0;background:rgba(255,255,255,0.12)}
+.hamburger{display:none;flex-direction:column;justify-content:center;gap:4px;width:36px;height:36px;background:none;border:none;cursor:pointer;padding:6px;margin-left:auto;flex-shrink:0}
+.hamburger span{display:block;height:2px;background:#f0ead0;border-radius:2px;transition:all .2s}
+
+/* mobile dropdown from hamburger */
+.mobile-menu{display:none;background:#2e3a1c;border-top:1px solid rgba(255,255,255,0.08);padding:.5rem 0}
+.mobile-menu.open{display:block}
+.mm-item{display:flex;align-items:center;gap:.65rem;padding:.65rem 1.5rem;text-decoration:none;font-family:'Rajdhani',sans-serif;font-size:.9rem;font-weight:700;color:rgba(240,234,208,0.7);transition:background .15s,color .15s}
+.mm-item:hover{background:rgba(255,255,255,0.06);color:#f0ead0}
+.mm-item.active{color:#f0ead0}
+.mm-item svg{width:16px;height:16px;stroke:currentColor;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+
+/* ══════════════════════════════════════
+   BOTTOM NAV (mobile only)
+══════════════════════════════════════ */
+.bot-nav{display:none;position:fixed;bottom:0;left:0;right:0;height:60px;background:#fff;border-top:1px solid var(--border);z-index:100;box-shadow:0 -2px 12px rgba(0,0,0,0.07)}
+.bn-item{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-decoration:none;color:var(--fog);font-family:'Rajdhani',sans-serif;font-size:.55rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;gap:2px;transition:color .15s;padding:.3rem .1rem}
+.bn-item svg{width:20px;height:20px;stroke:currentColor;stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.bn-item.active{color:var(--olive)}
+.bn-item:hover{color:var(--olive-l)}
+
+/* ══════════════════════════════════════
+   RESPONSIVE BREAKPOINTS
+══════════════════════════════════════ */
+@media(max-width:700px){
+  /* hide top nav links, show hamburger */
+  .top-nav-links{display:none}
+  .hamburger{display:flex}
+  /* show bottom nav */
+  .bot-nav{display:flex}
+  body{padding-bottom:60px}
+  /* shrink page header */
+  .pg-hdr{padding:1.1rem 1rem 1rem}
+  .pg-title{font-size:1.5rem}
+  .content{padding:.9rem}
+}
+@media(min-width:701px){
+  /* desktop: show all top links, no hamburger, no bottom nav */
+  .top-nav-links{display:flex}
+  .hamburger{display:none}
+  .mobile-menu{display:none !important}
+  .bot-nav{display:none !important}
+  body{padding-bottom:0}
+}
+</style>
+</head>
+<body>
+<a href="#main" class="skip">Skip to content</a>
+<header class="pg-hdr"><div class="pg-hdr-inner">
+  <div class="pg-tag">Military Time · Zulu · NATO Timezones</div>
+  <h1 class="pg-title">Military Time</h1>
+  <p class="pg-sub">Live clocks · Zulu to any timezone · 12-hour converter · NATO zone letters</p>
+</div></header>
+
+<main class="content" id="main">
+  <div class="st">Live Clocks</div>
+  <div class="dual-clocks">
+    <div class="clock-card">
+      <div class="clock-label">Zulu — UTC+0</div>
+      <div class="clock-big" id="zulu-clock" role="timer" aria-live="polite">----</div>
+      <div style="font-size:.68rem;color:var(--fog);margin-top:.25rem" id="zulu-date"></div>
+    </div>
+    <div class="clock-card nzt-card">
+      <div class="clock-label" style="color:var(--olive-l)" id="local-lbl">Local Time</div>
+      <div class="clock-big" id="local-clock" role="timer" aria-live="polite">----</div>
+      <div style="font-size:.68rem;color:var(--fog);margin-top:.25rem" id="local-date"></div>
+      <div style="font-size:.65rem;color:var(--fog);margin-top:.1rem" id="local-dst"></div>
+    </div>
+  </div>
+
+  <div class="st">Zulu → Local Converter</div>
+  <div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:.9rem;margin-bottom:1rem">
+    <div class="irow">
+      <span style="font-family:'Source Code Pro',monospace;font-size:11px;color:var(--fog);align-self:center;white-space:nowrap">Zulu (UTC):</span>
+      <input type="time" id="zulu-in" value="00:00" aria-label="Zulu UTC time" style="flex:0 0 auto"/>
+      <select id="tz-sel" aria-label="Select timezone" onchange="convertZulu()" style="flex:1;min-width:150px"></select>
+      <button class="btn" onclick="convertZulu()">Convert</button>
+    </div>
+    <div style="font-size:.68rem;color:var(--olive-l);font-family:'Source Code Pro',monospace;margin-bottom:.65rem" id="tz-detected"></div>
+    <div style="display:flex;gap:1.5rem;flex-wrap:wrap;align-items:baseline">
+      <div><div style="font-family:'Source Code Pro',monospace;font-size:.62rem;color:var(--fog)">LOCAL TIME</div><div class="mt-result" id="zconv-local">--:--</div></div>
+      <div><div style="font-family:'Source Code Pro',monospace;font-size:.62rem;color:var(--fog)">MILITARY</div><div class="mt-result" id="zconv-mil" style="color:var(--olive-l)">----</div></div>
+      <div><div style="font-family:'Source Code Pro',monospace;font-size:.62rem;color:var(--fog)">OFFSET</div><div class="mt-result" id="zconv-off" style="color:var(--fog);font-size:1.5rem">--</div></div>
+    </div>
+    <div style="margin-top:.65rem">
+      <button class="btn btn-sec" onclick="copyZconv()" id="zcopy-btn" style="font-size:.75rem;padding:.4rem .9rem">Copy Result</button>
+      <span style="font-family:'Source Code Pro',monospace;font-size:.7rem;color:var(--fog);margin-left:.5rem" id="zcopy-confirm"></span>
+    </div>
+  </div>
+
+  <div class="st">12-Hour → Military</div>
+  <div class="irow">
+    <input type="time" id="civil-in" value="13:30" aria-label="12-hour time input" onchange="toMil()"/>
+    <button class="btn" onclick="toMil()">Convert</button>
+  </div>
+  <div class="mt-result" id="mil-res">1330</div>
+  <div class="mt-sub" id="mil-say">Say: "Thirteen Thirty Hours"</div>
+
+  <div class="st">Military → 12-Hour</div>
+  <div class="irow">
+    <input id="mil-in" placeholder="e.g. 1430" maxlength="4" aria-label="Military time 4 digits" style="max-width:110px;font-size:16px" onkeydown="if(event.key==='Enter')fromMil()"/>
+    <button class="btn" onclick="fromMil()">Convert</button>
+  </div>
+  <div class="mt-result" id="civ-res">2:30 PM</div>
+  <div class="mt-sub" id="civ-say">Military: 1430 Hours</div>
+
+  <div class="st">World Zones</div>
+  <div class="time-grid" id="world-grid"></div>
+
+  <div class="st">Quick Reference</div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:7px;margin-bottom:1.25rem" id="ref-grid"></div>
+
+  <div class="st">NATO Timezone Letters</div>
+  <div class="grid-wide" id="tz-letters"></div>
+
+  <div class="st">How to Read Military Time</div>
+  <div class="info-box">
+    <strong>Format:</strong> 4-digit 24-hour clock (HHMM). No AM/PM, no colon.<br><br>
+    <strong>Pronunciation:</strong> "0830" = "Zero Eight Thirty Hours" · "1545" = "Fifteen Forty-Five Hours" · "0000" = "Zero Hundred Hours" · "1200" = "Twelve Hundred Hours"<br><br>
+    <strong>Why no AM/PM?</strong> Ambiguity kills. A supply drop at "3:00" in combat — 0300 or 1500? Military time eliminates the question entirely.
+  </div>
+</main>
+
+<footer class="pg-footer">© 2025 <a href="index.html">doomania</a> · <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></footer>
+
+<script>
+const NAV_PAGES=[
+  {id:'home',   label:'Home',        url:'index.html'},
+  {id:'alpha',  label:'Alphabet',    url:'alphabet.html'},
+  {id:'morse',  label:'Morse Code',  url:'morse.html'},
+  {id:'time',   label:'Mil Time',    url:'military-time.html'},
+  {id:'codes',  label:'Codes',       url:'codes.html'},
+  {id:'ham',    label:'Ham Radio',   url:'ham-radio.html'},
+  {id:'flags',  label:'Sig Flags',   url:'signal-flags.html'},
+  {id:'drill',  label:'Drill',       url:'drill.html'},
+];
+
+const NAV_ICONS={
+  home:'<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>',
+  alpha:'<polyline points="4 7 4 4 20 4 20 7"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="12" y1="4" x2="12" y2="20"/>',
+  morse:'<circle cx="5" cy="12" r="2"/><circle cx="13" cy="12" r="2"/><line x1="20" y1="9" x2="20" y2="15"/>',
+  time:'<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>',
+  codes:'<rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>',
+  ham:'<path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/>',
+  flags:'<path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/>',
+  drill:'<path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>',
+};
+
+function icon(id){
+  return '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">'+NAV_ICONS[id]+'</svg>';
+}
+
+function buildNav(currentId){
+  // ── TOP NAV (desktop) ──────────────────────────────────────
+  const topNav=document.createElement('nav');
+  topNav.className='top-nav';
+  topNav.setAttribute('aria-label','Main navigation');
+  topNav.innerHTML=`
+    <div class="top-nav-inner">
+      <a href="index.html" class="top-nav-brand">
+        <span class="tnb-badge">MilRef</span>
+      </a>
+      <div class="top-nav-links">
+        ${NAV_PAGES.map(p=>`
+          <a href="${p.url}" class="tnl${p.id===currentId?' active':''}" aria-current="${p.id===currentId?'page':'false'}">
+            ${p.label}
+          </a>`).join('')}
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" onclick="toggleMobileMenu()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+      ${NAV_PAGES.map(p=>`
+        <a href="${p.url}" class="mm-item${p.id===currentId?' active':''}">
+          ${icon(p.id)}${p.label}
+        </a>`).join('')}
+    </div>
+  `;
+  document.body.insertBefore(topNav, document.body.firstChild);
+
+  // ── BOTTOM NAV (mobile only, max 5 visible) ────────────────
+  const PRIMARY=['home','alpha','morse','time','drill'];
+  const bNav=document.createElement('nav');
+  bNav.className='bot-nav';
+  bNav.setAttribute('aria-label','Quick navigation');
+
+  // show current page in bottom nav even if it's not in primary list
+  let bottomPages=[...PRIMARY];
+  if(!bottomPages.includes(currentId) && currentId){
+    bottomPages.splice(4,1,currentId); // replace last slot
+  }
+
+  NAV_PAGES.filter(p=>bottomPages.includes(p.id)).forEach(p=>{
+    const a=document.createElement('a');
+    a.href=p.url;
+    a.className='bn-item'+(p.id===currentId?' active':'');
+    a.setAttribute('aria-current',p.id===currentId?'page':'false');
+    a.setAttribute('aria-label',p.label);
+    a.innerHTML=icon(p.id)+'<span>'+p.label+'</span>';
+    bNav.appendChild(a);
+  });
+  document.body.appendChild(bNav);
+}
+
+function toggleMobileMenu(){
+  const menu=document.getElementById('mobile-menu');
+  const btn=document.getElementById('hamburger');
+  const open=menu.classList.toggle('open');
+  btn.setAttribute('aria-expanded',open);
+  menu.setAttribute('aria-hidden',!open);
+}
+// close mobile menu on outside click
+document.addEventListener('click',e=>{
+  const menu=document.getElementById('mobile-menu');
+  const btn=document.getElementById('hamburger');
+  if(menu&&!menu.contains(e.target)&&!btn.contains(e.target)){
+    menu.classList.remove('open');
+    btn.setAttribute('aria-expanded','false');
+    menu.setAttribute('aria-hidden','true');
+  }
+});
+
+buildNav(currentId){
+  const nav=document.createElement('nav');
+  nav.className='bnav';
+  nav.setAttribute('aria-label','Main navigation');
+
+  NAV_PAGES.forEach(p=>{
+    if(p.id==='more'){
+      // More button + popup
+      const wrap=document.createElement('div');
+      wrap.style.cssText='flex:1;position:relative';
+      const btn=document.createElement('button');
+      btn.className='bnav-item bnav-more'+(MORE_PAGES.some(m=>m.id===currentId)?' active':'');
+      btn.setAttribute('aria-label','More pages');
+      btn.innerHTML='<svg viewBox="0 0 24 24">'+p.icon+'</svg>'+p.label;
+      const menu=document.createElement('div');
+      menu.className='more-menu';
+      menu.id='more-menu';
+      MORE_PAGES.forEach(mp=>{
+        const a=document.createElement('a');
+        a.href=mp.url;
+        a.className='more-item'+(mp.id===currentId?' active':'');
+        a.innerHTML='<svg viewBox="0 0 24 24">'+mp.icon+'</svg>'+mp.label;
+        menu.appendChild(a);
+      });
+      btn.onclick=(e)=>{e.stopPropagation();menu.classList.toggle('open');};
+      document.addEventListener('click',()=>menu.classList.remove('open'));
+      wrap.appendChild(btn);
+      wrap.appendChild(menu);
+      nav.appendChild(wrap);
+    } else {
+      const a=document.createElement('a');
+      a.href=p.url;
+      a.className='bnav-item'+(p.id===currentId?' active':'');
+      a.setAttribute('aria-label',p.label);
+      a.setAttribute('aria-current',p.id===currentId?'page':'false');
+      a.innerHTML='<svg viewBox="0 0 24 24">'+p.icon+'</svg>'+p.label;
+      nav.appendChild(a);
+    }
+  });
+  document.body.appendChild(nav);
+}
+buildNav('time');
+
+const TZ_LIST=[
+  {label:'Auckland, NZ (NZST/NZDT)',iana:'Pacific/Auckland'},
+  {label:'Sydney, AU (AEST/AEDT)',iana:'Australia/Sydney'},
+  {label:'Tokyo, JP (JST)',iana:'Asia/Tokyo'},
+  {label:'Singapore (SGT)',iana:'Asia/Singapore'},
+  {label:'Dubai (GST)',iana:'Asia/Dubai'},
+  {label:'Moscow (MSK)',iana:'Europe/Moscow'},
+  {label:'Nairobi (EAT)',iana:'Africa/Nairobi'},
+  {label:'Paris/Berlin (CET/CEST)',iana:'Europe/Paris'},
+  {label:'London (GMT/BST)',iana:'Europe/London'},
+  {label:'Reykjavik (GMT)',iana:'Atlantic/Reykjavik'},
+  {label:'Azores (AZOT)',iana:'Atlantic/Azores'},
+  {label:'Sao Paulo (BRT)',iana:'America/Sao_Paulo'},
+  {label:'New York (EST/EDT)',iana:'America/New_York'},
+  {label:'Chicago (CST/CDT)',iana:'America/Chicago'},
+  {label:'Denver (MST/MDT)',iana:'America/Denver'},
+  {label:'Los Angeles (PST/PDT)',iana:'America/Los_Angeles'},
+  {label:'Anchorage (AKST)',iana:'America/Anchorage'},
+  {label:'Honolulu (HST)',iana:'Pacific/Honolulu'},
+  {label:'Samoa (SST)',iana:'Pacific/Pago_Pago'},
+  {label:'Kabul (AFT)',iana:'Asia/Kabul'},
+  {label:'Colombo (IST)',iana:'Asia/Colombo'},
+  {label:'Kathmandu (NPT)',iana:'Asia/Kathmandu'},
+  {label:'Yangon (MMT)',iana:'Asia/Rangoon'},
+  {label:'Beijing/Shanghai (CST)',iana:'Asia/Shanghai'},
+  {label:'Seoul (KST)',iana:'Asia/Seoul'},
+  {label:'Kamchatka (PETT)',iana:'Asia/Kamchatka'},
+  {label:'Fiji (FJT)',iana:'Pacific/Fiji'},
+  {label:'Chatham Islands (CHAST)',iana:'Pacific/Chatham'},
+  {label:'Kiribati (LINT)',iana:'Pacific/Kiritimati'},
+];
+const WORLD_TZ=[
+  {label:'ZULU (UTC)',offset:0,id:'UTC'},
+  {label:'ROMEO (UTC-5)',offset:-5,id:'EST'},
+  {label:'UNIFORM (UTC-8)',offset:-8,id:'PST'},
+  {label:'ALPHA (UTC+1)',offset:1,id:'CET'},
+  {label:'CHARLIE (UTC+3)',offset:3,id:'MSK'},
+  {label:'KILO (UTC+10)',offset:10,id:'AEST'},
+  {label:'MIKE/NZT (UTC+12)',offset:12,id:'NZST'},
+];
+const TZ_LETTERS=[
+  {l:'Z',name:'Zulu',offset:'UTC+0',note:'Greenwich / universal reference'},
+  {l:'A',name:'Alpha',offset:'UTC+1',note:'Central European Time'},
+  {l:'B',name:'Bravo',offset:'UTC+2',note:'Eastern Europe / Middle East'},
+  {l:'C',name:'Charlie',offset:'UTC+3',note:'Moscow / East Africa'},
+  {l:'E',name:'Echo',offset:'UTC+5',note:'Pakistan'},
+  {l:'I',name:'India',offset:'UTC+9',note:'Japan / Korea'},
+  {l:'K',name:'Kilo',offset:'UTC+10',note:'Eastern Australia'},
+  {l:'M',name:'Mike',offset:'UTC+12',note:'New Zealand (NZT)'},
+  {l:'N',name:'November',offset:'UTC-1',note:'Azores'},
+  {l:'R',name:'Romeo',offset:'UTC-5',note:'Eastern Standard (US)'},
+  {l:'S',name:'Sierra',offset:'UTC-6',note:'Central Standard (US)'},
+  {l:'U',name:'Uniform',offset:'UTC-8',note:'Pacific Standard (US)'},
+  {l:'Y',name:'Yankee',offset:'UTC-12',note:'International Date Line West'},
+];
+const MILREF=[
+  {m:'0000',c:'12:00 AM'},{m:'0100',c:'1:00 AM'},{m:'0600',c:'6:00 AM'},
+  {m:'0800',c:'8:00 AM'},{m:'1000',c:'10:00 AM'},{m:'1200',c:'12:00 PM'},
+  {m:'1300',c:'1:00 PM'},{m:'1500',c:'3:00 PM'},{m:'1800',c:'6:00 PM'},
+  {m:'2000',c:'8:00 PM'},{m:'2100',c:'9:00 PM'},{m:'2359',c:'11:59 PM'},
+];
+
+function buildTzSelect(){
+  const sel=document.getElementById('tz-sel');
+  const userTz=Intl.DateTimeFormat().resolvedOptions().timeZone;
+  let matchedIdx=0;
+  TZ_LIST.forEach((tz,i)=>{
+    const opt=document.createElement('option');
+    opt.value=tz.iana;opt.textContent=tz.label;sel.appendChild(opt);
+    if(tz.iana===userTz) matchedIdx=i;
+  });
+  sel.selectedIndex=matchedIdx;
+  const det=document.getElementById('tz-detected');
+  det.textContent='Auto-detected: '+TZ_LIST[matchedIdx].label;
+  convertZulu();
+}
+
+function convertZulu(){
+  const t=document.getElementById('zulu-in').value;
+  if(!t) return;
+  const [h,m]=t.split(':').map(Number);
+  const iana=document.getElementById('tz-sel').value||'Pacific/Auckland';
+  const zuluDate=new Date();
+  zuluDate.setUTCHours(h,m,0,0);
+  try{
+    const fmtH=new Intl.DateTimeFormat('en-US',{timeZone:iana,hour:'numeric',hour12:false});
+    const fmtM=new Intl.DateTimeFormat('en-US',{timeZone:iana,minute:'2-digit'});
+    const lh=parseInt(fmtH.format(zuluDate));
+    const lm=parseInt(fmtM.format(zuluDate));
+    const ampm=lh<12?'AM':'PM';
+    const ch=lh===0?12:lh>12?lh-12:lh;
+    const tzAbbr=new Intl.DateTimeFormat('en-US',{timeZone:iana,timeZoneName:'short'}).formatToParts(zuluDate).find(p=>p.type==='timeZoneName')?.value||'';
+    const tzOff=new Intl.DateTimeFormat('en-US',{timeZone:iana,timeZoneName:'shortOffset'}).formatToParts(zuluDate).find(p=>p.type==='timeZoneName')?.value||'';
+    document.getElementById('zconv-local').textContent=ch+':'+String(lm).padStart(2,'0')+' '+ampm+' '+tzAbbr;
+    document.getElementById('zconv-mil').textContent=String(lh).padStart(2,'0')+String(lm).padStart(2,'0');
+    document.getElementById('zconv-off').textContent=tzOff;
+  }catch(e){console.warn('TZ error',e);}
+}
+
+function copyZconv(){
+  const local=document.getElementById('zconv-local').textContent;
+  const mil=document.getElementById('zconv-mil').textContent;
+  const off=document.getElementById('zconv-off').textContent;
+  navigator.clipboard.writeText(local+' | Military: '+mil+' | '+off).then(()=>{
+    const btn=document.getElementById('zcopy-btn');
+    const orig=btn.textContent;btn.textContent='Copied!';
+    setTimeout(()=>btn.textContent=orig,1500);
+  });
+}
+
+const ONES=['','One','Two','Three','Four','Five','Six','Seven','Eight','Nine','Ten','Eleven','Twelve','Thirteen','Fourteen','Fifteen','Sixteen','Seventeen','Eighteen','Nineteen'];
+const TENS=['','','Twenty','Thirty','Forty','Fifty'];
+function sayNum(n){if(n<20) return ONES[n];return TENS[Math.floor(n/10)]+(n%10?' '+ONES[n%10]:'');}
+function sayHours(h){const w=['Zero Hundred','Zero One Hundred','Zero Two Hundred','Zero Three Hundred','Zero Four Hundred','Zero Five Hundred','Zero Six Hundred','Zero Seven Hundred','Zero Eight Hundred','Zero Nine Hundred','Ten Hundred','Eleven Hundred','Twelve Hundred','Thirteen Hundred','Fourteen Hundred','Fifteen Hundred','Sixteen Hundred','Seventeen Hundred','Eighteen Hundred','Nineteen Hundred','Twenty Hundred','Twenty-One Hundred','Twenty-Two Hundred','Twenty-Three Hundred'];return w[h];}
+
+function toMil(){
+  const t=document.getElementById('civil-in').value;if(!t)return;
+  const [h,m]=t.split(':').map(Number);
+  document.getElementById('mil-res').textContent=String(h).padStart(2,'0')+String(m).padStart(2,'0');
+  const say=sayHours(h)+(m>0?' '+sayNum(m)+' Hours':' Hours');
+  document.getElementById('mil-say').textContent='Say: "'+say+'"';
+}
+
+function fromMil(){
+  const raw=document.getElementById('mil-in').value.trim();
+  if(raw.length!==4||isNaN(raw)){document.getElementById('civ-res').textContent='Invalid';return;}
+  const h=parseInt(raw.slice(0,2)),m=parseInt(raw.slice(2,4));
+  if(h>23||m>59){document.getElementById('civ-res').textContent='Invalid';return;}
+  const ampm=h<12?'AM':'PM';const ch=h===0?12:h>12?h-12:h;
+  document.getElementById('civ-res').textContent=ch+':'+String(m).padStart(2,'0')+' '+ampm;
+  document.getElementById('civ-say').textContent='Military: '+raw+' Hours';
+}
+
+function buildWorldGrid(){
+  const g=document.getElementById('world-grid');
+  WORLD_TZ.forEach(tz=>{
+    const d=document.createElement('div');d.className='clock-card';d.id='wtz-'+tz.id;
+    g.appendChild(d);
+  });
+}
+
+function buildRefGrid(){
+  const g=document.getElementById('ref-grid');
+  MILREF.forEach(r=>{
+    const d=document.createElement('div');d.className='card';
+    d.innerHTML='<div style="font-family:Rajdhani,sans-serif;font-size:1.15rem;font-weight:700;color:var(--olive)">'+r.m+'</div><div style="font-size:.72rem;color:var(--ink)">'+r.c+'</div>';
+    g.appendChild(d);
+  });
+}
+
+function buildTzLetters(){
+  const g=document.getElementById('tz-letters');
+  TZ_LETTERS.forEach(tz=>{
+    const d=document.createElement('div');d.className='card';
+    d.innerHTML='<div class="card-code">'+tz.l+' — '+tz.name+'</div><div class="card-mean">'+tz.offset+'</div><div class="card-ctx">'+tz.note+'</div>';
+    g.appendChild(d);
+  });
+}
+
+const days=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+const months=['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
+
+function updateClocks(){
+  const now=new Date();
+  const zh=String(now.getUTCHours()).padStart(2,'0');
+  const zm=String(now.getUTCMinutes()).padStart(2,'0');
+  document.getElementById('zulu-clock').textContent=zh+zm;
+  document.getElementById('zulu-date').textContent=days[now.getUTCDay()]+' '+now.getUTCDate()+' '+months[now.getUTCMonth()];
+
+  const sel=document.getElementById('tz-sel');
+  const iana=(sel&&sel.value)?sel.value:'Pacific/Auckland';
+  try{
+    const lh=parseInt(new Intl.DateTimeFormat('en-US',{timeZone:iana,hour:'numeric',hour12:false}).format(now));
+    const lm=parseInt(new Intl.DateTimeFormat('en-US',{timeZone:iana,minute:'2-digit'}).format(now));
+    const tzAbbr=new Intl.DateTimeFormat('en-US',{timeZone:iana,timeZoneName:'short'}).formatToParts(now).find(p=>p.type==='timeZoneName')?.value||'';
+    const tzOff=new Intl.DateTimeFormat('en-US',{timeZone:iana,timeZoneName:'shortOffset'}).formatToParts(now).find(p=>p.type==='timeZoneName')?.value||'';
+    const localDate=new Intl.DateTimeFormat('en-US',{timeZone:iana,weekday:'short',day:'numeric',month:'short'}).format(now);
+    document.getElementById('local-clock').textContent=String(lh).padStart(2,'0')+String(lm).padStart(2,'0');
+    document.getElementById('local-date').textContent=localDate;
+    document.getElementById('local-dst').textContent=tzAbbr+' '+tzOff;
+    if(sel) document.getElementById('local-lbl').textContent=sel.options[sel.selectedIndex]?.text.split('(')[0].trim()||'Local';
+  }catch(e){}
+
+  WORLD_TZ.forEach(tz=>{
+    const local=new Date(now.getTime()+tz.offset*3600000);
+    const lh=String(local.getUTCHours()).padStart(2,'0');
+    const lm=String(local.getUTCMinutes()).padStart(2,'0');
+    const el=document.getElementById('wtz-'+tz.id);
+    if(el) el.innerHTML='<div class="clock-label">'+tz.label+'</div><div class="clock-big" style="font-size:1.9rem">'+lh+lm+'</div><div class="clock-sub">UTC'+(tz.offset>=0?'+':'')+tz.offset+'</div>';
+  });
+}
+
+buildTzSelect();buildWorldGrid();buildRefGrid();buildTzLetters();
+toMil();updateClocks();setInterval(updateClocks,1000);
+document.getElementById('zulu-in').addEventListener('change',convertZulu);
+document.getElementById('civil-in').addEventListener('change',toMil);
+document.getElementById('mil-in').addEventListener('keydown',e=>{if(e.key==='Enter')fromMil();});
+if('serviceWorker' in navigator && location.hostname==='doomania.github.io'){
+  navigator.serviceWorker.register('/military-alphabet/sw.js').catch(()=>{});
+}
+</script>
+</body>
+</html>
