@@ -244,6 +244,7 @@ body{font-family:'Inter',sans-serif;background:var(--surface);color:var(--ink);m
 
 .mode-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:9px;margin-bottom:1.5rem}.mode-btn{background:var(--card);border:1.5px solid var(--border);border-radius:9px;padding:.75rem .9rem;cursor:pointer;text-align:left;transition:all .15s;display:flex;flex-direction:column;gap:.3rem;width:100%}.mode-btn:hover{border-color:var(--olive-l)}.mode-btn.active{border-color:var(--olive);background:rgba(74,92,47,0.06)}.mb-name{font-family:Rajdhani,sans-serif;font-size:.95rem;font-weight:700;color:var(--olive)}.mb-desc{font-size:.68rem;color:var(--fog)}.stats-row{display:flex;gap:1rem;margin-bottom:1.5rem;flex-wrap:wrap}.stat{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:.6rem .9rem;flex:1;min-width:70px;text-align:center}.stat-val{font-family:Rajdhani,sans-serif;font-size:1.6rem;font-weight:700;color:var(--olive);line-height:1}.stat-label{font-family:Source Code Pro,monospace;font-size:.58rem;color:var(--fog);text-transform:uppercase;letter-spacing:.08em;margin-top:.15rem}
 </style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the fastest way to memorize the NATO alphabet?", "acceptedAnswer": {"@type": "Answer", "text": "Short daily sessions beat one long cram: quiz random letters, spell real words aloud (names, number plates), and hammer the confusable pairs like Mike/November. Most people are fluent after a week of 10-minute drills."}}, {"@type": "Question", "name": "What should I practice first — alphabet, Morse or 10-codes?", "acceptedAnswer": {"@type": "Answer", "text": "Start with the NATO alphabet: it is only 26 words, used everywhere from aviation to call centres, and every other radio skill builds on it. Add military time next, then Morse or 10-codes depending on your field."}}]}</script>
 </head>
 <body>
 <a href="#main" class="skip">Skip to content</a>
@@ -253,6 +254,7 @@ body{font-family:'Inter',sans-serif;background:var(--surface);color:var(--ink);m
   <p class="pg-sub">Randomised quiz across all reference categories</p>
 </div></header>
 <main class="content" id="main">
+<p style="font-size:.85rem;line-height:1.7;margin-bottom:1.25rem;max-width:720px">Drill mode quizzes you on the NATO alphabet, Morse code, military time, police 10-codes and ham radio Q-codes in random order, with a streak counter and score.</p>
   <h2 class="st">Select Mode</h2>
   <div class="mode-grid"><button class="mode-btn" id="mb-nato" onclick="setMode('nato')" type="button"><div class="mb-name">NATO Alphabet</div><div class="mb-desc">Letter to codeword</div></button>
 <button class="mode-btn" id="mb-morse" onclick="setMode('morse')" type="button"><div class="mb-name">Morse Code</div><div class="mb-desc">Letter to Morse</div></button>
@@ -279,6 +281,11 @@ body{font-family:'Inter',sans-serif;background:var(--surface);color:var(--ink);m
     </div>
   </div>
 </main>
+<div class="content" style="padding-top:0">
+<h2 class="st">Frequently Asked Questions</h2>
+<div class="info-box" style="margin-bottom:.6rem"><h3 style="font-size:.85rem;margin-bottom:.25rem">What is the fastest way to memorize the NATO alphabet?</h3><p>Short daily sessions beat one long cram: quiz random letters, spell real words aloud (names, number plates), and hammer the confusable pairs like Mike/November. Most people are fluent after a week of 10-minute drills.</p></div>
+<div class="info-box" style="margin-bottom:.6rem"><h3 style="font-size:.85rem;margin-bottom:.25rem">What should I practice first — alphabet, Morse or 10-codes?</h3><p>Start with the NATO alphabet: it is only 26 words, used everywhere from aviation to call centres, and every other radio skill builds on it. Add military time next, then Morse or 10-codes depending on your field.</p></div>
+</div>
 <footer class="pg-footer">© 2025 <a href="index.html">doomania</a> · <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></footer>
 <script>
 const NAV_PAGES=[

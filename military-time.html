@@ -244,7 +244,7 @@ body{font-family:'Inter',sans-serif;background:var(--surface);color:var(--ink);m
 
 .dual-clocks{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:1.25rem}.nzt-card{border:2px solid var(--olive-l)}@media(max-width:380px){.dual-clocks{grid-template-columns:1fr}}
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What does the Z in 1500Z mean?", "acceptedAnswer": {"@type": "Answer", "text": "Z stands for Zulu, the NATO timezone letter for UTC (zero offset). 1500Z is 3:00 PM UTC regardless of where the sender is — militaries use it so orders carry one unambiguous time."}}, {"@type": "Question", "name": "Is midnight 0000 or 2400?", "acceptedAnswer": {"@type": "Answer", "text": "Both are valid: 0000 marks the start of a day and 2400 marks the end of the previous day. 0000 is the standard choice; 2400 appears mainly on schedules to show a closing time."}}, {"@type": "Question", "name": "How do I convert PM time to military time?", "acceptedAnswer": {"@type": "Answer", "text": "Add 12 to the hour: 3:30 PM becomes 1530, 11:00 PM becomes 2300. AM times keep their hour with a leading zero — 7:15 AM is 0715. Noon is 1200 and midnight is 0000."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What does the Z in 1500Z mean?", "acceptedAnswer": {"@type": "Answer", "text": "Z stands for Zulu, the NATO timezone letter for UTC (zero offset). 1500Z is 3:00 PM UTC regardless of where the sender is — militaries use it so orders carry one unambiguous time."}}, {"@type": "Question", "name": "Is midnight 0000 or 2400?", "acceptedAnswer": {"@type": "Answer", "text": "Both are valid: 0000 marks the start of a day and 2400 marks the end of the previous day. 0000 is the standard choice; 2400 appears mainly on schedules to show a closing time."}}, {"@type": "Question", "name": "How do I convert PM time to military time?", "acceptedAnswer": {"@type": "Answer", "text": "Add 12 to the hour: 3:30 PM becomes 1530, 11:00 PM becomes 2300. AM times keep their hour with a leading zero — 7:15 AM is 0715. Noon is 1200 and midnight is 0000."}}, {"@type": "Question", "name": "What is 1700 in normal time?", "acceptedAnswer": {"@type": "Answer", "text": "1700 (seventeen hundred) is 5:00 PM. Common conversions: 1300 = 1 PM, 1500 = 3 PM, 1800 = 6 PM, 2000 = 8 PM, 2200 = 10 PM. Subtract 12 from any hour above 12 to get the PM time."}}, {"@type": "Question", "name": "Why does the military use 24-hour time?", "acceptedAnswer": {"@type": "Answer", "text": "Because 0700 with no AM/PM cannot be misread across radio, written orders and logs — a wrong AM/PM guess moves an operation by 12 hours. It also pairs with Zulu (UTC) so units in different zones share one clock."}}, {"@type": "Question", "name": "What are the NATO time zone letters?", "acceptedAnswer": {"@type": "Answer", "text": "Each letter A–Z except J marks a UTC offset: Z (Zulu) = UTC, A (Alpha) = UTC+1, N (November) = UTC−1, M (Mike) = UTC+12. J (Juliett) means the observer's local time."}}]}</script>
 </head>
 <body>
 <a href="#main" class="skip">Skip to content</a>
@@ -254,6 +254,7 @@ body{font-family:'Inter',sans-serif;background:var(--surface);color:var(--ink);m
   <p class="pg-sub">Live clocks · Zulu to any timezone · 12-hour converter · NATO zone letters</p>
 </div></header>
 <main class="content" id="main">
+<p style="font-size:.85rem;line-height:1.7;margin-bottom:1.25rem;max-width:720px">Military time is the 24-hour clock written without a colon — 0000 to 2359. Zulu time (a Z suffix, e.g. 1500Z) is military time fixed to UTC, so every unit worldwide shares one unambiguous clock.</p>
   <h2 class="st">Live Clocks</h2>
   <div class="dual-clocks">
     <div class="clock-card">
@@ -313,10 +314,15 @@ body{font-family:'Inter',sans-serif;background:var(--surface);color:var(--ink);m
     <strong>Why no AM/PM?</strong> A supply drop at "3:00" in combat — 0300 or 1500? Military time eliminates all ambiguity.
   </div>
 </main>
+<div class="content" style="padding-top:0">
 <h2 class="st">Frequently Asked Questions</h2>
 <div class="info-box" style="margin-bottom:.6rem"><h3 style="font-size:.85rem;margin-bottom:.25rem">What does the Z in 1500Z mean?</h3><p>Z stands for Zulu, the NATO timezone letter for UTC (zero offset). 1500Z is 3:00 PM UTC regardless of where the sender is — militaries use it so orders carry one unambiguous time.</p></div>
 <div class="info-box" style="margin-bottom:.6rem"><h3 style="font-size:.85rem;margin-bottom:.25rem">Is midnight 0000 or 2400?</h3><p>Both are valid: 0000 marks the start of a day and 2400 marks the end of the previous day. 0000 is the standard choice; 2400 appears mainly on schedules to show a closing time.</p></div>
 <div class="info-box" style="margin-bottom:.6rem"><h3 style="font-size:.85rem;margin-bottom:.25rem">How do I convert PM time to military time?</h3><p>Add 12 to the hour: 3:30 PM becomes 1530, 11:00 PM becomes 2300. AM times keep their hour with a leading zero — 7:15 AM is 0715. Noon is 1200 and midnight is 0000.</p></div>
+<div class="info-box" style="margin-bottom:.6rem"><h3 style="font-size:.85rem;margin-bottom:.25rem">What is 1700 in normal time?</h3><p>1700 (seventeen hundred) is 5:00 PM. Common conversions: 1300 = 1 PM, 1500 = 3 PM, 1800 = 6 PM, 2000 = 8 PM, 2200 = 10 PM. Subtract 12 from any hour above 12 to get the PM time.</p></div>
+<div class="info-box" style="margin-bottom:.6rem"><h3 style="font-size:.85rem;margin-bottom:.25rem">Why does the military use 24-hour time?</h3><p>Because 0700 with no AM/PM cannot be misread across radio, written orders and logs — a wrong AM/PM guess moves an operation by 12 hours. It also pairs with Zulu (UTC) so units in different zones share one clock.</p></div>
+<div class="info-box" style="margin-bottom:.6rem"><h3 style="font-size:.85rem;margin-bottom:.25rem">What are the NATO time zone letters?</h3><p>Each letter A–Z except J marks a UTC offset: Z (Zulu) = UTC, A (Alpha) = UTC+1, N (November) = UTC−1, M (Mike) = UTC+12. J (Juliett) means the observer's local time.</p></div>
+</div>
 <footer class="pg-footer">© 2025 <a href="index.html">doomania</a> · <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></footer>
 <script>
 const NAV_PAGES=[
