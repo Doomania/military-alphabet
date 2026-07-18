@@ -18,6 +18,7 @@
 <meta name="twitter:title" content="NATO Phonetic Alphabet (Military Alphabet) — Chart, Pronunciation & Converter">
 <meta name="twitter:description" content="All 26 NATO phonetic alphabet codewords with pronunciation, word origin, and text to NATO converter. Alpha, Bravo, Charlie, Delta and more.">
 <meta name="theme-color" content="#4a5c2f">
+<meta name="theme-color" content="#15180f" media="(prefers-color-scheme: dark)">
 <link rel="manifest" href="manifest.json">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-WZ1SZQYXPC"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-WZ1SZQYXPC');</script>
@@ -27,8 +28,8 @@
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
   --olive:#4a5c2f;--olive-l:#6b8042;--olive-d:#2e3a1c;
-  --khaki:#c8b87a;--khaki-d:#9e8f52;
-  --ink:#1a2030;--fog:#7a8a78;
+  --khaki:#c8b87a;--khaki-d:#7a6c38;
+  --ink:#1a2030;--fog:#5c6b5a;
   --surface:#f4f2ec;--card:#fafaf6;
   --border:rgba(74,92,47,0.18);
   --red:#c0392b;--blue:#1a5276;
@@ -59,7 +60,7 @@ body{font-family:'Inter',sans-serif;background:var(--surface);color:var(--ink);m
 .card:hover{border-color:var(--olive-l);transform:translateY(-2px);box-shadow:0 4px 14px rgba(74,92,47,0.1)}
 .card-code{font-family:'Rajdhani',sans-serif;font-size:.95rem;font-weight:700;color:var(--olive-l);margin-bottom:.2rem}
 .card-mean{font-size:.8rem;color:var(--ink);line-height:1.4}
-.card-ctx{font-size:.67rem;color:var(--fog);margin-top:.2rem;font-style:italic}
+.card-ctx{font-size:.75rem;color:var(--fog);margin-top:.2rem;font-style:italic}
 
 /* INPUT / OUTPUT */
 .irow{display:flex;gap:8px;margin-bottom:.65rem;flex-wrap:wrap}
@@ -116,8 +117,8 @@ body{font-family:'Inter',sans-serif;background:var(--surface);color:var(--ink);m
 .ac:hover{border-color:var(--olive-l);transform:translateY(-2px);box-shadow:0 4px 12px rgba(74,92,47,0.1)}
 .ac .l{font-family:'Rajdhani',sans-serif;font-size:1.8rem;font-weight:700;color:var(--olive);line-height:1}
 .ac .w{font-family:'Rajdhani',sans-serif;font-size:.95rem;font-weight:600;color:var(--ink);margin:.12rem 0 .06rem}
-.ac .p{font-family:'Source Code Pro',monospace;font-size:.6rem;color:var(--fog)}
-.ac .o{font-size:.58rem;color:var(--khaki-d);margin-top:.28rem;line-height:1.3}
+.ac .p{font-family:'Source Code Pro',monospace;font-size:.68rem;color:var(--fog)}
+.ac .o{font-size:.68rem;color:var(--khaki-d);margin-top:.28rem;line-height:1.3}
 
 /* QUIZ */
 .quiz-wrap{max-width:380px;margin:0 auto;text-align:center}
@@ -142,7 +143,7 @@ body{font-family:'Inter',sans-serif;background:var(--surface);color:var(--ink);m
 .clock-big{font-family:'Rajdhani',sans-serif;font-size:3.2rem;font-weight:700;color:var(--olive);line-height:1;letter-spacing:.06em}
 .clock-label{font-family:'Source Code Pro',monospace;font-size:.65rem;color:var(--fog);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.3rem}
 .clock-card{background:var(--card);border:1px solid var(--border);border-radius:9px;padding:.9rem;text-align:center}
-.clock-sub{font-size:.68rem;color:var(--fog);margin-top:.2rem}
+.clock-sub{font-size:.75rem;color:var(--fog);margin-top:.2rem}
 .time-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:9px;margin-bottom:1.25rem}
 .mt-result{font-family:'Rajdhani',sans-serif;font-size:2rem;font-weight:700;color:var(--olive);letter-spacing:.06em}
 .mt-sub{font-size:.8rem;color:var(--fog);margin-bottom:1.2rem}
@@ -152,13 +153,13 @@ body{font-family:'Inter',sans-serif;background:var(--surface);color:var(--ink);m
 .pc{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:.7rem .9rem}
 .pc .pcode{font-family:'Rajdhani',sans-serif;font-size:1rem;font-weight:700;color:var(--blue);margin-bottom:.12rem}
 .pc .pmean{font-size:.78rem;color:var(--ink);line-height:1.35}
-.pc .pctx{font-size:.65rem;color:var(--fog);margin-top:.15rem;font-style:italic}
+.pc .pctx{font-size:.72rem;color:var(--fog);margin-top:.15rem;font-style:italic}
 
 /* HAM */
 .qcode{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:.7rem .9rem}
 .qcode .qc{font-family:'Rajdhani',sans-serif;font-size:1rem;font-weight:700;color:var(--olive-l);margin-bottom:.12rem}
 .qcode .qm{font-size:.78rem;color:var(--ink);line-height:1.35}
-.qcode .qx{font-size:.65rem;color:var(--fog);margin-top:.15rem;font-style:italic}
+.qcode .qx{font-size:.72rem;color:var(--fog);margin-top:.15rem;font-style:italic}
 .qcode-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:7px}
 
 /* SIGNAL FLAGS */
@@ -168,7 +169,7 @@ body{font-family:'Inter',sans-serif;background:var(--surface);color:var(--ink);m
 .flag-svg{width:70px;height:56px;margin:0 auto .5rem;display:block}
 .flag-letter{font-family:'Rajdhani',sans-serif;font-size:1.3rem;font-weight:700;color:var(--olive);line-height:1}
 .flag-name{font-family:'Rajdhani',sans-serif;font-size:.8rem;font-weight:600;color:var(--ink);margin:.1rem 0}
-.flag-mean{font-size:.62rem;color:var(--fog);line-height:1.3}
+.flag-mean{font-size:.72rem;color:var(--fog);line-height:1.3}
 
 /* FOOTER */
 .pg-footer{text-align:center;padding:1.2rem;font-family:'Source Code Pro',monospace;font-size:.68rem;color:var(--fog);border-top:1px solid var(--border);margin-top:1.5rem}
@@ -244,6 +245,20 @@ body{font-family:'Inter',sans-serif;background:var(--surface);color:var(--ink);m
 }
 
 
+
+@media(prefers-color-scheme:dark){
+  :root{
+    --olive:#93a862;--olive-l:#aec278;--olive-d:#242e14;
+    --khaki:#c8b87a;--khaki-d:#b0a165;
+    --ink:#e6e4d8;--fog:#9aa694;
+    --surface:#15180f;--card:#1e2317;
+    --border:rgba(174,194,120,0.18);
+    --red:#e0705f;--blue:#7fb2d8;
+  }
+  .bnav,.bot-nav,.more-menu{background:#1e2317}
+  .btn,.btn-sec:hover,.qb:hover,.skip{color:#141810}
+  .tool-icon{background:linear-gradient(135deg,#39481f,#5f7533)}
+}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why is it spelled Alfa and not Alpha?", "acceptedAnswer": {"@type": "Answer", "text": "ICAO uses the spellings Alfa and Juliett deliberately: 'ph' is not pronounced 'f' in many languages, and a single-t Juliet could be misread by French speakers. The altered spellings force the correct pronunciation."}}, {"@type": "Question", "name": "Is the military alphabet the same as the NATO phonetic alphabet?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. 'Military alphabet' is the informal name for the NATO phonetic alphabet (officially the International Radiotelephony Spelling Alphabet), standardized in 1956 and used by NATO forces, ICAO aviation and emergency services."}}, {"@type": "Question", "name": "What is the NATO phonetic alphabet in order from A to Z?", "acceptedAnswer": {"@type": "Answer", "text": "Alfa, Bravo, Charlie, Delta, Echo, Foxtrot, Golf, Hotel, India, Juliett, Kilo, Lima, Mike, November, Oscar, Papa, Quebec, Romeo, Sierra, Tango, Uniform, Victor, Whiskey, X-ray, Yankee, Zulu."}}, {"@type": "Question", "name": "How are numbers pronounced in the NATO alphabet?", "acceptedAnswer": {"@type": "Answer", "text": "Digits are spoken individually with modified pronunciations for clarity: 3 is 'tree', 4 is 'fower', 5 is 'fife' and 9 is 'niner' — so 1945 is spoken 'wun niner fower fife'."}}, {"@type": "Question", "name": "Who uses the NATO phonetic alphabet?", "acceptedAnswer": {"@type": "Answer", "text": "NATO militaries, civil aviation (ICAO), maritime services, amateur radio operators, police and emergency dispatch in many countries, and call centers spelling names, emails and booking references over the phone."}}, {"@type": "Question", "name": "What alphabet was used before the NATO alphabet?", "acceptedAnswer": {"@type": "Answer", "text": "The Able Baker alphabet (Able, Baker, Charlie, Dog...) used by US and UK forces through WWII. It was too English-centric, so ICAO developed the current alphabet, finalized in 1956 after testing across 31 language groups."}}, {"@type": "Question", "name": "How do I spell an email address over the phone?", "acceptedAnswer": {"@type": "Answer", "text": "Spell each letter with its codeword: 'john@' is Juliett, Oscar, Hotel, November, at-sign. Say 'dot' for periods, 'dash' for hyphens, 'underscore' for _, and 'capital' before uppercase letters."}}]}</script>
 </head>

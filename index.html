@@ -18,6 +18,7 @@
 <meta name="twitter:title" content="Military Communication Reference — NATO Alphabet, Morse Code, Military Time">
 <meta name="twitter:description" content="Complete military communication reference: NATO alphabet, Morse code, military time, Zulu converter, police codes, ham radio Q-codes, signal flags and drill.">
 <meta name="theme-color" content="#4a5c2f">
+<meta name="theme-color" content="#15180f" media="(prefers-color-scheme: dark)">
 <link rel="manifest" href="manifest.json">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="MilRef">
@@ -29,8 +30,8 @@
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
   --olive:#4a5c2f;--olive-l:#6b8042;--olive-d:#2e3a1c;
-  --khaki:#c8b87a;--khaki-d:#9e8f52;
-  --ink:#1a2030;--fog:#7a8a78;
+  --khaki:#c8b87a;--khaki-d:#7a6c38;
+  --ink:#1a2030;--fog:#5c6b5a;
   --surface:#f4f2ec;--card:#fafaf6;
   --border:rgba(74,92,47,0.18);
   --red:#c0392b;--blue:#1a5276;
@@ -61,7 +62,7 @@ body{font-family:'Inter',sans-serif;background:var(--surface);color:var(--ink);m
 .card:hover{border-color:var(--olive-l);transform:translateY(-2px);box-shadow:0 4px 14px rgba(74,92,47,0.1)}
 .card-code{font-family:'Rajdhani',sans-serif;font-size:.95rem;font-weight:700;color:var(--olive-l);margin-bottom:.2rem}
 .card-mean{font-size:.8rem;color:var(--ink);line-height:1.4}
-.card-ctx{font-size:.67rem;color:var(--fog);margin-top:.2rem;font-style:italic}
+.card-ctx{font-size:.75rem;color:var(--fog);margin-top:.2rem;font-style:italic}
 
 /* INPUT / OUTPUT */
 .irow{display:flex;gap:8px;margin-bottom:.65rem;flex-wrap:wrap}
@@ -118,8 +119,8 @@ body{font-family:'Inter',sans-serif;background:var(--surface);color:var(--ink);m
 .ac:hover{border-color:var(--olive-l);transform:translateY(-2px);box-shadow:0 4px 12px rgba(74,92,47,0.1)}
 .ac .l{font-family:'Rajdhani',sans-serif;font-size:1.8rem;font-weight:700;color:var(--olive);line-height:1}
 .ac .w{font-family:'Rajdhani',sans-serif;font-size:.95rem;font-weight:600;color:var(--ink);margin:.12rem 0 .06rem}
-.ac .p{font-family:'Source Code Pro',monospace;font-size:.6rem;color:var(--fog)}
-.ac .o{font-size:.58rem;color:var(--khaki-d);margin-top:.28rem;line-height:1.3}
+.ac .p{font-family:'Source Code Pro',monospace;font-size:.68rem;color:var(--fog)}
+.ac .o{font-size:.68rem;color:var(--khaki-d);margin-top:.28rem;line-height:1.3}
 
 /* QUIZ */
 .quiz-wrap{max-width:380px;margin:0 auto;text-align:center}
@@ -144,7 +145,7 @@ body{font-family:'Inter',sans-serif;background:var(--surface);color:var(--ink);m
 .clock-big{font-family:'Rajdhani',sans-serif;font-size:3.2rem;font-weight:700;color:var(--olive);line-height:1;letter-spacing:.06em}
 .clock-label{font-family:'Source Code Pro',monospace;font-size:.65rem;color:var(--fog);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.3rem}
 .clock-card{background:var(--card);border:1px solid var(--border);border-radius:9px;padding:.9rem;text-align:center}
-.clock-sub{font-size:.68rem;color:var(--fog);margin-top:.2rem}
+.clock-sub{font-size:.75rem;color:var(--fog);margin-top:.2rem}
 .time-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:9px;margin-bottom:1.25rem}
 .mt-result{font-family:'Rajdhani',sans-serif;font-size:2rem;font-weight:700;color:var(--olive);letter-spacing:.06em}
 .mt-sub{font-size:.8rem;color:var(--fog);margin-bottom:1.2rem}
@@ -154,13 +155,13 @@ body{font-family:'Inter',sans-serif;background:var(--surface);color:var(--ink);m
 .pc{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:.7rem .9rem}
 .pc .pcode{font-family:'Rajdhani',sans-serif;font-size:1rem;font-weight:700;color:var(--blue);margin-bottom:.12rem}
 .pc .pmean{font-size:.78rem;color:var(--ink);line-height:1.35}
-.pc .pctx{font-size:.65rem;color:var(--fog);margin-top:.15rem;font-style:italic}
+.pc .pctx{font-size:.72rem;color:var(--fog);margin-top:.15rem;font-style:italic}
 
 /* HAM */
 .qcode{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:.7rem .9rem}
 .qcode .qc{font-family:'Rajdhani',sans-serif;font-size:1rem;font-weight:700;color:var(--olive-l);margin-bottom:.12rem}
 .qcode .qm{font-size:.78rem;color:var(--ink);line-height:1.35}
-.qcode .qx{font-size:.65rem;color:var(--fog);margin-top:.15rem;font-style:italic}
+.qcode .qx{font-size:.72rem;color:var(--fog);margin-top:.15rem;font-style:italic}
 .qcode-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:7px}
 
 /* SIGNAL FLAGS */
@@ -170,7 +171,7 @@ body{font-family:'Inter',sans-serif;background:var(--surface);color:var(--ink);m
 .flag-svg{width:70px;height:56px;margin:0 auto .5rem;display:block}
 .flag-letter{font-family:'Rajdhani',sans-serif;font-size:1.3rem;font-weight:700;color:var(--olive);line-height:1}
 .flag-name{font-family:'Rajdhani',sans-serif;font-size:.8rem;font-weight:600;color:var(--ink);margin:.1rem 0}
-.flag-mean{font-size:.62rem;color:var(--fog);line-height:1.3}
+.flag-mean{font-size:.72rem;color:var(--fog);line-height:1.3}
 
 /* FOOTER */
 .pg-footer{text-align:center;padding:1.2rem;font-family:'Source Code Pro',monospace;font-size:.68rem;color:var(--fog);border-top:1px solid var(--border);margin-top:1.5rem}
@@ -258,11 +259,25 @@ body{font-family:'Inter',sans-serif;background:var(--surface);color:var(--ink);m
 .tool-icon{width:36px;height:36px;background:linear-gradient(135deg,var(--olive-d),var(--olive));border-radius:8px;display:flex;align-items:center;justify-content:center}
 .tool-icon svg{width:18px;height:18px;stroke:#f0ead0;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}
 .tool-name{font-family:"Rajdhani",sans-serif;font-size:1rem;font-weight:700;color:var(--olive)}
-.tool-desc{font-size:.72rem;color:var(--fog);line-height:1.4}
-.tool-count{font-family:"Source Code Pro",monospace;font-size:.62rem;color:var(--khaki-d);margin-top:.2rem}
+.tool-desc{font-size:.78rem;color:var(--fog);line-height:1.4}
+.tool-count{font-family:"Source Code Pro",monospace;font-size:.72rem;color:var(--khaki-d);margin-top:.2rem}
 .section-label{font-family:"Rajdhani",sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--fog);padding:.75rem 1.25rem 0;max-width:900px;margin:0 auto}
 @media(max-width:480px){.hero-title{font-size:1.9rem}.tools-grid{grid-template-columns:repeat(2,1fr);gap:9px;padding:1rem}}
 
+
+@media(prefers-color-scheme:dark){
+  :root{
+    --olive:#93a862;--olive-l:#aec278;--olive-d:#242e14;
+    --khaki:#c8b87a;--khaki-d:#b0a165;
+    --ink:#e6e4d8;--fog:#9aa694;
+    --surface:#15180f;--card:#1e2317;
+    --border:rgba(174,194,120,0.18);
+    --red:#e0705f;--blue:#7fb2d8;
+  }
+  .bnav,.bot-nav,.more-menu{background:#1e2317}
+  .btn,.btn-sec:hover,.qb:hover,.skip{color:#141810}
+  .tool-icon{background:linear-gradient(135deg,#39481f,#5f7533)}
+}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "Military Communication Reference", "alternateName": "MilRef", "url": "https://military-alphabet.pages.dev/", "description": "Free interactive reference: NATO phonetic alphabet, Morse code, military time, police 10-codes, ham radio Q-codes and signal flags."}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the NATO phonetic alphabet?", "acceptedAnswer": {"@type": "Answer", "text": "The NATO phonetic alphabet is the spelling alphabet used by NATO, ICAO aviation and most militaries since 1956. It assigns a codeword to each letter — Alfa, Bravo, Charlie through Zulu — so letters cannot be misheard over radio."}}, {"@type": "Question", "name": "Is this reference free to use?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Every tool — converters, Morse audio, quiz drills — is free, requires no signup, and works offline once loaded. Content is licensed CC BY-NC 4.0."}}, {"@type": "Question", "name": "What is the difference between military time and Zulu time?", "acceptedAnswer": {"@type": "Answer", "text": "Military time is the 24-hour clock (0000–2359) in your local zone. Zulu time is military time fixed to UTC, marked with a Z suffix: 1500Z means 3:00 PM UTC everywhere in the world."}}]}</script>

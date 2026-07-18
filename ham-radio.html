@@ -17,6 +17,7 @@
 <meta name="twitter:title" content="Ham Radio Q-Codes — Complete Reference for Amateur Radio Operators">
 <meta name="twitter:description" content="Complete ham radio Q-code reference: QRZ, QTH, QSL, QSO and more. Abbreviations, RST signal reports, HF band plan, NZ callsigns and ITU regions.">
 <meta name="theme-color" content="#4a5c2f">
+<meta name="theme-color" content="#15180f" media="(prefers-color-scheme: dark)">
 <link rel="manifest" href="manifest.json">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-WZ1SZQYXPC"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-WZ1SZQYXPC');</script>
@@ -26,8 +27,8 @@
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
   --olive:#4a5c2f;--olive-l:#6b8042;--olive-d:#2e3a1c;
-  --khaki:#c8b87a;--khaki-d:#9e8f52;
-  --ink:#1a2030;--fog:#7a8a78;
+  --khaki:#c8b87a;--khaki-d:#7a6c38;
+  --ink:#1a2030;--fog:#5c6b5a;
   --surface:#f4f2ec;--card:#fafaf6;
   --border:rgba(74,92,47,0.18);
   --red:#c0392b;--blue:#1a5276;
@@ -58,7 +59,7 @@ body{font-family:'Inter',sans-serif;background:var(--surface);color:var(--ink);m
 .card:hover{border-color:var(--olive-l);transform:translateY(-2px);box-shadow:0 4px 14px rgba(74,92,47,0.1)}
 .card-code{font-family:'Rajdhani',sans-serif;font-size:.95rem;font-weight:700;color:var(--olive-l);margin-bottom:.2rem}
 .card-mean{font-size:.8rem;color:var(--ink);line-height:1.4}
-.card-ctx{font-size:.67rem;color:var(--fog);margin-top:.2rem;font-style:italic}
+.card-ctx{font-size:.75rem;color:var(--fog);margin-top:.2rem;font-style:italic}
 
 /* INPUT / OUTPUT */
 .irow{display:flex;gap:8px;margin-bottom:.65rem;flex-wrap:wrap}
@@ -115,8 +116,8 @@ body{font-family:'Inter',sans-serif;background:var(--surface);color:var(--ink);m
 .ac:hover{border-color:var(--olive-l);transform:translateY(-2px);box-shadow:0 4px 12px rgba(74,92,47,0.1)}
 .ac .l{font-family:'Rajdhani',sans-serif;font-size:1.8rem;font-weight:700;color:var(--olive);line-height:1}
 .ac .w{font-family:'Rajdhani',sans-serif;font-size:.95rem;font-weight:600;color:var(--ink);margin:.12rem 0 .06rem}
-.ac .p{font-family:'Source Code Pro',monospace;font-size:.6rem;color:var(--fog)}
-.ac .o{font-size:.58rem;color:var(--khaki-d);margin-top:.28rem;line-height:1.3}
+.ac .p{font-family:'Source Code Pro',monospace;font-size:.68rem;color:var(--fog)}
+.ac .o{font-size:.68rem;color:var(--khaki-d);margin-top:.28rem;line-height:1.3}
 
 /* QUIZ */
 .quiz-wrap{max-width:380px;margin:0 auto;text-align:center}
@@ -141,7 +142,7 @@ body{font-family:'Inter',sans-serif;background:var(--surface);color:var(--ink);m
 .clock-big{font-family:'Rajdhani',sans-serif;font-size:3.2rem;font-weight:700;color:var(--olive);line-height:1;letter-spacing:.06em}
 .clock-label{font-family:'Source Code Pro',monospace;font-size:.65rem;color:var(--fog);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.3rem}
 .clock-card{background:var(--card);border:1px solid var(--border);border-radius:9px;padding:.9rem;text-align:center}
-.clock-sub{font-size:.68rem;color:var(--fog);margin-top:.2rem}
+.clock-sub{font-size:.75rem;color:var(--fog);margin-top:.2rem}
 .time-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:9px;margin-bottom:1.25rem}
 .mt-result{font-family:'Rajdhani',sans-serif;font-size:2rem;font-weight:700;color:var(--olive);letter-spacing:.06em}
 .mt-sub{font-size:.8rem;color:var(--fog);margin-bottom:1.2rem}
@@ -151,13 +152,13 @@ body{font-family:'Inter',sans-serif;background:var(--surface);color:var(--ink);m
 .pc{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:.7rem .9rem}
 .pc .pcode{font-family:'Rajdhani',sans-serif;font-size:1rem;font-weight:700;color:var(--blue);margin-bottom:.12rem}
 .pc .pmean{font-size:.78rem;color:var(--ink);line-height:1.35}
-.pc .pctx{font-size:.65rem;color:var(--fog);margin-top:.15rem;font-style:italic}
+.pc .pctx{font-size:.72rem;color:var(--fog);margin-top:.15rem;font-style:italic}
 
 /* HAM */
 .qcode{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:.7rem .9rem}
 .qcode .qc{font-family:'Rajdhani',sans-serif;font-size:1rem;font-weight:700;color:var(--olive-l);margin-bottom:.12rem}
 .qcode .qm{font-size:.78rem;color:var(--ink);line-height:1.35}
-.qcode .qx{font-size:.65rem;color:var(--fog);margin-top:.15rem;font-style:italic}
+.qcode .qx{font-size:.72rem;color:var(--fog);margin-top:.15rem;font-style:italic}
 .qcode-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:7px}
 
 /* SIGNAL FLAGS */
@@ -167,7 +168,7 @@ body{font-family:'Inter',sans-serif;background:var(--surface);color:var(--ink);m
 .flag-svg{width:70px;height:56px;margin:0 auto .5rem;display:block}
 .flag-letter{font-family:'Rajdhani',sans-serif;font-size:1.3rem;font-weight:700;color:var(--olive);line-height:1}
 .flag-name{font-family:'Rajdhani',sans-serif;font-size:.8rem;font-weight:600;color:var(--ink);margin:.1rem 0}
-.flag-mean{font-size:.62rem;color:var(--fog);line-height:1.3}
+.flag-mean{font-size:.72rem;color:var(--fog);line-height:1.3}
 
 /* FOOTER */
 .pg-footer{text-align:center;padding:1.2rem;font-family:'Source Code Pro',monospace;font-size:.68rem;color:var(--fog);border-top:1px solid var(--border);margin-top:1.5rem}
@@ -243,6 +244,20 @@ body{font-family:'Inter',sans-serif;background:var(--surface);color:var(--ink);m
 }
 
 
+
+@media(prefers-color-scheme:dark){
+  :root{
+    --olive:#93a862;--olive-l:#aec278;--olive-d:#242e14;
+    --khaki:#c8b87a;--khaki-d:#b0a165;
+    --ink:#e6e4d8;--fog:#9aa694;
+    --surface:#15180f;--card:#1e2317;
+    --border:rgba(174,194,120,0.18);
+    --red:#e0705f;--blue:#7fb2d8;
+  }
+  .bnav,.bot-nav,.more-menu{background:#1e2317}
+  .btn,.btn-sec:hover,.qb:hover,.skip{color:#141810}
+  .tool-icon{background:linear-gradient(135deg,#39481f,#5f7533)}
+}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What does QRZ mean?", "acceptedAnswer": {"@type": "Answer", "text": "QRZ asks 'who is calling me?'. It is one of the three-letter Q-codes standardized so operators can exchange routine information regardless of language — QTH is 'my location', QSL is 'I confirm receipt'."}}, {"@type": "Question", "name": "What does 73 mean in ham radio?", "acceptedAnswer": {"@type": "Answer", "text": "'73' means 'best regards' — a sign-off inherited from the 1859 Western Union number code list. '88' means 'love and kisses', so use 73 unless you know the operator very well."}}, {"@type": "Question", "name": "Do I need a license to listen to ham radio?", "acceptedAnswer": {"@type": "Answer", "text": "No — listening (shortwave listening, SWL) is legal in most countries with any receiver. Transmitting requires an amateur licence; in New Zealand that is the General Amateur Operator Certificate administered by RSM."}}, {"@type": "Question", "name": "What is an RST report?", "acceptedAnswer": {"@type": "Answer", "text": "RST scores a signal by Readability 1–5, Strength 1–9 and Tone 1–9 (tone applies to Morse/CW only). '599' — perfectly readable, extremely strong, pure tone — is the classic contest report."}}]}</script>
 </head>
