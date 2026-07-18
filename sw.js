@@ -1,7 +1,7 @@
-const CACHE = 'milref-v1';
+const CACHE = 'milref-v2';
 const ASSETS = [
-  '/military-alphabet/',
-  '/military-alphabet/index.html',
+  './',
+  './index.html',
   'https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=Source+Code+Pro:wght@400;500&family=Inter:wght@400;500&display=swap'
 ];
 

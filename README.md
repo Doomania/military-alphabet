@@ -2,7 +2,7 @@
 
 Complete interactive military communication reference — built for cybersecurity analysts, emergency responders, pilots, ham radio operators, and anyone who needs clear voice communication.
 
-🔗 **https://doomania.github.io/military-alphabet**
+🔗 **https://military-alphabet.pages.dev** (canonical) · mirror: https://doomania.github.io/military-alphabet
 
 ---
 

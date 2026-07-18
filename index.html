@@ -8,7 +8,15 @@
 <meta name="keywords" content="NATO phonetic alphabet, military alphabet, morse code, military time, zulu time, police 10 codes, ham radio, signal flags">
 <meta name="author" content="doomania">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://doomania.github.io/military-alphabet/">
+<link rel="canonical" href="https://military-alphabet.pages.dev/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Military Communication Reference">
+<meta property="og:title" content="Military Communication Reference — NATO Alphabet, Morse Code, Military Time">
+<meta property="og:description" content="Complete military communication reference: NATO alphabet, Morse code, military time, Zulu converter, police codes, ham radio Q-codes, signal flags and drill.">
+<meta property="og:url" content="https://military-alphabet.pages.dev/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Military Communication Reference — NATO Alphabet, Morse Code, Military Time">
+<meta name="twitter:description" content="Complete military communication reference: NATO alphabet, Morse code, military time, Zulu converter, police codes, ham radio Q-codes, signal flags and drill.">
 <meta name="theme-color" content="#4a5c2f">
 <link rel="manifest" href="manifest.json">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -256,6 +264,8 @@ body{font-family:'Inter',sans-serif;background:var(--surface);color:var(--ink);m
 @media(max-width:480px){.hero-title{font-size:1.9rem}.tools-grid{grid-template-columns:repeat(2,1fr);gap:9px;padding:1rem}}
 
 </style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "Military Communication Reference", "alternateName": "MilRef", "url": "https://military-alphabet.pages.dev/", "description": "Free interactive reference: NATO phonetic alphabet, Morse code, military time, police 10-codes, ham radio Q-codes and signal flags."}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the NATO phonetic alphabet?", "acceptedAnswer": {"@type": "Answer", "text": "The NATO phonetic alphabet is the spelling alphabet used by NATO, ICAO aviation and most militaries since 1956. It assigns a codeword to each letter — Alfa, Bravo, Charlie through Zulu — so letters cannot be misheard over radio."}}, {"@type": "Question", "name": "Is this reference free to use?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Every tool — converters, Morse audio, quiz drills — is free, requires no signup, and works offline once loaded. Content is licensed CC BY-NC 4.0."}}, {"@type": "Question", "name": "What is the difference between military time and Zulu time?", "acceptedAnswer": {"@type": "Answer", "text": "Military time is the 24-hour clock (0000–2359) in your local zone. Zulu time is military time fixed to UTC, marked with a Z suffix: 1500Z means 3:00 PM UTC everywhere in the world."}}]}</script>
 </head>
 <body>
 <a href="#tools" class="skip">Skip to tools</a>
@@ -266,6 +276,7 @@ body{font-family:'Inter',sans-serif;background:var(--surface);color:var(--ink);m
     <p class="hero-sub">Interactive tools for military, emergency services, aviation, cybersecurity and ham radio</p>
   </div>
 </div>
+<div class="content" style="padding-bottom:0"><p style="font-size:.85rem;line-height:1.7;margin-bottom:1.25rem;max-width:720px">Military Communication Reference (MilRef) is a free interactive reference for the NATO phonetic alphabet, Morse code, military time and Zulu conversion, police 10-codes, ham radio Q-codes and maritime signal flags. Every tool runs in your browser — no signup, works offline.</p></div>
 <div class="section-label" id="tools">Reference Tools</div>
 <div class="tools-grid">
   <a class="tool-card" href="alphabet.html">
@@ -310,6 +321,12 @@ body{font-family:'Inter',sans-serif;background:var(--surface);color:var(--ink);m
     <div class="tool-desc">Randomised quiz across all categories — test your knowledge</div>
     <div class="tool-count">5 modes · streak counter</div>
   </a>
+</div>
+<div class="content" style="padding-top:0">
+<h2 class="st">Frequently Asked Questions</h2>
+<div class="info-box" style="margin-bottom:.6rem"><h3 style="font-size:.85rem;margin-bottom:.25rem">What is the NATO phonetic alphabet?</h3><p>The NATO phonetic alphabet is the spelling alphabet used by NATO, ICAO aviation and most militaries since 1956. It assigns a codeword to each letter — Alfa, Bravo, Charlie through Zulu — so letters cannot be misheard over radio.</p></div>
+<div class="info-box" style="margin-bottom:.6rem"><h3 style="font-size:.85rem;margin-bottom:.25rem">Is this reference free to use?</h3><p>Yes. Every tool — converters, Morse audio, quiz drills — is free, requires no signup, and works offline once loaded. Content is licensed CC BY-NC 4.0.</p></div>
+<div class="info-box" style="margin-bottom:.6rem"><h3 style="font-size:.85rem;margin-bottom:.25rem">What is the difference between military time and Zulu time?</h3><p>Military time is the 24-hour clock (0000–2359) in your local zone. Zulu time is military time fixed to UTC, marked with a Z suffix: 1500Z means 3:00 PM UTC everywhere in the world.</p></div>
 </div>
 <footer class="pg-footer">© 2025 <a href="index.html">doomania</a> · <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></footer>
 <script>
@@ -412,8 +429,8 @@ document.addEventListener('click',e=>{
 
 buildNav('home');
 
-if('serviceWorker' in navigator && location.hostname==='doomania.github.io'){
-  navigator.serviceWorker.register('/military-alphabet/sw.js').catch(()=>{});
+if('serviceWorker' in navigator){
+  navigator.serviceWorker.register('sw.js').catch(()=>{});
 }
 </script>
 </body>

@@ -7,7 +7,15 @@
 <meta name="description" content="Translate text to Morse code and back. Play Morse audio at adjustable speed. Full A-Z and 0-9 reference. SOS and history.">
 <meta name="author" content="doomania">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://doomania.github.io/military-alphabet/morse.html">
+<link rel="canonical" href="https://military-alphabet.pages.dev/morse.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Military Communication Reference">
+<meta property="og:title" content="Morse Code Translator — Encode, Decode and Play Audio">
+<meta property="og:description" content="Translate text to Morse code and back. Play Morse audio at adjustable speed. Full A-Z and 0-9 reference. SOS and history.">
+<meta property="og:url" content="https://military-alphabet.pages.dev/morse.html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Morse Code Translator — Encode, Decode and Play Audio">
+<meta name="twitter:description" content="Translate text to Morse code and back. Play Morse audio at adjustable speed. Full A-Z and 0-9 reference. SOS and history.">
 <meta name="theme-color" content="#4a5c2f">
 <link rel="manifest" href="manifest.json">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-WZ1SZQYXPC"></script>
@@ -236,6 +244,7 @@ body{font-family:'Inter',sans-serif;background:var(--surface);color:var(--ink);m
 
 
 </style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is SOS in Morse code?", "acceptedAnswer": {"@type": "Answer", "text": "SOS is ... --- ... — three dots, three dashes, three dots, sent as one continuous sequence with no letter spacing. It was adopted in 1906 because it is unmistakable; the letters do not stand for anything."}}, {"@type": "Question", "name": "Is Morse code still used today?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Amateur radio operators use it daily (CW mode), aviation navigation beacons identify themselves in Morse, and navies still train signalmen. It stopped being required for maritime distress in 1999 when GMDSS replaced it."}}, {"@type": "Question", "name": "How long does it take to learn Morse code?", "acceptedAnswer": {"@type": "Answer", "text": "Most learners reach basic proficiency in one to three months with 15–20 minutes of daily practice. Learning by sound at full character speed (the Koch method) works better than memorizing dot-dash charts."}}]}</script>
 </head>
 <body>
 <a href="#main" class="skip">Skip to content</a>
@@ -245,7 +254,7 @@ body{font-family:'Inter',sans-serif;background:var(--surface);color:var(--ink);m
   <p class="pg-sub">Encode · Decode · Play audio · Full A-Z and 0-9 reference</p>
 </div></header>
 <main class="content" id="main">
-  <div class="st">Text to Morse</div>
+  <h2 class="st">Text to Morse</h2>
   <div class="irow">
     <input id="min" placeholder="Type text... e.g. SOS" maxlength="80" aria-label="Text to encode" onkeydown="if(event.key==='Enter')toMorse()"/>
     <button class="btn" onclick="toMorse()">Encode</button>
@@ -260,13 +269,13 @@ body{font-family:'Inter',sans-serif;background:var(--surface);color:var(--ink);m
       </select>
     </span>
   </div>
-  <div class="st" style="margin-top:1.5rem">Morse to Text</div>
+  <h2 class="st" style="margin-top:1.5rem">Morse to Text</h2>
   <div class="irow">
     <input id="mdin" placeholder="e.g. ... --- ... / ... --- ..." maxlength="300" aria-label="Morse code to decode" onkeydown="if(event.key==='Enter')fromMorse()"/>
     <button class="btn" onclick="fromMorse()">Decode</button>
   </div>
   <div class="out-box" id="mdout" aria-live="polite">Decoded text appears here...</div>
-  <div class="st">A-Z Reference</div>
+  <h2 class="st">A-Z Reference</h2>
   <div class="morse-grid"><div class="mc"><div class="ml">A</div><div class="mm">.-</div></div>
 <div class="mc"><div class="ml">B</div><div class="mm">-...</div></div>
 <div class="mc"><div class="ml">C</div><div class="mm">-.-.</div></div>
@@ -293,7 +302,7 @@ body{font-family:'Inter',sans-serif;background:var(--surface);color:var(--ink);m
 <div class="mc"><div class="ml">X</div><div class="mm">-..-</div></div>
 <div class="mc"><div class="ml">Y</div><div class="mm">-.--</div></div>
 <div class="mc"><div class="ml">Z</div><div class="mm">--..</div></div></div>
-  <div class="st">0-9 Reference</div>
+  <h2 class="st">0-9 Reference</h2>
   <div class="morse-grid"><div class="mc"><div class="ml">0</div><div class="mm">-----</div></div>
 <div class="mc"><div class="ml">1</div><div class="mm">.----</div></div>
 <div class="mc"><div class="ml">2</div><div class="mm">..---</div></div>
@@ -304,12 +313,16 @@ body{font-family:'Inter',sans-serif;background:var(--surface);color:var(--ink);m
 <div class="mc"><div class="ml">7</div><div class="mm">--...</div></div>
 <div class="mc"><div class="ml">8</div><div class="mm">---..</div></div>
 <div class="mc"><div class="ml">9</div><div class="mm">----.</div></div></div>
-  <div class="st">Rules and Timing</div>
+  <h2 class="st">Rules and Timing</h2>
   <div class="info-box">
     <strong>dot</strong> = 1 unit &nbsp;·&nbsp; <strong>dash</strong> = 3 units &nbsp;·&nbsp; Gap between signals = 1 unit &nbsp;·&nbsp; Gap between letters = 3 units &nbsp;·&nbsp; Gap between words = 7 units<br><br>
     <strong>SOS</strong> was adopted as the international distress signal in 1906 — chosen for simplicity, not as an abbreviation. Still valid on maritime and aviation frequencies.
   </div>
 </main>
+<h2 class="st">Frequently Asked Questions</h2>
+<div class="info-box" style="margin-bottom:.6rem"><h3 style="font-size:.85rem;margin-bottom:.25rem">What is SOS in Morse code?</h3><p>SOS is ... --- ... — three dots, three dashes, three dots, sent as one continuous sequence with no letter spacing. It was adopted in 1906 because it is unmistakable; the letters do not stand for anything.</p></div>
+<div class="info-box" style="margin-bottom:.6rem"><h3 style="font-size:.85rem;margin-bottom:.25rem">Is Morse code still used today?</h3><p>Yes. Amateur radio operators use it daily (CW mode), aviation navigation beacons identify themselves in Morse, and navies still train signalmen. It stopped being required for maritime distress in 1999 when GMDSS replaced it.</p></div>
+<div class="info-box" style="margin-bottom:.6rem"><h3 style="font-size:.85rem;margin-bottom:.25rem">How long does it take to learn Morse code?</h3><p>Most learners reach basic proficiency in one to three months with 15–20 minutes of daily practice. Learning by sound at full character speed (the Koch method) works better than memorizing dot-dash charts.</p></div>
 <footer class="pg-footer">© 2025 <a href="index.html">doomania</a> · <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></footer>
 <script>
 const NAV_PAGES=[
@@ -470,8 +483,8 @@ function playMorse(){
   setTimeout(() => { btn.textContent = 'Play Audio'; btn.disabled = false; playing = false; }, (t - audioCtx.currentTime) * 1000 + 200);
 }
 
-if('serviceWorker' in navigator && location.hostname==='doomania.github.io'){
-  navigator.serviceWorker.register('/military-alphabet/sw.js').catch(()=>{});
+if('serviceWorker' in navigator){
+  navigator.serviceWorker.register('sw.js').catch(()=>{});
 }
 </script>
 </body>

@@ -362,8 +362,8 @@ document.addEventListener('click',e=>{
 });
 
 buildNav('');
-if('serviceWorker' in navigator && location.hostname==='doomania.github.io'){
-  navigator.serviceWorker.register('/military-alphabet/sw.js').catch(()=>{});
+if('serviceWorker' in navigator){
+  navigator.serviceWorker.register('sw.js').catch(()=>{});
 }
 // Auto redirect after 10 seconds
 let secs = 10;

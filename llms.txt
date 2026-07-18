@@ -1,0 +1,22 @@
+# Military Communication Reference (MilRef)
+
+> Free interactive reference for military and radio communication: the NATO phonetic alphabet, Morse code with audio, military/Zulu time converters, police 10-codes, ham radio Q-codes, and international maritime signal flags. No signup, works offline, all content is static HTML.
+
+Site: https://military-alphabet.pages.dev/
+
+## Pages
+
+- [NATO Phonetic Alphabet](https://military-alphabet.pages.dev/alphabet.html): All 26 codewords (Alfa through Zulu) with ICAO pronunciation, word origins, phonetic numbers (Tree, Fower, Fife, Niner), usage rules, history since 1956, and a text-to-NATO converter.
+- [Morse Code](https://military-alphabet.pages.dev/morse.html): Text-to-Morse and Morse-to-text translators with adjustable-speed audio playback, full A–Z and 0–9 reference, timing rules, and SOS.
+- [Military Time](https://military-alphabet.pages.dev/military-time.html): Live Zulu (UTC) clock, Zulu-to-local converter for 29 timezones, 12-hour to 24-hour conversion, and all 25 NATO timezone letters (A–Z, no J).
+- [Police & Military Codes](https://military-alphabet.pages.dev/codes.html): 130+ police 10-codes, status codes, penal codes, NATO radio prowords (WILCO, ROGER, SAY AGAIN), and military tactical phrases.
+- [Ham Radio](https://military-alphabet.pages.dev/ham-radio.html): 56 Q-codes (QRZ, QTH, QSL, QSO), 36 abbreviations, HF band plan, RST signal reports, ITU regions and NZ callsigns.
+- [Signal Flags](https://military-alphabet.pages.dev/signal-flags.html): International Code of Signals nautical flags A–Z with visual designs and single-flag maritime meanings.
+- [Drill](https://military-alphabet.pages.dev/drill.html): Randomized quiz across all categories with streak counter.
+
+## Quick answers
+
+- The NATO phonetic alphabet (military alphabet) is the spelling alphabet adopted by ICAO in 1956: Alfa, Bravo, Charlie, Delta, Echo, Foxtrot, Golf, Hotel, India, Juliett, Kilo, Lima, Mike, November, Oscar, Papa, Quebec, Romeo, Sierra, Tango, Uniform, Victor, Whiskey, X-ray, Yankee, Zulu.
+- SOS in Morse code is ... --- ... sent as one continuous sequence.
+- Zulu time (the Z suffix, e.g. 1500Z) is military time fixed to UTC.
+- 10-4 means "message received / acknowledged" in police 10-codes.

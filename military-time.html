@@ -7,7 +7,15 @@
 <meta name="description" content="Live military time clock, Zulu to local time converter for 29 timezones, 12-hour to military time converter, NATO time zone letters and NZT converter.">
 <meta name="author" content="doomania">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://doomania.github.io/military-alphabet/military-time.html">
+<link rel="canonical" href="https://military-alphabet.pages.dev/military-time.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Military Communication Reference">
+<meta property="og:title" content="Military Time Converter — Zulu Time, World Clocks and NZT">
+<meta property="og:description" content="Live military time clock, Zulu to local time converter for 29 timezones, 12-hour to military time converter, NATO time zone letters and NZT converter.">
+<meta property="og:url" content="https://military-alphabet.pages.dev/military-time.html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Military Time Converter — Zulu Time, World Clocks and NZT">
+<meta name="twitter:description" content="Live military time clock, Zulu to local time converter for 29 timezones, 12-hour to military time converter, NATO time zone letters and NZT converter.">
 <meta name="theme-color" content="#4a5c2f">
 <link rel="manifest" href="manifest.json">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-WZ1SZQYXPC"></script>
@@ -236,6 +244,7 @@ body{font-family:'Inter',sans-serif;background:var(--surface);color:var(--ink);m
 
 .dual-clocks{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:1.25rem}.nzt-card{border:2px solid var(--olive-l)}@media(max-width:380px){.dual-clocks{grid-template-columns:1fr}}
 </style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What does the Z in 1500Z mean?", "acceptedAnswer": {"@type": "Answer", "text": "Z stands for Zulu, the NATO timezone letter for UTC (zero offset). 1500Z is 3:00 PM UTC regardless of where the sender is — militaries use it so orders carry one unambiguous time."}}, {"@type": "Question", "name": "Is midnight 0000 or 2400?", "acceptedAnswer": {"@type": "Answer", "text": "Both are valid: 0000 marks the start of a day and 2400 marks the end of the previous day. 0000 is the standard choice; 2400 appears mainly on schedules to show a closing time."}}, {"@type": "Question", "name": "How do I convert PM time to military time?", "acceptedAnswer": {"@type": "Answer", "text": "Add 12 to the hour: 3:30 PM becomes 1530, 11:00 PM becomes 2300. AM times keep their hour with a leading zero — 7:15 AM is 0715. Noon is 1200 and midnight is 0000."}}]}</script>
 </head>
 <body>
 <a href="#main" class="skip">Skip to content</a>
@@ -245,7 +254,7 @@ body{font-family:'Inter',sans-serif;background:var(--surface);color:var(--ink);m
   <p class="pg-sub">Live clocks · Zulu to any timezone · 12-hour converter · NATO zone letters</p>
 </div></header>
 <main class="content" id="main">
-  <div class="st">Live Clocks</div>
+  <h2 class="st">Live Clocks</h2>
   <div class="dual-clocks">
     <div class="clock-card">
       <div class="clock-label">Zulu (UTC+0)</div>
@@ -259,7 +268,7 @@ body{font-family:'Inter',sans-serif;background:var(--surface);color:var(--ink);m
       <div style="font-size:.65rem;color:var(--fog);margin-top:.1rem" id="local-dst"></div>
     </div>
   </div>
-  <div class="st">Zulu to Local Converter</div>
+  <h2 class="st">Zulu to Local Converter</h2>
   <div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:.9rem;margin-bottom:1rem">
     <div class="irow">
       <span style="font-family:Source Code Pro,monospace;font-size:11px;color:var(--fog);align-self:center;white-space:nowrap">Zulu (UTC):</span>
@@ -277,33 +286,37 @@ body{font-family:'Inter',sans-serif;background:var(--surface);color:var(--ink);m
       <button class="btn btn-sec" onclick="copyZconv()" id="zcopy-btn" style="font-size:.75rem;padding:.4rem .9rem">Copy Result</button>
     </div>
   </div>
-  <div class="st">12-Hour to Military</div>
+  <h2 class="st">12-Hour to Military</h2>
   <div class="irow">
     <input type="time" id="civil-in" value="13:30" aria-label="12-hour time" onchange="toMil()"/>
     <button class="btn" onclick="toMil()">Convert</button>
   </div>
   <div class="mt-result" id="mil-res">1330</div>
   <div class="mt-sub" id="mil-say">Say: "Thirteen Thirty Hours"</div>
-  <div class="st">Military to 12-Hour</div>
+  <h2 class="st">Military to 12-Hour</h2>
   <div class="irow">
     <input id="mil-in" placeholder="e.g. 1430" maxlength="4" aria-label="Military time 4 digits" style="max-width:110px;font-size:16px" onkeydown="if(event.key==='Enter')fromMil()"/>
     <button class="btn" onclick="fromMil()">Convert</button>
   </div>
   <div class="mt-result" id="civ-res">2:30 PM</div>
   <div class="mt-sub" id="civ-say">Military: 1430 Hours</div>
-  <div class="st">World Zones</div>
+  <h2 class="st">World Zones</h2>
   <div class="time-grid" id="world-grid"></div>
-  <div class="st">Quick Reference</div>
+  <h2 class="st">Quick Reference</h2>
   <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:7px;margin-bottom:1.25rem" id="ref-grid"></div>
-  <div class="st">NATO Timezone Letters</div>
+  <h2 class="st">NATO Timezone Letters</h2>
   <div class="grid-wide" id="tz-letters"></div>
-  <div class="st">How to Read Military Time</div>
+  <h2 class="st">How to Read Military Time</h2>
   <div class="info-box">
     <strong>Format:</strong> 4-digit 24-hour clock (HHMM). No AM/PM, no colon.<br><br>
     <strong>Pronunciation:</strong> "0830" = "Zero Eight Thirty Hours" · "1545" = "Fifteen Forty-Five Hours" · "0000" = "Zero Hundred Hours"<br><br>
     <strong>Why no AM/PM?</strong> A supply drop at "3:00" in combat — 0300 or 1500? Military time eliminates all ambiguity.
   </div>
 </main>
+<h2 class="st">Frequently Asked Questions</h2>
+<div class="info-box" style="margin-bottom:.6rem"><h3 style="font-size:.85rem;margin-bottom:.25rem">What does the Z in 1500Z mean?</h3><p>Z stands for Zulu, the NATO timezone letter for UTC (zero offset). 1500Z is 3:00 PM UTC regardless of where the sender is — militaries use it so orders carry one unambiguous time.</p></div>
+<div class="info-box" style="margin-bottom:.6rem"><h3 style="font-size:.85rem;margin-bottom:.25rem">Is midnight 0000 or 2400?</h3><p>Both are valid: 0000 marks the start of a day and 2400 marks the end of the previous day. 0000 is the standard choice; 2400 appears mainly on schedules to show a closing time.</p></div>
+<div class="info-box" style="margin-bottom:.6rem"><h3 style="font-size:.85rem;margin-bottom:.25rem">How do I convert PM time to military time?</h3><p>Add 12 to the hour: 3:30 PM becomes 1530, 11:00 PM becomes 2300. AM times keep their hour with a leading zero — 7:15 AM is 0715. Noon is 1200 and midnight is 0000.</p></div>
 <footer class="pg-footer">© 2025 <a href="index.html">doomania</a> · <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></footer>
 <script>
 const NAV_PAGES=[
@@ -426,8 +439,8 @@ MILREF.forEach(r=>{const d=document.createElement('div');d.className='card';d.in
 TZ_LETTERS.forEach(tz=>{const d=document.createElement('div');d.className='card';d.innerHTML='<div class="card-code">'+tz.l+' — '+tz.name+'</div><div class="card-mean">'+tz.offset+'</div><div class="card-ctx">'+tz.note+'</div>';document.getElementById('tz-letters').appendChild(d)});
 buildTzSelect();toMil();updateClocks();setInterval(updateClocks,1000);
 
-if('serviceWorker' in navigator && location.hostname==='doomania.github.io'){
-  navigator.serviceWorker.register('/military-alphabet/sw.js').catch(()=>{});
+if('serviceWorker' in navigator){
+  navigator.serviceWorker.register('sw.js').catch(()=>{});
 }
 </script>
 </body>

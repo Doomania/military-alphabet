@@ -1,11 +1,20 @@
-# Allow all search engines to crawl the site
+# All crawlers welcome, including AI crawlers
 User-agent: *
 Allow: /
 
-# Direct search engines to your sitemap
-Sitemap: https://doomania.github.io/military-alphabet/sitemap.xml
+User-agent: GPTBot
+Allow: /
 
-# Optional: Prevent crawling of specific system folders if you use Jekyll
-Disallow: /_drafts/
-Disallow: /_includes/
-Disallow: /_layouts/
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://military-alphabet.pages.dev/sitemap.xml

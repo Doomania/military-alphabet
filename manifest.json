@@ -2,8 +2,8 @@
   "name": "Military Communication Reference",
   "short_name": "MilRef",
   "description": "NATO phonetic alphabet, Morse code, military time, Zulu converter, police 10-codes and more.",
-  "start_url": "/military-alphabet/",
-  "scope": "/military-alphabet/",
+  "start_url": "./",
+  "scope": "./",
   "display": "standalone",
   "orientation": "any",
   "background_color": "#f4f2ec",
@@ -24,39 +24,30 @@
       "purpose": "any maskable"
     }
   ],
-  "screenshots": [
-    {
-      "src": "og-image.png",
-      "sizes": "1200x630",
-      "type": "image/png",
-      "form_factor": "wide",
-      "label": "Military Communication Reference — Desktop"
-    }
-  ],
   "shortcuts": [
     {
       "name": "NATO Alphabet",
       "short_name": "Alphabet",
       "description": "View NATO phonetic alphabet cards",
-      "url": "/military-alphabet/#alphabet"
+      "url": "./#alphabet"
     },
     {
       "name": "Morse Code",
       "short_name": "Morse",
       "description": "Encode and decode Morse code",
-      "url": "/military-alphabet/#morse"
+      "url": "./#morse"
     },
     {
       "name": "Military Time",
       "short_name": "Mil Time",
       "description": "Convert military and Zulu time",
-      "url": "/military-alphabet/#miltime"
+      "url": "./#miltime"
     },
     {
       "name": "Police Codes",
       "short_name": "10-Codes",
       "description": "Police 10-codes reference",
-      "url": "/military-alphabet/#police"
+      "url": "./#police"
     }
   ]
 }
