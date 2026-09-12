@@ -1,9 +1,5 @@
-const CACHE = 'milref-v3';
-const ASSETS = [
-  './',
-  './index.html',
-  'https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=Source+Code+Pro:wght@400;500&family=Inter:wght@400;500&display=swap'
-];
+const CACHE = 'milref-v4';
+const ASSETS = ['./', './reference.css'];
 
 self.addEventListener('install', e => {
   e.waitUntil(
@@ -36,7 +32,7 @@ self.addEventListener('fetch', e => {
     // network-first: deploys reach returning visitors; cache is the offline fallback
     e.respondWith(
       fetch(e.request).then(res => cachePut(e.request, res))
-        .catch(() => caches.match(e.request).then(c => c || caches.match('./index.html')))
+        .catch(() => caches.match(e.request).then(c => c || caches.match('./')))
     );
   } else {
     e.respondWith(

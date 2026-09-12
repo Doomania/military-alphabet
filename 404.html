@@ -255,6 +255,8 @@ body{font-family:'Inter',sans-serif;background:var(--surface);color:var(--ink);m
   .tool-icon{background:linear-gradient(135deg,#39481f,#5f7533)}
 }
 </style>
+<link rel="stylesheet" href="reference.css">
+<noscript><style>.top-nav-links{display:flex!important;flex-wrap:wrap}.top-nav-inner{height:auto;min-height:48px;flex-wrap:wrap}.hamburger{display:none!important}.js-only{display:none!important}</style></noscript>
 </head>
 <body>
 <header class="pg-hdr"><div class="pg-hdr-inner">
@@ -266,28 +268,28 @@ body{font-family:'Inter',sans-serif;background:var(--surface);color:var(--ink);m
   <div class="notfound-code">404</div>
   <div class="notfound-title">Radio silence.</div>
   <p class="notfound-sub">That page is not in the net. The URL may have changed or the page doesn't exist. Return to base and try one of the links below.</p>
-  <a href="index.html" class="btn" style="display:inline-block;text-decoration:none">Return to Home Base</a>
+  <a href="./" class="btn" style="display:inline-block;text-decoration:none">Return to Home Base</a>
   <div class="notfound-links">
-    <a href="alphabet.html" class="nl"><span class="nl-label">Reference</span>NATO Alphabet</a>
-    <a href="morse.html" class="nl"><span class="nl-label">Reference</span>Morse Code</a>
-    <a href="military-time.html" class="nl"><span class="nl-label">Reference</span>Military Time</a>
-    <a href="codes.html" class="nl"><span class="nl-label">Reference</span>Police Codes</a>
-    <a href="ham-radio.html" class="nl"><span class="nl-label">Reference</span>Ham Radio</a>
-    <a href="signal-flags.html" class="nl"><span class="nl-label">Reference</span>Signal Flags</a>
-    <a href="drill.html" class="nl"><span class="nl-label">Practice</span>Drill Mode</a>
+    <a href="alphabet" class="nl"><span class="nl-label">Reference</span>NATO Alphabet</a>
+    <a href="morse" class="nl"><span class="nl-label">Reference</span>Morse Code</a>
+    <a href="military-time" class="nl"><span class="nl-label">Reference</span>Military Time</a>
+    <a href="codes" class="nl"><span class="nl-label">Reference</span>Police Codes</a>
+    <a href="ham-radio" class="nl"><span class="nl-label">Reference</span>Ham Radio</a>
+    <a href="signal-flags" class="nl"><span class="nl-label">Reference</span>Signal Flags</a>
+    <a href="drill" class="nl"><span class="nl-label">Practice</span>Drill Mode</a>
   </div>
 </div>
-<footer class="pg-footer">© 2025 <a href="index.html">doomania</a> · <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></footer>
+<footer class="pg-footer">© 2025 <a href="./">doomania</a> · <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></footer>
 <script>
 const NAV_PAGES=[
-  {id:'home',   label:'Home',        url:'index.html'},
-  {id:'alpha',  label:'Alphabet',    url:'alphabet.html'},
-  {id:'morse',  label:'Morse Code',  url:'morse.html'},
-  {id:'time',   label:'Mil Time',    url:'military-time.html'},
-  {id:'codes',  label:'Codes',       url:'codes.html'},
-  {id:'ham',    label:'Ham Radio',   url:'ham-radio.html'},
-  {id:'flags',  label:'Sig Flags',   url:'signal-flags.html'},
-  {id:'drill',  label:'Drill',       url:'drill.html'},
+  {id:'home',   label:'Home',        url:'./'},
+  {id:'alpha',  label:'Alphabet',    url:'alphabet'},
+  {id:'morse',  label:'Morse Code',  url:'morse'},
+  {id:'time',   label:'Mil Time',    url:'military-time'},
+  {id:'codes',  label:'Codes',       url:'codes'},
+  {id:'ham',    label:'Ham Radio',   url:'ham-radio'},
+  {id:'flags',  label:'Sig Flags',   url:'signal-flags'},
+  {id:'drill',  label:'Drill',       url:'drill'},
 ];
 
 const NAV_ICONS={
@@ -312,7 +314,7 @@ function buildNav(currentId){
   topNav.setAttribute('aria-label','Main navigation');
   topNav.innerHTML=`
     <div class="top-nav-inner">
-      <a href="index.html" class="top-nav-brand">
+      <a href="./" class="top-nav-brand">
         <span class="tnb-badge">MilRef</span>
       </a>
       <div class="top-nav-links">

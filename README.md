@@ -11,13 +11,13 @@ Complete interactive military communication reference — built for cybersecurit
 | Page | URL | What's inside |
 |------|-----|---------------|
 | **Home** | `/` | Hub — links to all tools |
-| **NATO Alphabet** | `/alphabet.html` | 26 codewords, pronunciation, origin, text converter |
-| **Morse Code** | `/morse.html` | Encode, decode, live audio playback, A–Z and 0–9 |
-| **Military Time** | `/military-time.html` | Live Zulu clock, Zulu to any timezone, 12-hr converter, world zones |
-| **Police Codes** | `/codes.html` | 10-codes, status codes, penal codes, prowords, tactical phrases |
-| **Ham Radio** | `/ham-radio.html` | Q-codes, abbreviations, HF band plan, RST, NZ callsigns |
-| **Signal Flags** | `/signal-flags.html` | ICS nautical flags A–Z with SVG visuals and maritime meanings |
-| **Drill** | `/drill.html` | Randomised quiz — NATO, Morse, military time, police codes, ham radio |
+| **NATO Alphabet** | `/alphabet` | 26 codewords, pronunciation, origin, text converter |
+| **Morse Code** | `/morse` | Encode, decode, live audio playback, A–Z and 0–9 |
+| **Military Time** | `/military-time` | Live Zulu clock, Zulu to any timezone, 12-hr converter, world zones |
+| **Police Codes** | `/codes` | 10-codes, status codes, penal codes, prowords, tactical phrases |
+| **Ham Radio** | `/ham-radio` | Q-codes, abbreviations, HF band plan, RST, NZ callsigns |
+| **Signal Flags** | `/signal-flags` | ICS nautical flags A–Z with SVG visuals and maritime meanings |
+| **Drill** | `/drill` | Randomised quiz — NATO, Morse, military time, police codes, ham radio |
 
 ---
 
@@ -27,7 +27,7 @@ Complete interactive military communication reference — built for cybersecurit
 - Auto-detects user timezone for Zulu converter
 - Live ticking clocks (Zulu + local)
 - Morse audio via Web Audio API (adjustable speed)
-- Searchable codes page — filters all 130+ codes in real time
+- Searchable codes page — filters reference entries in real time
 - Drill mode with streak counter and score percentage
 - ICS signal flags rendered as pure SVG — no image files needed
 - Installable PWA — works offline after first load
@@ -40,7 +40,7 @@ Complete interactive military communication reference — built for cybersecurit
 
 ## Tech
 
-- 8 standalone HTML files — no framework, no build step, no dependencies
+- 9 content HTML files — no framework, no build step, no dependencies
 - Vanilla JS + CSS only
 - Shared design system via inline CSS and JS across all pages
 - Service worker for offline PWA caching
@@ -64,7 +64,7 @@ military-alphabet/
 ├── 404.html             Custom not found page
 ├── sw.js                Service worker (offline PWA)
 ├── manifest.json        PWA install manifest
-├── sitemap.xml          SEO sitemap (all 8 pages)
+├── sitemap.xml          SEO sitemap (all 9 pages)
 ├── robots.txt           Search engine crawl rules
 ├── _config.yml          Jekyll / GitHub Pages config
 └── LICENSE              CC BY-NC 4.0

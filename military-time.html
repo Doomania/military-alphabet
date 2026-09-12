@@ -7,12 +7,12 @@
 <meta name="description" content="Live military time clock, Zulu to local time converter for 29 timezones, 12-hour to military time converter, NATO time zone letters and NZT converter.">
 <meta name="author" content="doomania">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://military-alphabet.pages.dev/military-time.html">
+<link rel="canonical" href="https://military-alphabet.pages.dev/military-time">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Military Communication Reference">
 <meta property="og:title" content="Military Time Converter — Zulu Time, World Clocks and NZT">
 <meta property="og:description" content="Live military time clock, Zulu to local time converter for 29 timezones, 12-hour to military time converter, NATO time zone letters and NZT converter.">
-<meta property="og:url" content="https://military-alphabet.pages.dev/military-time.html">
+<meta property="og:url" content="https://military-alphabet.pages.dev/military-time">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Military Time Converter — Zulu Time, World Clocks and NZT">
 <meta name="twitter:description" content="Live military time clock, Zulu to local time converter for 29 timezones, 12-hour to military time converter, NATO time zone letters and NZT converter.">
@@ -259,9 +259,12 @@ body{font-family:'Inter',sans-serif;background:var(--surface);color:var(--ink);m
   .tool-icon{background:linear-gradient(135deg,#39481f,#5f7533)}
 }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What does the Z in 1500Z mean?", "acceptedAnswer": {"@type": "Answer", "text": "Z stands for Zulu, the NATO timezone letter for UTC (zero offset). 1500Z is 3:00 PM UTC regardless of where the sender is — militaries use it so orders carry one unambiguous time."}}, {"@type": "Question", "name": "Is midnight 0000 or 2400?", "acceptedAnswer": {"@type": "Answer", "text": "Both are valid: 0000 marks the start of a day and 2400 marks the end of the previous day. 0000 is the standard choice; 2400 appears mainly on schedules to show a closing time."}}, {"@type": "Question", "name": "How do I convert PM time to military time?", "acceptedAnswer": {"@type": "Answer", "text": "Add 12 to the hour: 3:30 PM becomes 1530, 11:00 PM becomes 2300. AM times keep their hour with a leading zero — 7:15 AM is 0715. Noon is 1200 and midnight is 0000."}}, {"@type": "Question", "name": "What is 1700 in normal time?", "acceptedAnswer": {"@type": "Answer", "text": "1700 (seventeen hundred) is 5:00 PM. Common conversions: 1300 = 1 PM, 1500 = 3 PM, 1800 = 6 PM, 2000 = 8 PM, 2200 = 10 PM. Subtract 12 from any hour above 12 to get the PM time."}}, {"@type": "Question", "name": "Why does the military use 24-hour time?", "acceptedAnswer": {"@type": "Answer", "text": "Because 0700 with no AM/PM cannot be misread across radio, written orders and logs — a wrong AM/PM guess moves an operation by 12 hours. It also pairs with Zulu (UTC) so units in different zones share one clock."}}, {"@type": "Question", "name": "What are the NATO time zone letters?", "acceptedAnswer": {"@type": "Answer", "text": "Each letter A–Z except J marks a UTC offset: Z (Zulu) = UTC, A (Alpha) = UTC+1, N (November) = UTC−1, M (Mike) = UTC+12. J (Juliett) means the observer's local time."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What does the Z in 1500Z mean?", "acceptedAnswer": {"@type": "Answer", "text": "Z stands for Zulu, the NATO timezone letter for UTC (zero offset). 1500Z is 3:00 PM UTC regardless of where the sender is — militaries use it so orders carry one unambiguous time."}}, {"@type": "Question", "name": "Is midnight 0000 or 2400?", "acceptedAnswer": {"@type": "Answer", "text": "Both are valid: 0000 marks the start of a day and 2400 marks the end of the previous day. 0000 is the standard choice; 2400 appears mainly on schedules to show a closing time."}}, {"@type": "Question", "name": "How do I convert PM time to military time?", "acceptedAnswer": {"@type": "Answer", "text": "For 1 PM through 11 PM, add 12 to the hour: 3:30 PM becomes 1530. Noon remains 1200. For AM, use 00 for midnight and keep hours 1 through 11 with a leading zero. For example, 12:30 AM becomes 0030."}}, {"@type": "Question", "name": "What is 1700 in normal time?", "acceptedAnswer": {"@type": "Answer", "text": "1700 (seventeen hundred) is 5:00 PM. Common conversions: 1300 = 1 PM, 1500 = 3 PM, 1800 = 6 PM, 2000 = 8 PM, 2200 = 10 PM. Subtract 12 from any hour above 12 to get the PM time."}}, {"@type": "Question", "name": "Why does the military use 24-hour time?", "acceptedAnswer": {"@type": "Answer", "text": "Because 0700 with no AM/PM cannot be misread across radio, written orders and logs — a wrong AM/PM guess moves an operation by 12 hours. It also pairs with Zulu (UTC) so units in different zones share one clock."}}, {"@type": "Question", "name": "What are the NATO time zone letters?", "acceptedAnswer": {"@type": "Answer", "text": "Each letter A–Z except J marks a UTC offset: Z (Zulu) = UTC, A (Alfa) = UTC+1, N (November) = UTC−1, M (Mike) = UTC+12. J (Juliett) means the observer's local time."}}]}</script>
+<link rel="stylesheet" href="reference.css">
+<noscript><style>.top-nav-links{display:flex!important;flex-wrap:wrap}.top-nav-inner{height:auto;min-height:48px;flex-wrap:wrap}.hamburger{display:none!important}.js-only{display:none!important}</style></noscript>
 </head>
 <body>
+<nav class="top-nav" aria-label="Main navigation"><div class="top-nav-inner"><a href="./" class="top-nav-brand"><span class="tnb-badge">MilRef</span></a><div class="top-nav-links"><a href="./" class="tnl">Home</a><a href="alphabet" class="tnl">Alphabet</a><a href="morse" class="tnl">Morse Code</a><a href="military-time" class="tnl active" aria-current="page">Military Time</a><a href="codes" class="tnl">Codes</a><a href="ham-radio" class="tnl">Ham Radio</a><a href="signal-flags" class="tnl">Signal Flags</a><a href="drill" class="tnl">Practice</a></div><button class="hamburger" id="hamburger" type="button" aria-label="Toggle menu" aria-controls="mobile-menu" aria-expanded="false" onclick="toggleMobileMenu()"><span></span><span></span><span></span></button></div><div class="mobile-menu" id="mobile-menu" aria-hidden="true"><a href="./" class="mm-item">Home</a><a href="alphabet" class="mm-item">Alphabet</a><a href="morse" class="mm-item">Morse Code</a><a href="military-time" class="mm-item">Military Time</a><a href="codes" class="mm-item">Codes</a><a href="ham-radio" class="mm-item">Ham Radio</a><a href="signal-flags" class="mm-item">Signal Flags</a><a href="drill" class="mm-item">Practice</a></div></nav>
 <a href="#main" class="skip">Skip to content</a>
 <header class="pg-hdr"><div class="pg-hdr-inner">
   <div class="pg-tag">Military Time · Zulu · NATO Timezones</div>
@@ -269,6 +272,7 @@ body{font-family:'Inter',sans-serif;background:var(--surface);color:var(--ink);m
   <p class="pg-sub">Live clocks · Zulu to any timezone · 12-hour converter · NATO zone letters</p>
 </div></header>
 <main class="content" id="main">
+<div class="reference-actions"><button class="btn btn-sec js-only" type="button" onclick="window.print()">Print reference</button></div>
 <p style="font-size:.85rem;line-height:1.7;margin-bottom:1.25rem;max-width:720px">Military time is the 24-hour clock written without a colon — 0000 to 2359. Zulu time (a Z suffix, e.g. 1500Z) is military time fixed to UTC, so every unit worldwide shares one unambiguous clock.</p>
   <h2 class="st">Live Clocks</h2>
   <div class="dual-clocks">
@@ -284,7 +288,7 @@ body{font-family:'Inter',sans-serif;background:var(--surface);color:var(--ink);m
       <div style="font-size:.65rem;color:var(--fog);margin-top:.1rem" id="local-dst"></div>
     </div>
   </div>
-  <h2 class="st">Zulu to Local Converter</h2>
+  <h2 class="st">Zulu to Local Converter</h2><p class="source-note">Uses today’s UTC date and the selected timezone’s daylight saving rules.</p>
   <div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:.9rem;margin-bottom:1rem">
     <div class="irow">
       <span style="font-family:Source Code Pro,monospace;font-size:11px;color:var(--fog);align-self:center;white-space:nowrap">Zulu (UTC):</span>
@@ -316,39 +320,39 @@ body{font-family:'Inter',sans-serif;background:var(--surface);color:var(--ink);m
   </div>
   <div class="mt-result" id="civ-res">2:30 PM</div>
   <div class="mt-sub" id="civ-say">Military: 1430 Hours</div>
-  <h2 class="st">World Zones</h2>
+  <h2 class="st">Fixed-Offset Zone Clocks</h2><p class="source-note">These clocks use the displayed fixed offsets. Use the local timezone converter for daylight saving adjustments.</p>
   <div class="time-grid" id="world-grid"></div>
   <h2 class="st">Quick Reference</h2>
-  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:7px;margin-bottom:1.25rem" id="ref-grid"></div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:7px;margin-bottom:1.25rem" id="ref-grid"><div class="card"><div class="card-code">0000</div><div class="card-mean">12:00 AM</div></div><div class="card"><div class="card-code">0100</div><div class="card-mean">1:00 AM</div></div><div class="card"><div class="card-code">0200</div><div class="card-mean">2:00 AM</div></div><div class="card"><div class="card-code">0300</div><div class="card-mean">3:00 AM</div></div><div class="card"><div class="card-code">0400</div><div class="card-mean">4:00 AM</div></div><div class="card"><div class="card-code">0500</div><div class="card-mean">5:00 AM</div></div><div class="card"><div class="card-code">0600</div><div class="card-mean">6:00 AM</div></div><div class="card"><div class="card-code">0700</div><div class="card-mean">7:00 AM</div></div><div class="card"><div class="card-code">0800</div><div class="card-mean">8:00 AM</div></div><div class="card"><div class="card-code">0900</div><div class="card-mean">9:00 AM</div></div><div class="card"><div class="card-code">1000</div><div class="card-mean">10:00 AM</div></div><div class="card"><div class="card-code">1100</div><div class="card-mean">11:00 AM</div></div><div class="card"><div class="card-code">1200</div><div class="card-mean">12:00 PM</div></div><div class="card"><div class="card-code">1300</div><div class="card-mean">1:00 PM</div></div><div class="card"><div class="card-code">1400</div><div class="card-mean">2:00 PM</div></div><div class="card"><div class="card-code">1500</div><div class="card-mean">3:00 PM</div></div><div class="card"><div class="card-code">1600</div><div class="card-mean">4:00 PM</div></div><div class="card"><div class="card-code">1700</div><div class="card-mean">5:00 PM</div></div><div class="card"><div class="card-code">1800</div><div class="card-mean">6:00 PM</div></div><div class="card"><div class="card-code">1900</div><div class="card-mean">7:00 PM</div></div><div class="card"><div class="card-code">2000</div><div class="card-mean">8:00 PM</div></div><div class="card"><div class="card-code">2100</div><div class="card-mean">9:00 PM</div></div><div class="card"><div class="card-code">2200</div><div class="card-mean">10:00 PM</div></div><div class="card"><div class="card-code">2300</div><div class="card-mean">11:00 PM</div></div></div>
   <h2 class="st">NATO Timezone Letters</h2>
-  <div class="grid-wide" id="tz-letters"></div>
+  <p class="source-note">These 25 letters denote fixed UTC offsets. J (Juliett) denotes local time rather than a fixed offset. Country clock offsets can change with daylight saving time.</p><div class="grid-wide" id="tz-letters"><div class="card"><div class="card-code">A — Alfa</div><div class="card-mean">UTC+1</div></div><div class="card"><div class="card-code">B — Bravo</div><div class="card-mean">UTC+2</div></div><div class="card"><div class="card-code">C — Charlie</div><div class="card-mean">UTC+3</div></div><div class="card"><div class="card-code">D — Delta</div><div class="card-mean">UTC+4</div></div><div class="card"><div class="card-code">E — Echo</div><div class="card-mean">UTC+5</div></div><div class="card"><div class="card-code">F — Foxtrot</div><div class="card-mean">UTC+6</div></div><div class="card"><div class="card-code">G — Golf</div><div class="card-mean">UTC+7</div></div><div class="card"><div class="card-code">H — Hotel</div><div class="card-mean">UTC+8</div></div><div class="card"><div class="card-code">I — India</div><div class="card-mean">UTC+9</div></div><div class="card"><div class="card-code">K — Kilo</div><div class="card-mean">UTC+10</div></div><div class="card"><div class="card-code">L — Lima</div><div class="card-mean">UTC+11</div></div><div class="card"><div class="card-code">M — Mike</div><div class="card-mean">UTC+12</div></div><div class="card"><div class="card-code">N — November</div><div class="card-mean">UTC−1</div></div><div class="card"><div class="card-code">O — Oscar</div><div class="card-mean">UTC−2</div></div><div class="card"><div class="card-code">P — Papa</div><div class="card-mean">UTC−3</div></div><div class="card"><div class="card-code">Q — Quebec</div><div class="card-mean">UTC−4</div></div><div class="card"><div class="card-code">R — Romeo</div><div class="card-mean">UTC−5</div></div><div class="card"><div class="card-code">S — Sierra</div><div class="card-mean">UTC−6</div></div><div class="card"><div class="card-code">T — Tango</div><div class="card-mean">UTC−7</div></div><div class="card"><div class="card-code">U — Uniform</div><div class="card-mean">UTC−8</div></div><div class="card"><div class="card-code">V — Victor</div><div class="card-mean">UTC−9</div></div><div class="card"><div class="card-code">W — Whiskey</div><div class="card-mean">UTC−10</div></div><div class="card"><div class="card-code">X — X-ray</div><div class="card-mean">UTC−11</div></div><div class="card"><div class="card-code">Y — Yankee</div><div class="card-mean">UTC−12</div></div><div class="card"><div class="card-code">Z — Zulu</div><div class="card-mean">UTC+0</div></div></div>
   <h2 class="st">How to Read Military Time</h2>
   <div class="info-box">
     <strong>Format:</strong> 4-digit 24-hour clock (HHMM). No AM/PM, no colon.<br><br>
     <strong>Pronunciation:</strong> "0830" = "Zero Eight Thirty Hours" · "1545" = "Fifteen Forty-Five Hours" · "0000" = "Zero Hundred Hours"<br><br>
     <strong>Why no AM/PM?</strong> A supply drop at "3:00" in combat — 0300 or 1500? Military time eliminates all ambiguity.
   </div>
-</main>
+<section class="editorial"><h2>Time references and practice</h2><p>Read the <a href="https://aa.usno.navy.mil/faq/UT">US Naval Observatory explanation of Universal Time</a>. Use the live timezone converter for local offsets and <a href="drill">practice 24-hour time</a>.</p></section></main>
 <div class="content" style="padding-top:0">
 <h2 class="st">Frequently Asked Questions</h2>
 <div class="info-box" style="margin-bottom:.6rem"><h3 style="font-size:.85rem;margin-bottom:.25rem">What does the Z in 1500Z mean?</h3><p>Z stands for Zulu, the NATO timezone letter for UTC (zero offset). 1500Z is 3:00 PM UTC regardless of where the sender is — militaries use it so orders carry one unambiguous time.</p></div>
 <div class="info-box" style="margin-bottom:.6rem"><h3 style="font-size:.85rem;margin-bottom:.25rem">Is midnight 0000 or 2400?</h3><p>Both are valid: 0000 marks the start of a day and 2400 marks the end of the previous day. 0000 is the standard choice; 2400 appears mainly on schedules to show a closing time.</p></div>
-<div class="info-box" style="margin-bottom:.6rem"><h3 style="font-size:.85rem;margin-bottom:.25rem">How do I convert PM time to military time?</h3><p>Add 12 to the hour: 3:30 PM becomes 1530, 11:00 PM becomes 2300. AM times keep their hour with a leading zero — 7:15 AM is 0715. Noon is 1200 and midnight is 0000.</p></div>
+<div class="info-box" style="margin-bottom:.6rem"><h3 style="font-size:.85rem;margin-bottom:.25rem">How do I convert PM time to military time?</h3><p>For 1 PM through 11 PM, add 12 to the hour: 3:30 PM becomes 1530. Noon remains 1200. For AM, use 00 for midnight and keep hours 1 through 11 with a leading zero. For example, 12:30 AM becomes 0030.</p></div>
 <div class="info-box" style="margin-bottom:.6rem"><h3 style="font-size:.85rem;margin-bottom:.25rem">What is 1700 in normal time?</h3><p>1700 (seventeen hundred) is 5:00 PM. Common conversions: 1300 = 1 PM, 1500 = 3 PM, 1800 = 6 PM, 2000 = 8 PM, 2200 = 10 PM. Subtract 12 from any hour above 12 to get the PM time.</p></div>
 <div class="info-box" style="margin-bottom:.6rem"><h3 style="font-size:.85rem;margin-bottom:.25rem">Why does the military use 24-hour time?</h3><p>Because 0700 with no AM/PM cannot be misread across radio, written orders and logs — a wrong AM/PM guess moves an operation by 12 hours. It also pairs with Zulu (UTC) so units in different zones share one clock.</p></div>
-<div class="info-box" style="margin-bottom:.6rem"><h3 style="font-size:.85rem;margin-bottom:.25rem">What are the NATO time zone letters?</h3><p>Each letter A–Z except J marks a UTC offset: Z (Zulu) = UTC, A (Alpha) = UTC+1, N (November) = UTC−1, M (Mike) = UTC+12. J (Juliett) means the observer's local time.</p></div>
+<div class="info-box" style="margin-bottom:.6rem"><h3 style="font-size:.85rem;margin-bottom:.25rem">What are the NATO time zone letters?</h3><p>Each letter A–Z except J marks a UTC offset: Z (Zulu) = UTC, A (Alfa) = UTC+1, N (November) = UTC−1, M (Mike) = UTC+12. J (Juliett) means the observer's local time.</p></div>
 </div>
-<footer class="pg-footer">© 2025 <a href="index.html">doomania</a> · <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></footer>
+<footer class="pg-footer"><a href="about">About &amp; corrections</a> · © 2025 <a href="./">doomania</a> · <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></footer>
 <script>
 const NAV_PAGES=[
-  {id:'home',   label:'Home',        url:'index.html'},
-  {id:'alpha',  label:'Alphabet',    url:'alphabet.html'},
-  {id:'morse',  label:'Morse Code',  url:'morse.html'},
-  {id:'time',   label:'Mil Time',    url:'military-time.html'},
-  {id:'codes',  label:'Codes',       url:'codes.html'},
-  {id:'ham',    label:'Ham Radio',   url:'ham-radio.html'},
-  {id:'flags',  label:'Sig Flags',   url:'signal-flags.html'},
-  {id:'drill',  label:'Drill',       url:'drill.html'},
+  {id:'home',   label:'Home',        url:'./'},
+  {id:'alpha',  label:'Alphabet',    url:'alphabet'},
+  {id:'morse',  label:'Morse Code',  url:'morse'},
+  {id:'time',   label:'Mil Time',    url:'military-time'},
+  {id:'codes',  label:'Codes',       url:'codes'},
+  {id:'ham',    label:'Ham Radio',   url:'ham-radio'},
+  {id:'flags',  label:'Sig Flags',   url:'signal-flags'},
+  {id:'drill',  label:'Drill',       url:'drill'},
 ];
 
 const NAV_ICONS={
@@ -367,33 +371,7 @@ function icon(id){
 }
 
 function buildNav(currentId){
-  // ── TOP NAV (desktop) ──────────────────────────────────────
-  const topNav=document.createElement('nav');
-  topNav.className='top-nav';
-  topNav.setAttribute('aria-label','Main navigation');
-  topNav.innerHTML=`
-    <div class="top-nav-inner">
-      <a href="index.html" class="top-nav-brand">
-        <span class="tnb-badge">MilRef</span>
-      </a>
-      <div class="top-nav-links">
-        ${NAV_PAGES.map(p=>`
-          <a href="${p.url}" class="tnl${p.id===currentId?' active':''}" aria-current="${p.id===currentId?'page':'false'}">
-            ${p.label}
-          </a>`).join('')}
-      </div>
-      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" onclick="toggleMobileMenu()">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
-      ${NAV_PAGES.map(p=>`
-        <a href="${p.url}" class="mm-item${p.id===currentId?' active':''}">
-          ${icon(p.id)}${p.label}
-        </a>`).join('')}
-    </div>
-  `;
-  document.body.insertBefore(topNav, document.body.firstChild);
+  // Main navigation is delivered as static HTML.
 
   // ── BOTTOM NAV (mobile only, max 5 visible) ────────────────
   const PRIMARY=['home','alpha','morse','time','drill'];
@@ -440,9 +418,7 @@ document.addEventListener('click',e=>{
 buildNav('time');
 
 const TZ_LIST = [{label:'Auckland, NZ (NZST/NZDT)',iana:'Pacific/Auckland'},{label:'Sydney, AU (AEST/AEDT)',iana:'Australia/Sydney'},{label:'Tokyo, JP (JST)',iana:'Asia/Tokyo'},{label:'Singapore (SGT)',iana:'Asia/Singapore'},{label:'Dubai (GST)',iana:'Asia/Dubai'},{label:'Moscow (MSK)',iana:'Europe/Moscow'},{label:'Nairobi (EAT)',iana:'Africa/Nairobi'},{label:'Paris/Berlin (CET/CEST)',iana:'Europe/Paris'},{label:'London (GMT/BST)',iana:'Europe/London'},{label:'Reykjavik (GMT)',iana:'Atlantic/Reykjavik'},{label:'Azores (AZOT)',iana:'Atlantic/Azores'},{label:'Sao Paulo (BRT)',iana:'America/Sao_Paulo'},{label:'New York (EST/EDT)',iana:'America/New_York'},{label:'Chicago (CST/CDT)',iana:'America/Chicago'},{label:'Denver (MST/MDT)',iana:'America/Denver'},{label:'Los Angeles (PST/PDT)',iana:'America/Los_Angeles'},{label:'Anchorage (AKST)',iana:'America/Anchorage'},{label:'Honolulu (HST)',iana:'Pacific/Honolulu'},{label:'Samoa (SST)',iana:'Pacific/Pago_Pago'},{label:'Kabul (AFT)',iana:'Asia/Kabul'},{label:'Colombo (IST)',iana:'Asia/Colombo'},{label:'Kathmandu (NPT)',iana:'Asia/Kathmandu'},{label:'Yangon (MMT)',iana:'Asia/Rangoon'},{label:'Beijing/Shanghai (CST)',iana:'Asia/Shanghai'},{label:'Seoul (KST)',iana:'Asia/Seoul'},{label:'Kamchatka (PETT)',iana:'Asia/Kamchatka'},{label:'Fiji (FJT)',iana:'Pacific/Fiji'},{label:'Chatham Islands (CHAST)',iana:'Pacific/Chatham'},{label:'Kiribati (LINT)',iana:'Pacific/Kiritimati'}];
-const WORLD_TZ = [{label:'ZULU (UTC)',offset:0,id:'UTC'},{label:'ROMEO (UTC-5)',offset:-5,id:'EST'},{label:'UNIFORM (UTC-8)',offset:-8,id:'PST'},{label:'ALPHA (UTC+1)',offset:1,id:'CET'},{label:'CHARLIE (UTC+3)',offset:3,id:'MSK'},{label:'KILO (UTC+10)',offset:10,id:'AEST'},{label:'MIKE/NZT (UTC+12)',offset:12,id:'NZST'}];
-const TZ_LETTERS = [{l:'Z',name:'Zulu',offset:'UTC+0',note:'Greenwich / universal reference'},{l:'A',name:'Alpha',offset:'UTC+1',note:'Central European Time'},{l:'B',name:'Bravo',offset:'UTC+2',note:'Eastern Europe / Middle East'},{l:'C',name:'Charlie',offset:'UTC+3',note:'Moscow / East Africa'},{l:'E',name:'Echo',offset:'UTC+5',note:'Pakistan'},{l:'I',name:'India',offset:'UTC+9',note:'Japan / Korea'},{l:'K',name:'Kilo',offset:'UTC+10',note:'Eastern Australia'},{l:'M',name:'Mike',offset:'UTC+12',note:'New Zealand (NZT)'},{l:'N',name:'November',offset:'UTC-1',note:'Azores'},{l:'R',name:'Romeo',offset:'UTC-5',note:'Eastern Standard (US)'},{l:'S',name:'Sierra',offset:'UTC-6',note:'Central Standard (US)'},{l:'U',name:'Uniform',offset:'UTC-8',note:'Pacific Standard (US)'},{l:'Y',name:'Yankee',offset:'UTC-12',note:'International Date Line West'}];
-const MILREF = [{m:'0000',c:'12:00 AM'},{m:'0100',c:'1:00 AM'},{m:'0600',c:'6:00 AM'},{m:'0800',c:'8:00 AM'},{m:'1000',c:'10:00 AM'},{m:'1200',c:'12:00 PM'},{m:'1300',c:'1:00 PM'},{m:'1500',c:'3:00 PM'},{m:'1800',c:'6:00 PM'},{m:'2000',c:'8:00 PM'},{m:'2100',c:'9:00 PM'},{m:'2359',c:'11:59 PM'}];
+const WORLD_TZ = [{label:'ZULU (UTC)',offset:0,id:'UTC'},{label:'ROMEO (UTC-5)',offset:-5,id:'EST'},{label:'UNIFORM (UTC-8)',offset:-8,id:'PST'},{label:'ALFA (UTC+1)',offset:1,id:'CET'},{label:'CHARLIE (UTC+3)',offset:3,id:'MSK'},{label:'KILO (UTC+10)',offset:10,id:'AEST'},{label:'MIKE (UTC+12)',offset:12,id:'NZST'}];
 const DAYS = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
 const MONTHS = ['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
 const ONES = ['','One','Two','Three','Four','Five','Six','Seven','Eight','Nine','Ten','Eleven','Twelve','Thirteen','Fourteen','Fifteen','Sixteen','Seventeen','Eighteen','Nineteen'];
@@ -450,15 +426,22 @@ const TENS = ['','','Twenty','Thirty','Forty','Fifty'];
 const HOURS_WORDS = ['Zero Hundred','Zero One Hundred','Zero Two Hundred','Zero Three Hundred','Zero Four Hundred','Zero Five Hundred','Zero Six Hundred','Zero Seven Hundred','Zero Eight Hundred','Zero Nine Hundred','Ten Hundred','Eleven Hundred','Twelve Hundred','Thirteen Hundred','Fourteen Hundred','Fifteen Hundred','Sixteen Hundred','Seventeen Hundred','Eighteen Hundred','Nineteen Hundred','Twenty Hundred','Twenty-One Hundred','Twenty-Two Hundred','Twenty-Three Hundred'];
 function sayNum(n){if(n<20)return ONES[n];return TENS[Math.floor(n/10)]+(n%10?' '+ONES[n%10]:'')}
 function buildTzSelect(){const sel=document.getElementById('tz-sel');const userTz=Intl.DateTimeFormat().resolvedOptions().timeZone;let matchedIdx=0;TZ_LIST.forEach((tz,i)=>{const opt=document.createElement('option');opt.value=tz.iana;opt.textContent=tz.label;sel.appendChild(opt);if(tz.iana===userTz)matchedIdx=i});sel.selectedIndex=matchedIdx;document.getElementById('tz-detected').textContent='Auto-detected: '+TZ_LIST[matchedIdx].label;convertZulu()}
-function convertZulu(){const t=document.getElementById('zulu-in').value;if(!t)return;const [h,m]=t.split(':').map(Number);const iana=document.getElementById('tz-sel').value||'Pacific/Auckland';const zuluDate=new Date();zuluDate.setUTCHours(h,m,0,0);try{const lh=parseInt(new Intl.DateTimeFormat('en-US',{timeZone:iana,hour:'numeric',hour12:false}).format(zuluDate));const lm=parseInt(new Intl.DateTimeFormat('en-US',{timeZone:iana,minute:'2-digit'}).format(zuluDate));const ampm=lh<12?'AM':'PM';const ch=lh===0?12:lh>12?lh-12:lh;const tzAbbr=new Intl.DateTimeFormat('en-US',{timeZone:iana,timeZoneName:'short'}).formatToParts(zuluDate).find(p=>p.type==='timeZoneName')?.value||'';const tzOff=new Intl.DateTimeFormat('en-US',{timeZone:iana,timeZoneName:'shortOffset'}).formatToParts(zuluDate).find(p=>p.type==='timeZoneName')?.value||'';document.getElementById('zconv-local').textContent=ch+':'+String(lm).padStart(2,'0')+' '+ampm+' '+tzAbbr;document.getElementById('zconv-mil').textContent=String(lh).padStart(2,'0')+String(lm).padStart(2,'0');document.getElementById('zconv-off').textContent=tzOff}catch(e){console.warn('TZ error',e)}}
+function convertZulu(){const t=document.getElementById('zulu-in').value;if(!t)return;const [h,m]=t.split(':').map(Number);const iana=document.getElementById('tz-sel').value||'Pacific/Auckland';const zuluDate=new Date();zuluDate.setUTCHours(h,m,0,0);try{const lh=parseInt(new Intl.DateTimeFormat('en-US',{timeZone:iana,hour:'numeric',hourCycle:'h23'}).format(zuluDate));const lm=parseInt(new Intl.DateTimeFormat('en-US',{timeZone:iana,minute:'2-digit'}).format(zuluDate));const ampm=lh<12?'AM':'PM';const ch=lh===0?12:lh>12?lh-12:lh;const tzAbbr=new Intl.DateTimeFormat('en-US',{timeZone:iana,timeZoneName:'short'}).formatToParts(zuluDate).find(p=>p.type==='timeZoneName')?.value||'';const tzOff=new Intl.DateTimeFormat('en-US',{timeZone:iana,timeZoneName:'shortOffset'}).formatToParts(zuluDate).find(p=>p.type==='timeZoneName')?.value||'';document.getElementById('zconv-local').textContent=ch+':'+String(lm).padStart(2,'0')+' '+ampm+' '+tzAbbr;document.getElementById('zconv-mil').textContent=String(lh).padStart(2,'0')+String(lm).padStart(2,'0');document.getElementById('zconv-off').textContent=tzOff}catch(e){console.warn('TZ error',e)}}
 function copyZconv(){const t=document.getElementById('zconv-local').textContent+' | Military: '+document.getElementById('zconv-mil').textContent+' | '+document.getElementById('zconv-off').textContent;navigator.clipboard.writeText(t).then(()=>{const btn=document.getElementById('zcopy-btn');const orig=btn.textContent;btn.textContent='Copied!';setTimeout(()=>btn.textContent=orig,1500)})}
-function toMil(){const t=document.getElementById('civil-in').value;if(!t)return;const [h,m]=t.split(':').map(Number);document.getElementById('mil-res').textContent=String(h).padStart(2,'0')+String(m).padStart(2,'0');const say=HOURS_WORDS[h]+(m>0?' '+sayNum(m)+' Hours':' Hours');document.getElementById('mil-say').textContent='Say: "'+say+'"'}
-function fromMil(){const raw=document.getElementById('mil-in').value.trim();if(raw.length!==4||isNaN(raw)){document.getElementById('civ-res').textContent='Invalid';return}const h=parseInt(raw.slice(0,2)),m=parseInt(raw.slice(2,4));if(h>23||m>59){document.getElementById('civ-res').textContent='Invalid';return}const ampm=h<12?'AM':'PM',ch=h===0?12:h>12?h-12:h;document.getElementById('civ-res').textContent=ch+':'+String(m).padStart(2,'0')+' '+ampm;document.getElementById('civ-say').textContent='Military: '+raw+' Hours'}
-function updateClocks(){const now=new Date();document.getElementById('zulu-clock').textContent=String(now.getUTCHours()).padStart(2,'0')+String(now.getUTCMinutes()).padStart(2,'0');document.getElementById('zulu-date').textContent=DAYS[now.getUTCDay()]+' '+now.getUTCDate()+' '+MONTHS[now.getUTCMonth()];const sel=document.getElementById('tz-sel');const iana=(sel&&sel.value)?sel.value:'Pacific/Auckland';try{const lh=parseInt(new Intl.DateTimeFormat('en-US',{timeZone:iana,hour:'numeric',hour12:false}).format(now));const lm=parseInt(new Intl.DateTimeFormat('en-US',{timeZone:iana,minute:'2-digit'}).format(now));const tzAbbr=new Intl.DateTimeFormat('en-US',{timeZone:iana,timeZoneName:'short'}).formatToParts(now).find(p=>p.type==='timeZoneName')?.value||'';const tzOff=new Intl.DateTimeFormat('en-US',{timeZone:iana,timeZoneName:'shortOffset'}).formatToParts(now).find(p=>p.type==='timeZoneName')?.value||'';const localDate=new Intl.DateTimeFormat('en-US',{timeZone:iana,weekday:'short',day:'numeric',month:'short'}).format(now);document.getElementById('local-clock').textContent=String(lh).padStart(2,'0')+String(lm).padStart(2,'0');document.getElementById('local-date').textContent=localDate;document.getElementById('local-dst').textContent=tzAbbr+' '+tzOff;if(sel)document.getElementById('local-lbl').textContent=sel.options[sel.selectedIndex]?.text.split('(')[0].trim()||'Local'}catch(e){}}
+function toMil(){const t=document.getElementById('civil-in').value;if(!t)return;const [h,m]=t.split(':').map(Number);document.getElementById('mil-res').textContent=String(h).padStart(2,'0')+String(m).padStart(2,'0');const say=(m>0?HOURS_WORDS[h].replace(' Hundred',''):HOURS_WORDS[h])+(m>0?' '+sayNum(m)+' Hours':' Hours');document.getElementById('mil-say').textContent='Say: "'+say+'"'}
+function fromMil(){const raw=document.getElementById('mil-in').value.trim();if(!/^\d{4}$/.test(raw)){document.getElementById('civ-res').textContent='Invalid';return}const h=parseInt(raw.slice(0,2)),m=parseInt(raw.slice(2,4));if(h>23||m>59){document.getElementById('civ-res').textContent='Invalid';return}const ampm=h<12?'AM':'PM',ch=h===0?12:h>12?h-12:h;document.getElementById('civ-res').textContent=ch+':'+String(m).padStart(2,'0')+' '+ampm;document.getElementById('civ-say').textContent='Military: '+raw+' Hours'}
+function updateClocks(){const now=new Date();document.getElementById('zulu-clock').textContent=String(now.getUTCHours()).padStart(2,'0')+String(now.getUTCMinutes()).padStart(2,'0');document.getElementById('zulu-date').textContent=DAYS[now.getUTCDay()]+' '+now.getUTCDate()+' '+MONTHS[now.getUTCMonth()];const sel=document.getElementById('tz-sel');const iana=(sel&&sel.value)?sel.value:'Pacific/Auckland';try{const lh=parseInt(new Intl.DateTimeFormat('en-US',{timeZone:iana,hour:'numeric',hourCycle:'h23'}).format(now));const lm=parseInt(new Intl.DateTimeFormat('en-US',{timeZone:iana,minute:'2-digit'}).format(now));const tzAbbr=new Intl.DateTimeFormat('en-US',{timeZone:iana,timeZoneName:'short'}).formatToParts(now).find(p=>p.type==='timeZoneName')?.value||'';const tzOff=new Intl.DateTimeFormat('en-US',{timeZone:iana,timeZoneName:'shortOffset'}).formatToParts(now).find(p=>p.type==='timeZoneName')?.value||'';const localDate=new Intl.DateTimeFormat('en-US',{timeZone:iana,weekday:'short',day:'numeric',month:'short'}).format(now);document.getElementById('local-clock').textContent=String(lh).padStart(2,'0')+String(lm).padStart(2,'0');document.getElementById('local-date').textContent=localDate;document.getElementById('local-dst').textContent=tzAbbr+' '+tzOff;if(sel)document.getElementById('local-lbl').textContent=sel.options[sel.selectedIndex]?.text.split('(')[0].trim()||'Local'}catch(e){}}
 WORLD_TZ.forEach(tz=>{const d=document.createElement('div');d.className='clock-card';d.id='wtz-'+tz.id;document.getElementById('world-grid').appendChild(d)});
-MILREF.forEach(r=>{const d=document.createElement('div');d.className='card';d.innerHTML='<div style="font-family:Rajdhani,sans-serif;font-size:1.15rem;font-weight:700;color:var(--olive)">'+r.m+'</div><div style="font-size:.72rem;color:var(--ink)">'+r.c+'</div>';document.getElementById('ref-grid').appendChild(d)});
-TZ_LETTERS.forEach(tz=>{const d=document.createElement('div');d.className='card';d.innerHTML='<div class="card-code">'+tz.l+' — '+tz.name+'</div><div class="card-mean">'+tz.offset+'</div><div class="card-ctx">'+tz.note+'</div>';document.getElementById('tz-letters').appendChild(d)});
-buildTzSelect();toMil();updateClocks();setInterval(updateClocks,1000);
+
+
+function updateWorldClocks(){
+  WORLD_TZ.forEach(tz=>{
+    const card=document.getElementById('wtz-'+tz.id);
+    const shifted=new Date(Date.now()+tz.offset*3600000);
+    card.textContent=tz.label+' — '+new Intl.DateTimeFormat('en-GB',{timeZone:'UTC',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).format(shifted);
+  });
+}
+buildTzSelect();toMil();updateClocks();updateWorldClocks();setInterval(()=>{updateClocks();updateWorldClocks();},1000);
 
 if('serviceWorker' in navigator){
   navigator.serviceWorker.register('sw.js').catch(()=>{});

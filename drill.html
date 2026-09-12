@@ -7,12 +7,12 @@
 <meta name="description" content="Practice NATO phonetic alphabet, Morse code, military time, police 10-codes and ham radio Q-codes with randomised quiz drills.">
 <meta name="author" content="doomania">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://military-alphabet.pages.dev/drill.html">
+<link rel="canonical" href="https://military-alphabet.pages.dev/drill">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Military Communication Reference">
 <meta property="og:title" content="Military Communication Drill — Quiz and Practice">
 <meta property="og:description" content="Practice NATO phonetic alphabet, Morse code, military time, police 10-codes and ham radio Q-codes with randomised quiz drills.">
-<meta property="og:url" content="https://military-alphabet.pages.dev/drill.html">
+<meta property="og:url" content="https://military-alphabet.pages.dev/drill">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Military Communication Drill — Quiz and Practice">
 <meta name="twitter:description" content="Practice NATO phonetic alphabet, Morse code, military time, police 10-codes and ham radio Q-codes with randomised quiz drills.">
@@ -259,9 +259,12 @@ body{font-family:'Inter',sans-serif;background:var(--surface);color:var(--ink);m
   .tool-icon{background:linear-gradient(135deg,#39481f,#5f7533)}
 }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the fastest way to memorize the NATO alphabet?", "acceptedAnswer": {"@type": "Answer", "text": "Short daily sessions beat one long cram: quiz random letters, spell real words aloud (names, number plates), and hammer the confusable pairs like Mike/November. Most people are fluent after a week of 10-minute drills."}}, {"@type": "Question", "name": "What should I practice first — alphabet, Morse or 10-codes?", "acceptedAnswer": {"@type": "Answer", "text": "Start with the NATO alphabet: it is only 26 words, used everywhere from aviation to call centres, and every other radio skill builds on it. Add military time next, then Morse or 10-codes depending on your field."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the fastest way to memorize the NATO alphabet?", "acceptedAnswer": {"@type": "Answer", "text": "Practice a few letters at a time, then spell familiar names aloud and use mixed-letter quizzes. Review mistakes against the alphabet chart. Learning time varies; this quiz does not certify operational proficiency."}}, {"@type": "Question", "name": "What should I practice first — alphabet, Morse or 10-codes?", "acceptedAnswer": {"@type": "Answer", "text": "Start with the NATO alphabet: it is only 26 words, used everywhere from aviation to call centres, and every other radio skill builds on it. Add military time next, then Morse or 10-codes depending on your field."}}]}</script>
+<link rel="stylesheet" href="reference.css">
+<noscript><style>.top-nav-links{display:flex!important;flex-wrap:wrap}.top-nav-inner{height:auto;min-height:48px;flex-wrap:wrap}.hamburger{display:none!important}.js-only{display:none!important}</style></noscript>
 </head>
 <body>
+<nav class="top-nav" aria-label="Main navigation"><div class="top-nav-inner"><a href="./" class="top-nav-brand"><span class="tnb-badge">MilRef</span></a><div class="top-nav-links"><a href="./" class="tnl">Home</a><a href="alphabet" class="tnl">Alphabet</a><a href="morse" class="tnl">Morse Code</a><a href="military-time" class="tnl">Military Time</a><a href="codes" class="tnl">Codes</a><a href="ham-radio" class="tnl">Ham Radio</a><a href="signal-flags" class="tnl">Signal Flags</a><a href="drill" class="tnl active" aria-current="page">Practice</a></div><button class="hamburger" id="hamburger" type="button" aria-label="Toggle menu" aria-controls="mobile-menu" aria-expanded="false" onclick="toggleMobileMenu()"><span></span><span></span><span></span></button></div><div class="mobile-menu" id="mobile-menu" aria-hidden="true"><a href="./" class="mm-item">Home</a><a href="alphabet" class="mm-item">Alphabet</a><a href="morse" class="mm-item">Morse Code</a><a href="military-time" class="mm-item">Military Time</a><a href="codes" class="mm-item">Codes</a><a href="ham-radio" class="mm-item">Ham Radio</a><a href="signal-flags" class="mm-item">Signal Flags</a><a href="drill" class="mm-item">Practice</a></div></nav>
 <a href="#main" class="skip">Skip to content</a>
 <header class="pg-hdr"><div class="pg-hdr-inner">
   <div class="pg-tag">Training · Drill · Knowledge Test</div>
@@ -270,7 +273,7 @@ body{font-family:'Inter',sans-serif;background:var(--surface);color:var(--ink);m
 </div></header>
 <main class="content" id="main">
 <p style="font-size:.85rem;line-height:1.7;margin-bottom:1.25rem;max-width:720px">Drill mode quizzes you on the NATO alphabet, Morse code, military time, police 10-codes and ham radio Q-codes in random order, with a streak counter and score.</p>
-  <h2 class="st">Select Mode</h2>
+  <p class="source-note">Police mode uses the agency-dependent general examples on our <a href="codes">codes reference</a>. NATO answers use official spellings; Alpha and Juliet are accepted as familiar variants.</p><h2 class="st">Select Mode</h2>
   <div class="mode-grid"><button class="mode-btn" id="mb-nato" onclick="setMode('nato')" type="button"><div class="mb-name">NATO Alphabet</div><div class="mb-desc">Letter to codeword</div></button>
 <button class="mode-btn" id="mb-morse" onclick="setMode('morse')" type="button"><div class="mb-name">Morse Code</div><div class="mb-desc">Letter to Morse</div></button>
 <button class="mode-btn" id="mb-miltime" onclick="setMode('miltime')" type="button"><div class="mb-name">Military Time</div><div class="mb-desc">12-hr to military</div></button>
@@ -298,20 +301,20 @@ body{font-family:'Inter',sans-serif;background:var(--surface);color:var(--ink);m
 </main>
 <div class="content" style="padding-top:0">
 <h2 class="st">Frequently Asked Questions</h2>
-<div class="info-box" style="margin-bottom:.6rem"><h3 style="font-size:.85rem;margin-bottom:.25rem">What is the fastest way to memorize the NATO alphabet?</h3><p>Short daily sessions beat one long cram: quiz random letters, spell real words aloud (names, number plates), and hammer the confusable pairs like Mike/November. Most people are fluent after a week of 10-minute drills.</p></div>
+<div class="info-box" style="margin-bottom:.6rem"><h3 style="font-size:.85rem;margin-bottom:.25rem">What is the fastest way to memorize the NATO alphabet?</h3><p>Practice a few letters at a time, then spell familiar names aloud and use mixed-letter quizzes. Review mistakes against the alphabet chart. Learning time varies; this quiz does not certify operational proficiency.</p></div>
 <div class="info-box" style="margin-bottom:.6rem"><h3 style="font-size:.85rem;margin-bottom:.25rem">What should I practice first — alphabet, Morse or 10-codes?</h3><p>Start with the NATO alphabet: it is only 26 words, used everywhere from aviation to call centres, and every other radio skill builds on it. Add military time next, then Morse or 10-codes depending on your field.</p></div>
 </div>
-<footer class="pg-footer">© 2025 <a href="index.html">doomania</a> · <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></footer>
+<footer class="pg-footer"><a href="about">About &amp; corrections</a> · © 2025 <a href="./">doomania</a> · <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></footer>
 <script>
 const NAV_PAGES=[
-  {id:'home',   label:'Home',        url:'index.html'},
-  {id:'alpha',  label:'Alphabet',    url:'alphabet.html'},
-  {id:'morse',  label:'Morse Code',  url:'morse.html'},
-  {id:'time',   label:'Mil Time',    url:'military-time.html'},
-  {id:'codes',  label:'Codes',       url:'codes.html'},
-  {id:'ham',    label:'Ham Radio',   url:'ham-radio.html'},
-  {id:'flags',  label:'Sig Flags',   url:'signal-flags.html'},
-  {id:'drill',  label:'Drill',       url:'drill.html'},
+  {id:'home',   label:'Home',        url:'./'},
+  {id:'alpha',  label:'Alphabet',    url:'alphabet'},
+  {id:'morse',  label:'Morse Code',  url:'morse'},
+  {id:'time',   label:'Mil Time',    url:'military-time'},
+  {id:'codes',  label:'Codes',       url:'codes'},
+  {id:'ham',    label:'Ham Radio',   url:'ham-radio'},
+  {id:'flags',  label:'Sig Flags',   url:'signal-flags'},
+  {id:'drill',  label:'Drill',       url:'drill'},
 ];
 
 const NAV_ICONS={
@@ -330,33 +333,7 @@ function icon(id){
 }
 
 function buildNav(currentId){
-  // ── TOP NAV (desktop) ──────────────────────────────────────
-  const topNav=document.createElement('nav');
-  topNav.className='top-nav';
-  topNav.setAttribute('aria-label','Main navigation');
-  topNav.innerHTML=`
-    <div class="top-nav-inner">
-      <a href="index.html" class="top-nav-brand">
-        <span class="tnb-badge">MilRef</span>
-      </a>
-      <div class="top-nav-links">
-        ${NAV_PAGES.map(p=>`
-          <a href="${p.url}" class="tnl${p.id===currentId?' active':''}" aria-current="${p.id===currentId?'page':'false'}">
-            ${p.label}
-          </a>`).join('')}
-      </div>
-      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" onclick="toggleMobileMenu()">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
-      ${NAV_PAGES.map(p=>`
-        <a href="${p.url}" class="mm-item${p.id===currentId?' active':''}">
-          ${icon(p.id)}${p.label}
-        </a>`).join('')}
-    </div>
-  `;
-  document.body.insertBefore(topNav, document.body.firstChild);
+  // Main navigation is delivered as static HTML.
 
   // ── BOTTOM NAV (mobile only, max 5 visible) ────────────────
   const PRIMARY=['home','alpha','morse','time','drill'];
@@ -403,13 +380,13 @@ document.addEventListener('click',e=>{
 buildNav('drill');
 
 const MODES = [
-  {id:'nato',  hint:'Type the NATO codeword for this letter', ph:'e.g. Alpha'},
+  {id:'nato',  hint:'Type the NATO codeword for this letter', ph:'e.g. Alfa'},
   {id:'morse', hint:'Type the Morse code (. and -)',          ph:'e.g. .-'},
   {id:'miltime',hint:'Type the military time (4 digits)',     ph:'e.g. 1300'},
   {id:'police',hint:'Type the meaning of this code',          ph:'e.g. Acknowledged'},
   {id:'ham',   hint:'Type the meaning of this Q-code',        ph:'e.g. My location is...'},
 ];
-const NATO_D = [{l:'A',w:'alpha'},{l:'B',w:'bravo'},{l:'C',w:'charlie'},{l:'D',w:'delta'},{l:'E',w:'echo'},{l:'F',w:'foxtrot'},{l:'G',w:'golf'},{l:'H',w:'hotel'},{l:'I',w:'india'},{l:'J',w:'juliett'},{l:'K',w:'kilo'},{l:'L',w:'lima'},{l:'M',w:'mike'},{l:'N',w:'november'},{l:'O',w:'oscar'},{l:'P',w:'papa'},{l:'Q',w:'quebec'},{l:'R',w:'romeo'},{l:'S',w:'sierra'},{l:'T',w:'tango'},{l:'U',w:'uniform'},{l:'V',w:'victor'},{l:'W',w:'whiskey'},{l:'X',w:'x-ray'},{l:'Y',w:'yankee'},{l:'Z',w:'zulu'}];
+const NATO_D = [{l:'A',w:'alfa'},{l:'B',w:'bravo'},{l:'C',w:'charlie'},{l:'D',w:'delta'},{l:'E',w:'echo'},{l:'F',w:'foxtrot'},{l:'G',w:'golf'},{l:'H',w:'hotel'},{l:'I',w:'india'},{l:'J',w:'juliett'},{l:'K',w:'kilo'},{l:'L',w:'lima'},{l:'M',w:'mike'},{l:'N',w:'november'},{l:'O',w:'oscar'},{l:'P',w:'papa'},{l:'Q',w:'quebec'},{l:'R',w:'romeo'},{l:'S',w:'sierra'},{l:'T',w:'tango'},{l:'U',w:'uniform'},{l:'V',w:'victor'},{l:'W',w:'whiskey'},{l:'X',w:'x-ray'},{l:'Y',w:'yankee'},{l:'Z',w:'zulu'}];
 const MORSE_D = {A:'.-',B:'-...',C:'-.-.',D:'-..',E:'.',F:'..-.',G:'--.',H:'....',I:'..',J:'.---',K:'-.-',L:'.-..',M:'--',N:'-.',O:'---',P:'.--.',Q:'--.-',R:'.-.',S:'...',T:'-',U:'..-',V:'...-',W:'.--',X:'-..-',Y:'-.--',Z:'--..'};
 const POLICE_D = [{c:'10-1',m:'signal weak'},{c:'10-4',m:'acknowledged'},{c:'10-7',m:'out of service'},{c:'10-8',m:'in service'},{c:'10-9',m:'repeat last message'},{c:'10-20',m:'location'},{c:'10-22',m:'disregard'},{c:'10-23',m:'arrived at scene'},{c:'10-32',m:'person with gun'},{c:'10-33',m:'emergency all units stand by'},{c:'10-50',m:'accident'},{c:'10-76',m:'en route'},{c:'10-78',m:'need assistance'},{c:'10-80',m:'chase in progress'},{c:'10-95',m:'prisoner in custody'},{c:'10-99',m:'wanted stolen'}];
 const HAM_D = [{c:'QRZ',m:'who is calling me'},{c:'QTH',m:'my location is'},{c:'QSL',m:'i confirm receipt'},{c:'QSO',m:'direct two-way contact'},{c:'QRM',m:'man-made interference'},{c:'QRN',m:'natural static noise'},{c:'QRT',m:'stop sending'},{c:'QRV',m:'i am ready'},{c:'QSY',m:'change frequency'},{c:'QRP',m:'low power operation'},{c:'QSB',m:'signal fading'},{c:'73',m:'best regards'},{c:'CQ',m:'calling any station'},{c:'DX',m:'long distance contact'},{c:'SK',m:'end of contact'},{c:'OM',m:'old man any male operator'}];
@@ -448,7 +425,8 @@ function check(){
   const ans = document.getElementById('quiz-inp').value.trim().toLowerCase();
   const ca = pool[idx].a.toLowerCase();
   total++;
-  const ok = ans===ca || (ca.startsWith(ans) && ans.length>3);
+  const natoAnswer = ans.replace(/^alpha$/, 'alfa').replace(/^juliet$/, 'juliett').replace(/^xray$/, 'x-ray');
+  const ok = mode.id==='nato' ? natoAnswer===ca : ans===ca || (mode.id!=='morse' && mode.id!=='miltime' && ca.startsWith(ans) && ans.length>3);
   if(ok){ correct++; streak++; document.getElementById('quiz-fb').style.color='#2ecc71'; document.getElementById('quiz-fb').textContent='Correct!'; }
   else{ streak=0; document.getElementById('quiz-fb').style.color='#e74c3c'; document.getElementById('quiz-fb').textContent='Incorrect.'; }
   updateStats();
