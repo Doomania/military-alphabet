@@ -18,3 +18,4 @@ User-agent: Google-Extended
 Allow: /
 
 Sitemap: https://military-alphabet.pages.dev/sitemap.xml
+Sitemap: https://military-alphabet.pages.dev/sitemap.txt
